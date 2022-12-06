@@ -2,7 +2,6 @@
 **Description:**
 
 ## Table of Contents
----
 - [Discovery Phase](#discovery)
 - [Planning Phase](#planning)
 - [Designing Phase](#designing)
@@ -10,7 +9,6 @@
 - [Maintenance Phase](#maintenance)
 
 ## Discovery
----
 **Website Purpose:** To present and share TPG-related content and information.
 
 **Goals of the Website:** 
@@ -28,7 +26,6 @@
 
 
 ## Planning
----
 **Site Map:**
 
 ![Site Map](Sitemap.png)
@@ -37,16 +34,13 @@
 
 
 ## Designing
----
 
 ## Development
----
 
 ## Testing and Delivery
----
 
 ## Maintenance
----
+
 
 Sources:
 
