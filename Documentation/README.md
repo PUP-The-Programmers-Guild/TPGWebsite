@@ -22,9 +22,6 @@
 2. PUP Students
 3. TPG Members (Devskolars)
 
-**Type of Content the Target Audience will look for:**
-
-
 ## Planning
 **Site Map:**
 
@@ -82,6 +79,24 @@
     - Benefits of a devskolar
     - Membership requirements and process
     - Registration Form
+
+**Team and Members(TBA)**
+- UI/UX
+- Frontend
+- Backend
+- Management
+
+**Tools and Technologies**
+- UI/UX
+    - Figma
+- Frontend
+    - Next.js
+- Backend
+    - Firebase / Sanity.io
+- Documentation
+    - Markdown
+
+**Deadline: July 2023**
 
 ## Designing
 
