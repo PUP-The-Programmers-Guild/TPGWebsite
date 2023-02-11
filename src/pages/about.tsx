@@ -1,6 +1,4 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/page.module.css'
+import styles from '../styles/about.module.css'
 
 export default function Home() {
   return (
