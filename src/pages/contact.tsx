@@ -1,4 +1,4 @@
-export default function AboutPage() {
+export default function Contact() {
     return (
         <>
             
