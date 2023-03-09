@@ -1,7 +1,7 @@
 export default function IndexPage() {
     return (
-        <>
-            <h1>Test</h1>
-        </>
+        <h1 className="text-2xl underline">
+            Hello world!
+        </h1>
     )
 }
