@@ -1,6 +1,4 @@
-import styles from '../styles/page.module.css'
-
-export default function Home() {
+export default function IndexPage() {
   return (
     <div>
       <p>Main Page</p>

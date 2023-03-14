@@ -1,6 +1,4 @@
-import styles from '../styles/about.module.css'
-
-export default function Home() {
+export default function About() {
   return (
     <div>
       <p>About Page</p>
