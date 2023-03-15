@@ -1,9 +1,9 @@
-export default function AboutPage() {
+export default function AccomplishmentsFeed() {
     return (
         <>
             <div className="z-100 min-h-[100vh]">
                 <h1 className="text-2xl underline">
-                    About Us Page
+                    Accomplishments Page
                 </h1>
             </div>
         </>
