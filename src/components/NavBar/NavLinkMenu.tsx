@@ -16,7 +16,7 @@ interface ILinkMenuItemProps {
 
 const Item = (props: ILinkMenuItemProps) => {
     return (
-        <Link href={props.href} className="text-xs font-normal leading-none">
+        <Link href={props.href} className="group z-60 text-xs font-normal leading-none">
             <div className="hover:text-green-400 mx-auto my-2">
                 <span>
                     {props.children}

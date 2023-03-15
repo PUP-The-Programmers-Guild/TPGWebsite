@@ -9,7 +9,9 @@ const NAVLINKS = [
     {
         name: "Home",
         href: "/", 
-        sublinks: []
+        sublinks: [
+
+        ]
     },
     {
         name: "About Us",
@@ -23,12 +25,19 @@ const NAVLINKS = [
     {
         name: "News",
         href: "/news",
-        sublinks: []
+        sublinks: [
+            {name:"Latest Announcement/News",href:""},
+            {name:"Latest/Past Events", href:""},
+        ]
     },
     {
         name: "Contact Us",
         href: "/contact",
-        sublinks: []
+        sublinks: [
+            {name:"Social Media and Emails", href:"/#contact"},
+            {name:"Frequently Asked Questions", href:"/#faq"},
+            {name:"Get in Touch Form", href:"/#touch"},
+        ]
     },
 ]
 
@@ -36,7 +45,7 @@ export default function Header() {
     const [navbarOpen, setNavbarOpen] = useState(false);
     return (
         <>
-            <nav className="relative flex flex-wrap items-center justify-between px-0.5 py-1 bg-neutral-500 mb-3">
+            <nav className="relative flex flex-wrap items-center justify-between px-0.5 py-1 bg-neutral-500 mb-0 max-h-[4rem]">
                 <div className="container px-12 mx-auto flex flex-wrap items-center justify-between">
                     <Image src={TPGLogo} alt="TPG" width="50" height="50"/>
                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">

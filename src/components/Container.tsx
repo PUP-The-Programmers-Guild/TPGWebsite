@@ -6,9 +6,7 @@ export default function Container({children} : {children: ReactNode[] | ReactNod
     return (
         <>
             <Header/>
-            <div className="z-100 min-h-[100vh]">
                 {children}
-            </div>
             <Footer/>
         </>
     )
