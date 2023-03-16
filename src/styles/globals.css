@@ -1,8 +1,18 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import './base/typography.css';
 
 :root {
-  /* include setup here */
-
+  /* Variables - No ideas on naming colors */
+  --left1: #293c4b;
+  --left2: #11423f;
+  --left3: #017c5a;
+  --left4: #74e291;
+  --left5: #abc980;
+  --right1: #409a3c;
+  --right2: #54a531;
+  --right3: #99d44e;
+  --right4: #caed67;
+  --right5: #e6f59f;
 }
