@@ -21,15 +21,15 @@ export default function ShowcaseCarousel() {
       <>
         <div className="flex xs:flex-col-reverse py-[13.813rem] min-h-[550px] min-w-[1144px] px-[9.25rem]">
           <div className="col-span-3 h-full mr-[4.063rem]">
-              <p className="text-[2.5rem] font-bold text-white leading-[49px]">
+              <p className={`text-[2.5rem] font-bold text-white leading-[49px] font-heading`}>
                   Lorem ipsum dolor sit amet
               </p>
-              <p className="text-[1.5rem] leading-[28px] mt-[25pt] text-white">
+              <p className={`text-[1.5rem] leading-[28px] mt-[25pt] text-white font-body`}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </p>
               <button className="mt-[205px] mb-[71px] bg-white p-[20px] flex justify-center items-center gap-[16px]">
-                  <ArrowDown size={18} weight="fill" />
-                  <span className="text-[1rem]">Learn more</span>
+                  <ArrowDown size={28} weight="fill" />
+                  <span className="text-[1rem] font-body uppercase font-bold">Learn more</span>
               </button>
           </div>
           <div className="relative col-span-4">

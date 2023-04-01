@@ -2,7 +2,6 @@ import Container from "@/components/Container";
 import HeroCarousel from "@/components/Home/Hero/HeroCarousel";
 import ShowcaseCarousel from "@/components/Home/Hero/ShowcaseCarousel";
 import HomeNews from "@/components/Home/News";
-import { ArrowDown } from "@phosphor-icons/react";
 
 /** @TODO: Another carousel below <HeroCarousel />
  *  To track slides: (slide.track.details.rel)
