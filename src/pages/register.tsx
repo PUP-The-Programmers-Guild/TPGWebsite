@@ -1,11 +1,13 @@
-export default function RegisterPage() {
-    return (
-        <>
-            <div className="z-100 min-h-[100vh]">
-                <h1 className="text-2xl underline">
-                    Register Page
-                </h1>
-            </div>
-        </>
-    )
-}
+import React from 'react';
+import HeroSection from '../components/Devskolar/Hero';
+
+const RegisterPage: React.FC = () => {
+  return (
+    <div>
+      <HeroSection titleFirstPart="BE A" titleSecondPart="DEV" titleThirdPart="SKOLAR"/>
+      {/* The rest of your page content goes here */}
+    </div>
+  );
+};
+
+export default RegisterPage;

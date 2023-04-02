@@ -4,6 +4,9 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ['Century Gothic','sans-serif'],
+    },
     extend: {},
     variants: {
       display: ['responsive', 'group-hover', 'group-focus'],
