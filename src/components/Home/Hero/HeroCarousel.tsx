@@ -1,6 +1,7 @@
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
 import { useState } from "react";
+import { centuryGothic } from "@/components/base/fonts";
 
 // Inf. Loop Move, Lazy load
 
@@ -58,7 +59,7 @@ export default function HeroCarousel() {
     return (
         <div className="relative -z-10">
             <div className={`${"w-3/4 z-10 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"}
-                                ${"text-[5em] text-center text-white font-light leading-none"}`}>
+                                ${"text-[5em] text-center text-white font-light leading-none"} font-heading`}>
                 Empowering the next generation of coders
             </div>
             <div ref={sliderRef} className="min-h-[calc(100vh_-_3rem)] min-w-full relative overflow-hidden -z-10">
