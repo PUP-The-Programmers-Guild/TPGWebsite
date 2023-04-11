@@ -1,4 +1,5 @@
 import React from 'react';
+import HeroSteps from './HeroSteps';
 
 interface HeroProps {
   titleFirstPart: string;
@@ -23,13 +24,7 @@ const HeroSection: React.FC<HeroProps> = ({ titleFirstPart, titleSecondPart, tit
           </div>
         </div>
       </div>
-      <div className="relative">
-        <div className="absolute top-20 left-48 w-36 h-36 bg-blue-500 rounded-full"></div>
-        <div className="absolute top-40 left-28 text-black-600 text-xl">
-          <span className="font-bold">Step 1:</span><br />Register
-        </div>
-      </div>
-
+      <HeroSteps />
     </div>
   );
 };
