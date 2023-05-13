@@ -1,13 +1,14 @@
-import React from 'react';
-import HeroSection from '../components/Devskolar/Hero';
+import HeroSection from "../components/Devskolar/Hero";
 
-const RegisterPage: React.FC = () => {
+export default function RegisterPage() {
   return (
-    <div >
-      <HeroSection titleFirstPart="BE A" titleSecondPart="DEV" titleThirdPart="SKOLAR" />
+    <div>
+      <HeroSection
+        titleFirstPart="BE A"
+        titleSecondPart="DEV"
+        titleThirdPart="SKOLAR"
+      />
       {/* The rest of your page content goes here */}
     </div>
   );
-};
-
-export default RegisterPage;
+}
