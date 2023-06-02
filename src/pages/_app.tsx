@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import "../styles/globals.css";
 
+// This is just a test comment to try pushing in dev branch
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
