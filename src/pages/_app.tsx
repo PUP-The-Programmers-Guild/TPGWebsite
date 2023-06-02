@@ -4,6 +4,7 @@ import Head from "next/head";
 import "../styles/globals.css";
 
 // This is just a test comment to try pushing in dev branch
+// This is yet another test comment
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
