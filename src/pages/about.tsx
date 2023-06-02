@@ -1,3 +1,4 @@
+
 export default function AboutPage() {
   return (
     <div className="z-100 min-h-[100vh]">
