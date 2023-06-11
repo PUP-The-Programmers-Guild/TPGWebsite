@@ -7,11 +7,11 @@ export default function NewsFeedPage() {
       <div className="container mx-auto grid grid-cols-2 gap-8 py-14">
         {/* Spotlight Metadata */}
         <div className="grid justify-items-start">
-          <p className="text-2xl font-light">JAN 24 2023 | Author</p>
-          <p className="Headings-Titles">
+          <p className="font-body text-2xl">JAN 24 2023 | Author</p>
+          <p className="font-heading text-[64px] font-bold">
             SPOTLIGHT STORY re:CONNECT || re:KINDLE 2023
           </p>
-          <p className="my-10 font-light">
+          <p className="my-10 font-body font-light">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates
             dignissimos reiciendis eaque voluptas a laudantium obcaecati fugiat
             cum expedita necessitatibus! Amet eaque officiis blanditiis ratione!
@@ -33,15 +33,15 @@ export default function NewsFeedPage() {
 
       {/* TODO: The styles of the events and accomplishments container is the same, maybe converge to only one? */}
       {/* Events and Accomplishments */}
-      <div className="divide-y-4 divide-white bg-[#293c4b] text-white">
+      <div className="divide-y-4 divide-white bg-[#293c4b] font-twcentmt text-white">
         {/* Events */}
         <div className="container mx-auto space-y-20 py-20">
-          <p className="Subheadings-1 text-5xl">Events</p>
+          <p className="text-5xl">Events</p>
           <div className="flex gap-4">
             {newsDataEvents.map((event) => (
               <div className="grid justify-items-start">
                 <img src={event.picture} alt="" />
-                <p className="Subheadings-1 my-5 text-3xl">{event.title}</p>
+                <p className="my-5 text-3xl">{event.title}</p>
                 <RoundButton url="#" text="Read" />
               </div>
             ))}
@@ -50,12 +50,12 @@ export default function NewsFeedPage() {
 
         {/* Accomplishments */}
         <div className="container mx-auto space-y-20 py-20">
-          <p className="Subheadings-1 text-5xl">Accomplishments</p>
+          <p className="text-5xl">Accomplishments</p>
           <div className="flex gap-4">
             {newsDataAcc.map((event) => (
               <div className="grid justify-items-start">
                 <img src={event.picture} alt="" />
-                <p className="Subheadings-1 my-5 text-3xl">{event.title}</p>
+                <p className="my-5 text-3xl">{event.title}</p>
                 <RoundButton url="#" text="Read" />
               </div>
             ))}
