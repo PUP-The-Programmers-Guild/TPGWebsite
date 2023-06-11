@@ -1,9 +1,13 @@
-import "@/styles/hero-carousel.module.css";
 import { ArrowDown } from "@phosphor-icons/react";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
+import { mockDataImage } from "@/mock/mockdataImage";
+import Image from "next/image";
 
 export default function ShowcaseCarousel() {
+
+  const heroSlider = "flex items-center justify-center text-[50px] text-white font-medium min-w-[459.35px] min-h-[424.48px] max-h-[459.35px]"
+
   const [ref] = useKeenSlider<HTMLDivElement>({
     loop: true,
     mode: "snap",
@@ -116,12 +120,16 @@ export default function ShowcaseCarousel() {
           className="keen-slider col-span-3"
           style={{ maxWidth: "650px" }}
         >
-          <div className="keen-slider__heroslide hero-slide1">1</div>
-          <div className="keen-slider__heroslide hero-slide2">2</div>
-          <div className="keen-slider__heroslide hero-slide3">3</div>
-          <div className="keen-slider__heroslide hero-slide4">4</div>
-          <div className="keen-slider__heroslide hero-slide5">5</div>
-          <div className="keen-slider__heroslide hero-slide6">6</div>
+          {mockDataImage.map((item, index) => (
+            <Image
+              className={`keen-slider__heroslide ${heroSlider}`}
+              key={`heroslider-${index}`}
+              src={item.url}
+              alt={`${item.url}`}
+              height={424.48}
+              width={459.35}
+            />
+          ))}
         </div>
       </div>
     </>
