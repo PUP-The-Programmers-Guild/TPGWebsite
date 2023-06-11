@@ -1,9 +1,17 @@
-import styles from "../../styles/base/roundbutton.module.css";
+interface IRoundButtonProps {
+  url: string;
+  text: string;
+}
 
-export default function RoundButton(props: { url: string; text: string }) {
+export default function RoundButton(props: IRoundButtonProps) {
+  const { url, text } = props;
+
   return (
-    <a href={props.url} className={styles.roundButton}>
-      {props.text}
+    <a
+      className="rounded-full bg-[#11423f] px-14 py-4 font-body text-2xl text-white"
+      href={url}
+    >
+      {text}
     </a>
   );
 }
