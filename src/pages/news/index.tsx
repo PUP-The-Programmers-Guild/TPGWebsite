@@ -67,6 +67,27 @@ export default function NewsFeedPage() {
 }
 
 // Sample Data to Simulate CMS Backend
+// const newsDataMain = [
+//   {
+//     date: "JAN 24 2023",
+//     title: "Spotlight Story re:Connect || re:Kindle 2023",
+//     picture: "news/main1.png",
+//     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates dignissimos reiciendis eaque voluptas a laudantium obcaecati fugiat cum expedita necessitatibus! Amet eaque officiis blanditiis ratione! Dolor voluptatum numquam sint, maxime natus, sapiente aliquam mollitia assumenda reprehenderit iusto laborum, quis odit accusantium? Reiciendis quas optio molestias quo nisi maxime! Aperiam, illum.",
+//   },
+//   {
+//     date: "FEB 24 2023",
+//     title: "TPG Look Back",
+//     picture: "news/main2.png",
+//     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates dignissimos reiciendis eaque voluptas a laudantium obcaecati fugiat cum expedita necessitatibus! Amet eaque officiis blanditiis ratione! Dolor voluptatum numquam sint, maxime natus, sapiente aliquam mollitia assumenda reprehenderit iusto laborum, quis odit accusantium? Reiciendis quas optio molestias quo nisi maxime! Aperiam, illum.",
+//   },
+//   {
+//     date: "March 24 2023",
+//     title: "TPG Membership 2023",
+//     picture: "news/main3.png",
+//     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates dignissimos reiciendis eaque voluptas a laudantium obcaecati fugiat cum expedita necessitatibus! Amet eaque officiis blanditiis ratione! Dolor voluptatum numquam sint, maxime natus, sapiente aliquam mollitia assumenda reprehenderit iusto laborum, quis odit accusantium? Reiciendis quas optio molestias quo nisi maxime! Aperiam, illum.",
+//   },
+// ];
+
 const newsDataEvents = [
   {
     title: "Event News #1",
