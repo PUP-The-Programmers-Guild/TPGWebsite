@@ -6,9 +6,6 @@ import { mockDataImage } from "@/mock/mockdataImage";
 //https://codesandbox.io/s/github/rcbyr/keen-slider-sandboxes/tree/v6/basic/free-mode/react-typescript?file=/src/styles.css
 
 export default function HomeNews() {
-
-  const numberSlide = "flex items-center justify-center text-[50px] text-black font-medium min-h-[271px] min-w-[339px] max-h-[339px]"
-
   const [ref] = useKeenSlider<HTMLDivElement>({
     loop: true,
     mode: "snap",
@@ -43,7 +40,7 @@ export default function HomeNews() {
                   alt={item.url}
                   width={339}
                   height={271}
-                  className={`keen-slider__newsslide ${numberSlide}`}
+                  className="keen-slider__newsslide flex items-center justify-center min-h-[271px] min-w-[339px] max-h-[339px]"
                 />
             ))
           }

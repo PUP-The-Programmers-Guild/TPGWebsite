@@ -5,9 +5,6 @@ import { mockDataImage } from "@/mock/mockdataImage";
 import Image from "next/image";
 
 export default function ShowcaseCarousel() {
-
-  const heroSlider = "flex items-center justify-center text-[50px] text-white font-medium min-w-[459.35px] min-h-[424.48px] max-h-[459.35px]"
-
   const [ref] = useKeenSlider<HTMLDivElement>({
     loop: true,
     mode: "snap",
@@ -122,7 +119,7 @@ export default function ShowcaseCarousel() {
         >
           {mockDataImage.map((item, index) => (
             <Image
-              className={`keen-slider__heroslide ${heroSlider}`}
+              className="keen-slider__heroslide flex items-center justify-center min-w-[459.35px] min-h-[424.48px] max-h-[459.35px]"
               key={`heroslider-${index}`}
               src={item.url}
               alt={`${item.url}`}
