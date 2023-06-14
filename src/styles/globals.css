@@ -1,7 +1,6 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import './base/typography.css';
 
 /*
   number-slide = flex items-center justify-center text-[50px] text-white font-medium min-h-[271px] min-w-[339px] max-h-[339px]
