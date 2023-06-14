@@ -32,18 +32,16 @@ export default function HomeNews() {
       </div>
       <div className="mb-[10.625rem]">
         <div ref={ref} className="keen-slider">
-          {
-            mockDataImage.map((item, index) => (
-                <Image 
-                  key={`newsCarousel-${index}`}
-                  src={item.url}
-                  alt={item.url}
-                  width={339}
-                  height={271}
-                  className="keen-slider__newsslide flex items-center justify-center min-h-[271px] min-w-[339px] max-h-[339px]"
-                />
-            ))
-          }
+          {mockDataImage.map((item, index) => (
+            <Image
+              key={`newsCarousel-${index}`}
+              src={item.url}
+              alt={item.url}
+              width={339}
+              height={271}
+              className="keen-slider__newsslide flex max-h-[339px] min-h-[271px] min-w-[339px] items-center justify-center"
+            />
+          ))}
         </div>
       </div>
     </>

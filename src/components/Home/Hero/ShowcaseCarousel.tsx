@@ -119,7 +119,7 @@ export default function ShowcaseCarousel() {
         >
           {mockDataImage.map((item, index) => (
             <Image
-              className="keen-slider__heroslide flex items-center justify-center min-w-[459.35px] min-h-[424.48px] max-h-[459.35px]"
+              className="keen-slider__heroslide flex max-h-[459.35px] min-h-[424.48px] min-w-[459.35px] items-center justify-center"
               key={`heroslider-${index}`}
               src={item.url}
               alt={`${item.url}`}
