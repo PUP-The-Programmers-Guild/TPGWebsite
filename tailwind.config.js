@@ -1,19 +1,24 @@
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 
-export const content = ["./src/**/*.{js,ts,jsx,tsx}"];
-export const theme = {
-    fontFamily: {
-        tpgTitle: "var(--font-neptune)",
-        pupTitle: "var(--font-optimusPrinceps)",
-        heading: "var(--font-centuryGothic)",
-        title: "var(--font-centuryGothic)",
-        twcentmt: "var(--font-twCenMt)",
-        biko: "var(--font-biko)",
-        body: "var(--font-karla)",
+module.exports = {
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      fontFamily: {
+        tpgTitle: ["var(--font-neptune)"],
+        pupTitle: ["var(--font-optimusPrinceps"],
+        heading: ["var(--font-centuryGothic)"],
+        title: ["var(--font-centuryGothic)"],
+        twcentmt: ["var(--font-twCenMt)"],
+        biko: ["var(--font-biko"],
+        body: ["var(--font-karla)"],
+      },
     },
-    extend: {},
     variants: {
-        display: ['responsive', 'group-hover', 'group-focus'],
-    }
+      display: ["responsive", "group-hover", "group-focus"],
+    },
+  },
+  plugins: [require("tailwind-gradient-mask-image")],
 };
-export const plugins = [require("tailwind-gradient-mask-image")];
