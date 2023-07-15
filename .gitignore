@@ -1,0 +1,12 @@
+# virtual env files
+venv/
+
+# migration files
+backend/*/migrations/
+
+# pycache
+backend/*/__pycache__/
+backend/*/*/__pycache__/
+
+# database
+backend/db.sqlite3
