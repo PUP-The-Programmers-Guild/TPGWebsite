@@ -39,8 +39,8 @@ You know you've done it when you see `(venv)` on your terminal
 Cd into backend and get the server set up
 
 ```
-cd backend
 pip install -r requirements.txt
+cd backend
 python manage.py migrate
 python manage.py runserver
 ```
