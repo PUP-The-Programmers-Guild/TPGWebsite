@@ -1,6 +1,7 @@
 import { CaretRight } from "@phosphor-icons/react";
-import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
+import Image from "next/image";
+import { mockDataImage } from "@/mock/mockdataImage";
 
 //https://codesandbox.io/s/github/rcbyr/keen-slider-sandboxes/tree/v6/basic/free-mode/react-typescript?file=/src/styles.css
 
@@ -31,12 +32,16 @@ export default function HomeNews() {
       </div>
       <div className="mb-[10.625rem]">
         <div ref={ref} className="keen-slider">
-          <div className="keen-slider__newsslide number-slide1">1</div>
-          <div className="keen-slider__newsslide number-slide2">2</div>
-          <div className="keen-slider__newsslide number-slide3">3</div>
-          <div className="keen-slider__newsslide number-slide4">4</div>
-          <div className="keen-slider__newsslide number-slide5">5</div>
-          <div className="keen-slider__newsslide number-slide6">6</div>
+          {mockDataImage.map((item, index) => (
+            <Image
+              key={`newsCarousel-${index}`}
+              src={item.url}
+              alt={item.url}
+              width={339}
+              height={271}
+              className="keen-slider__newsslide flex max-h-[339px] min-h-[271px] min-w-[339px] items-center justify-center"
+            />
+          ))}
         </div>
       </div>
     </>
