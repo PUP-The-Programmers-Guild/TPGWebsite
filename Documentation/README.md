@@ -22,9 +22,6 @@
 2. PUP Students
 3. TPG Members (Devskolars)
 
-**Type of Content the Target Audience will look for:**
-
-
 ## Planning
 **Site Map:**
 
@@ -39,7 +36,7 @@
         - Home (InPage)
         - About Us (InPage)
         - News (InPage)
-        - Contact Us (InPage)
+        - FAQs (InPage)
         - Be A Devskolar (Sends to Devskolar Page)
 
 - Home Page
@@ -58,12 +55,10 @@
         - Latest Announcements/News (3) (can be clicked on to read more about it, directed to News Page)
         - Past/Latest Events (3) (can be clicked on to read more about it, directed to News Page)
         - Button for going to the News Page
-    - Contact Us
-        - Frequently Asked Questions
+    - Frequently Asked Questions
             - Can I join TPG?
             - What is TPG?
             - What do you do?
-        - Get in Touch Form
 
 - Footer
     - Social Media and Emails
@@ -78,13 +73,30 @@
     - Accomplishments
     - Latest Events
     - Past Events
-    Note on Layout: Flexbox* with caption with learn more and gets sent to Facebook post link related to it
-    Note on Events: Shows partnered organizations
+        - Note on Events: Shows partnered organizations
 
 - Devskolar Page
     - Benefits of a devskolar
     - Membership requirements and process
     - Registration Form
+
+**Team and Members(TBA)**
+- UI/UX
+- Frontend
+- Backend
+- Management
+
+**Tools and Technologies**
+- UI/UX
+    - Figma
+- Frontend
+    - Next.js
+- Backend
+    - Firebase / Sanity.io
+- Documentation
+    - Markdown
+
+**Deadline: July 2023**
 
 ## Designing
 

@@ -39,8 +39,8 @@ You know you've done it when you see `(venv)` on your terminal
 Cd into backend and get the server set up
 
 ```
-cd backend
 pip install -r requirements.txt
+cd backend
 python manage.py migrate
 python manage.py runserver
 ```
@@ -67,7 +67,7 @@ python manage.py runserver
 - Expand API endpoints
 
 #### Contribution Guidelines (Backend)
-- Don't commit migration files
+- Do commit migration files
 - Don't commit sqlite3 files
 - Don't touch `core/` unless you know what you're doing
 - Don't touch `manage.py` unless you know what you're doing
