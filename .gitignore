@@ -10,3 +10,6 @@ backend/*/*/__pycache__/
 
 # database
 backend/db.sqlite3
+
+# personal configs
+.vscode
