@@ -1,6 +1,6 @@
 import HeroCarousel from "@/components/Home/Hero/HeroCarousel";
 import ShowcaseCarousel from "@/components/Home/Hero/ShowcaseCarousel";
-import LatestNewsSection from "@/components/Home/LatestNews/LatestNewsSection";
+import LatestNews from "@/components/Home/LatestNews/LatestNews";
 
 /** @TODO: Another carousel below <HeroCarousel />
  *  To track slides: (slide.track.details.rel)
@@ -28,7 +28,7 @@ export default function IndexPage() {
         <h1 className="text-2xl underline">About Us</h1>
       </section>
 
-      <LatestNewsSection />
+      <LatestNews />
 
       <section className="min-h-screen">
         <h1 className="text-2xl underline">FAQ</h1>

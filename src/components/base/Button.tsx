@@ -26,11 +26,12 @@ const buttonVariants = cva(
           "border border-input hover:bg-accent hover:text-accent-foreground",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        none: "",
       },
       size: {
         default: "px-12 py-4",
-        sm: "px-8 py-3 rounded-sm",
-        lg: "px-6 py-2 rounded-lg",
+        sm: "px-6 py-2 rounded-sm",
+        lg: "px-8 py-3 rounded-lg",
         rounded: "px-14 py-4 rounded-full",
       },
     },
@@ -38,6 +39,10 @@ const buttonVariants = cva(
       intent: "default",
       size: "default",
     },
+    compoundVariants: [{
+      intent: "none",
+      class: "p-0 rounded-none"
+    }]
   }
 );
 

@@ -1,14 +1,14 @@
+import Button from "@/components/base/Button";
 import { cn } from "@/lib/utils";
 import { CaretLeft, CaretRight } from "@phosphor-icons/react";
 import { TrackDetails, useKeenSlider } from "keen-slider/react";
 import { useState } from "react";
-import LatestNewsPreview from "./LatestNewsPreview";
+import CarouselSlide from "./CarouselSlide";
 
 // TODO: some parts here could be separated into own component or custom hook
-export default function LatestNewsSection() {
+export default function LatestNews() {
   const [details, setDetails] = useState<TrackDetails>();
   const [slideRef, slider] = useKeenSlider({
-    loop: false,
     slides: {
       perView: 1.25,
     },
@@ -19,34 +19,28 @@ export default function LatestNewsSection() {
   const currentSlide = details?.rel ?? 0;
   const slidesLength = details?.slides.length ?? 0;
 
-  // TODO: to fix the glitchy thing when changing slides through touch, try to mess with the translateX instead of right property
+  // TODO: to fix the glitchy thing when changing slides through touch, try to mess with the right property
   function calculateStyle(idx: number) {
-    if (details) {
+    if (slider.current && details) {
       const slide = details.slides[idx];
+      const slideSize = slide.size * slider.current.size;
+      const isLastSlide = currentSlide === idx && currentSlide === slidesLength - 1;
+
       const scaleY = 1 - Math.abs(0.2 * slide.distance);
-      const right = 100 - (100 - 85 * slide.distance);
-
-      let zIndex = 1000;
-      if (currentSlide !== idx) {
-        zIndex = slidesLength - Math.abs(currentSlide - idx);
-      }
-
-      let opacity = Math.max(1 - Math.abs(slide.distance / 1.5), 0.25);
-      if (currentSlide === idx && currentSlide === slidesLength - 1) {
-        opacity = 1;
-      }
+      const right = slideSize * slide.distance;
+      const opacity = Math.max(1 - Math.abs(slide.distance / 1.5), 0.25);
+      const zIndex = slidesLength - Math.abs(currentSlide - idx);
 
       return {
-        "--img-opacity": opacity,
-        zIndex,
-        right: `${right}%`,
-        scale: `1 ${scaleY}`,
-      };
+        "--img-opacity": currentSlide === idx ? 1 : opacity,
+        right: `${right}px`,
+        zIndex: currentSlide === idx ? 1000 : zIndex,
+        scale: `1 ${isLastSlide ? 1 : scaleY}`,
+      } as React.CSSProperties;
     }
   }
 
   function isArrowDisabled(direction: "left" | "right") {
-    if (!slider.current) return true;
     if (direction === "left") return currentSlide === 0;
     return currentSlide === slidesLength - 1;
   }
@@ -56,43 +50,44 @@ export default function LatestNewsSection() {
       <div className="mx-auto flex max-w-6xl flex-1 flex-col gap-10">
         <h2 className="font-heading text-5xl font-bold">LATEST EVENTS</h2>
         {/* Events Carousel */}
-        <div ref={slideRef} className="keen-slider relative flex-1">
+        <div ref={slideRef} className="keen-slider flex-1">
           {[0, 1, 2, 3].map((idx) => (
-            <LatestNewsPreview
+            <CarouselSlide
               key={idx}
               image="Placeholder1.png"
               title={`Slide ${idx}`}
-              className="keen-slider__slide"
               style={calculateStyle(idx)}
             />
           ))}
         </div>
         {/* Carousel Navigation */}
         <div className="flex items-center gap-4">
-          <button
+          <Button
+            intent="none"
             className="disabled:text-black/50"
-            onClick={() => slider.current?.prev()}
             disabled={isArrowDisabled("left")}
+            onClick={() => slider.current?.prev()}
           >
             <CaretLeft fill="currentColor" size={40} />
-          </button>
+          </Button>
           {slider.current?.slides.map((_, idx) => (
             <button
               key={idx}
               className={cn(
                 "h-1 w-24 bg-black/50",
-                currentSlide === idx && "bg-black"
+                currentSlide === idx && "bg-black",
               )}
               onClick={() => slider.current?.moveToIdx(idx)}
             />
           ))}
-          <button
+          <Button
+            intent="none"
             className="disabled:text-black/50"
-            onClick={() => slider.current?.next()}
             disabled={isArrowDisabled("right")}
+            onClick={() => slider.current?.next()}
           >
             <CaretRight fill="currentColor" size={40} />
-          </button>
+          </Button>
         </div>
       </div>
     </section>
