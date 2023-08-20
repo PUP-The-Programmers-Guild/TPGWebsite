@@ -1,55 +1,31 @@
-// TODO: The names of these components are not yet final
-// TODO: The default styles of these components are not yet final
-
 import { cn } from "@/lib/utils";
 import React from "react";
 
 interface ILatestNewsPreview extends React.HTMLAttributes<HTMLElement> {
+  title: string;
   image: string;
 }
 
-export const LatestNewsPreview = React.forwardRef<
-  HTMLElement,
-  ILatestNewsPreview
->(({ image, className, children, ...props }, ref) => {
+// TODO: The styles are not yet final
+export default function LatestNewsPreview({
+  title,
+  image,
+  className,
+  style,
+  ...props
+}: ILatestNewsPreview) {
   return (
     <article
-      ref={ref}
       className={cn(
-        "relative h-72 bg-gray-100 bg-[image:var(--image)] bg-cover text-white",
+        "bg-white before:absolute before:inset-0 before:-z-10 before:bg-[image:var(--image)] before:bg-cover before:opacity-[--img-opacity] before:content-['']",
         className
       )}
-      style={{ "--image": `url(${image})` } as React.CSSProperties}
+      style={{ "--image": `url(${image})`, ...style } as React.CSSProperties}
       {...props}
     >
-      <div className="flex h-full flex-col justify-end space-y-8 bg-gradient-to-t from-gray-400 from-30% to-transparent p-6">
-        {children}
+      <div className="grid h-full items-end bg-gray-500/5 p-8">
+        <h1 className="font-heading text-5xl font-bold text-white">{title}</h1>
       </div>
     </article>
   );
-});
-LatestNewsPreview.displayName = "LatestNewsPreview";
-
-export const LatestNewsTitle = React.forwardRef<
-  HTMLHeadingElement,
-  React.HTMLAttributes<HTMLHeadElement>
->(({ className, ...props }, ref) => {
-  return (
-    <h2
-      ref={ref}
-      className={cn("font-heading text-5xl font-bold", className)}
-      {...props}
-    />
-  );
-});
-LatestNewsTitle.displayName = "LatestNewsTitle";
-
-export const LatestNewsDescription = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => {
-  return (
-    <p ref={ref} className={cn("font-body text-xl", className)} {...props} />
-  );
-});
-LatestNewsDescription.displayName = "LatestNewsDescription";
+}

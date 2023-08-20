@@ -68,7 +68,7 @@ export default function HeroCarousel() {
       </div>
       <div
         ref={sliderRef}
-        className="relative -z-10 min-h-[calc(100vh_-_3rem)] min-w-full overflow-hidden"
+        className="relative -z-10 min-h-screen min-w-full overflow-hidden"
       >
         {images.map((src, idx) => (
           <div
