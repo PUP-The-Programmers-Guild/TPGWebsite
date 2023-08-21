@@ -5,10 +5,22 @@ import { TrackDetails, useKeenSlider } from "keen-slider/react";
 import { useState } from "react";
 import CarouselSlide from "./CarouselSlide";
 
-// TODO: some parts here could be separated into own component or custom hook
+/** @TODO: some parts here could be separated into own component or custom hook
+ *  Initial structure proposed:
+ *  <Carousel>
+ *    <CarouselSlide />
+ *    <CarouselSlide />
+ *    <CarouselNavigation>
+ *      <ArrowLeft />
+ *      <LineButon />
+ *      <ArrowRight />
+ *    </CarouselNavigation>
+ *  </Carousel> 
+ */
 export default function LatestNews() {
   const [details, setDetails] = useState<TrackDetails>();
   const [slideRef, slider] = useKeenSlider({
+    selector: ".event-slide",
     slides: {
       perView: 1.25,
     },
@@ -19,21 +31,27 @@ export default function LatestNews() {
   const currentSlide = details?.rel ?? 0;
   const slidesLength = details?.slides.length ?? 0;
 
-  // TODO: to fix the glitchy thing when changing slides through touch, try to mess with the right property
-  function calculateStyle(idx: number) {
+  /** @TODO: to fix the glitchy/jiggly behavior when changing slides, try the following:
+   *  - change `renderMode` option to "custom" to manually calculate the transform property
+   *  - adjust `transform: translateX()` property to stack them up
+   *  - add an offset to each slide which depends to their distance to the beginning of the
+   *    viewport and direction when swiping (negative towards left and positive towards right)
+   */
+  function calculateStyle(idx: number, image = "Placeholder1.png") {
     if (slider.current && details) {
       const slide = details.slides[idx];
       const slideSize = slide.size * slider.current.size;
       const isLastSlide = currentSlide === idx && currentSlide === slidesLength - 1;
 
       const scaleY = 1 - Math.abs(0.2 * slide.distance);
-      const right = slideSize * slide.distance;
       const opacity = Math.max(1 - Math.abs(slide.distance / 1.5), 0.25);
       const zIndex = slidesLength - Math.abs(currentSlide - idx);
+      const translateX = slideSize * slide.distance;
 
       return {
+        "--img-background": `url(${image})`,
         "--img-opacity": currentSlide === idx ? 1 : opacity,
-        right: `${right}px`,
+        "--offset": `${-translateX}px`,
         zIndex: currentSlide === idx ? 1000 : zIndex,
         scale: `1 ${isLastSlide ? 1 : scaleY}`,
       } as React.CSSProperties;
@@ -54,7 +72,6 @@ export default function LatestNews() {
           {[0, 1, 2, 3].map((idx) => (
             <CarouselSlide
               key={idx}
-              image="Placeholder1.png"
               title={`Slide ${idx}`}
               style={calculateStyle(idx)}
             />
