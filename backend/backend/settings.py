@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-raalf8$-9@lbj)&s(_x2&e8i#m2x*6=_4dpky@oj8zs=f_1r5c
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "*", # SECURITY WARNING: this allows all requests to be accepted by the server
+    "*",  # SECURITY WARNING: this allows all requests to be accepted by the server
 ]
 
 
@@ -51,6 +51,7 @@ LOCAL_APPS = [
 
 THIRD_PARTY_APPS = [
     'rest_framework',
+    'corsheaders',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
@@ -63,6 +64,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = "backend.urls"
@@ -137,3 +140,9 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# CORS
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+]
