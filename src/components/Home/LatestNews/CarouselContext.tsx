@@ -1,5 +1,5 @@
 import { KeenSliderInstance, useKeenSlider } from "keen-slider/react";
-import { createContext, ReactNode, useContext, useState } from "react";
+import { ReactNode, createContext, useContext, useState } from "react";
 
 interface ICarouselProvider {
   children: ReactNode[];
@@ -14,7 +14,7 @@ export default function CarouselProvider({ children }: ICarouselProvider) {
   const [slideRef] = useKeenSlider({
     selector: ".event-slide",
     slides: {
-      perView: 1.25,
+      perView: "auto",
     },
     detailsChanged(slider) {
       setSlider({ ...slider });

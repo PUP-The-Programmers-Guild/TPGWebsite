@@ -41,7 +41,7 @@ export default function CarouselSlide({ title, image, idx }: ICarouselSlide) {
   }
 
   return (
-    <article className="event-slide grid" style={calculateStyle()}>
+    <article className="event-slide grid min-w-[75%]" style={calculateStyle()}>
       <div className="grid translate-x-[--offset] items-end bg-white p-8 before:absolute before:inset-0 before:-z-10 before:bg-[image:var(--img-background)] before:bg-cover before:opacity-[--img-opacity] before:content-['']">
         <h3 className="font-heading text-5xl font-bold text-white">{title}</h3>
       </div>
