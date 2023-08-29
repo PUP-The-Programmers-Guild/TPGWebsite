@@ -13,7 +13,7 @@ export default function LatestNews() {
             <CarouselSlide
               key={idx}
               title={`Slide ${idx}`}
-              image="Placeholder1.png"
+              image={`https://picsum.photos/920/480?random=${idx}`}
               idx={idx}
             />
           ))}
