@@ -7,11 +7,11 @@ export interface Reqdetails {
     text: string;
 }
 
-const ReqBars: React.FC <Reqdetails> = ({
+export default function ReqBars({
     title,
     image,
-    text,
-}) => {
+    text
+}: Reqdetails){
     return(
         <div className="flex max-lg:flex-col flex-row items-center justify-center flex-wrap gap-5 max-lg:gap-1">
             <div>
@@ -24,5 +24,3 @@ const ReqBars: React.FC <Reqdetails> = ({
         </div>
     );
 }; 
-
-export default ReqBars;

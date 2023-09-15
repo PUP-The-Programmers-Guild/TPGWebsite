@@ -9,7 +9,7 @@ const Process = [
     { num:4,step: "Announcement", image:Placeholder, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temport incididunt ut." }
 ]
 
-const ProcessSection: React.FC<Process> = () => {
+export default function ProcessSection({}:Process){
     return (
         <div className="relative bg-gray-500 flex flex-col item-center justify-center gap-16 py-44 px-44">
             <div className="flex item-center justify-center">
@@ -23,5 +23,4 @@ const ProcessSection: React.FC<Process> = () => {
         </div>
       );
     };
-    export default ProcessSection;
     

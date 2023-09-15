@@ -9,7 +9,7 @@ const Requirement = [
     { title: "Requirement 4",image:Placeholder, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temport incididunt ut." }
 ]
 
-const RequirementSection: React.FC<Requirement> = () => {
+export default function RequirementSection({}:Requirement){
     return (
         <div className="relative py-28 px-44 bg-gray-500 flex flex-col item-center justify-center gap-20">
             <div className="flex flex-col item-center justify-center gap-16">
@@ -31,4 +31,3 @@ const RequirementSection: React.FC<Requirement> = () => {
     );
 };
     
-    export default RequirementSection;
