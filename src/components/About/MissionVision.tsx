@@ -7,8 +7,8 @@ export default function MissionVision() {
       {
         [["Mission", MissionContent], ["Vision", VisionContent]]
         .map(([title, content]) => (
-          <div>
-            <div className="flex items-start gap-x-6 mb-10" key={title}>
+          <div key={title}>
+            <div className="flex items-start gap-x-6 mb-10">
               <h2 className="font-heading text-4xl font-bold">{title}</h2>
 
               {/* TODO: Icon for mission/vision beside the title */}
