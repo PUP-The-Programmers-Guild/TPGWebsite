@@ -10,6 +10,7 @@ export default function RegisterPage() {
         titleThirdPart="SKOLAR"
       />
       <ProcessSection/> {/*Process Section*/}
+      <RequirementSection/>  {/*Requirement Section*/}
       {/* The rest of your page content goeshere */}
     </div>
   );
