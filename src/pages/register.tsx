@@ -1,4 +1,5 @@
 import HeroSection from "../components/Devskolar/Hero";
+import ProcessSection from "../components/Devskolar/Process";
 
 export default function RegisterPage() {
   return (
@@ -8,7 +9,8 @@ export default function RegisterPage() {
         titleSecondPart="DEV"
         titleThirdPart="SKOLAR"
       />
-      {/* The rest of your page content goes here */}
+      <ProcessSection/> {/*Process Section*/}
+      {/* The rest of your page content goeshere */}
     </div>
   );
 }
