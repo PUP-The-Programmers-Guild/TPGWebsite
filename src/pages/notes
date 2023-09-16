@@ -1,0 +1,68 @@
+import React from "react";
+import { ButtonLinkToOther } from "./ButtonLinkToOther";
+
+export const Frame = () => {
+  return (
+    <div className="flex w-[1440px] items-start gap-[70px] px-[180px] py-[40px] relative bg-[#8a8a8a]">
+      <div className="inline-flex flex-col items-center gap-[74px] relative flex-[0_0_auto]">
+        <div className="flex flex-col w-[440px] items-start gap-[30px] relative flex-[0_0_auto]">
+          <div className="flex flex-col items-start self-stretch w-full relative flex-[0_0_auto]">
+            <div className="mt-[-1.00px] text-[length:var(--h4-font-size)] relative self-stretch [font-family:var(--h4-font-family)] font-[number:var(--h4-font-weight)] text-white tracking-[var(--h4-letter-spacing)] leading-[var(--h4-line-height)] [font-style:var(--h4-font-style)]">
+              Devskolar
+            </div>
+            <div className="text-[length:var(--h1-font-size)] relative self-stretch [font-family:var(--h1-font-family)] font-[number:var(--h1-font-weight)] text-white tracking-[var(--h1-letter-spacing)] leading-[var(--h1-line-height)] [font-style:var(--h1-font-style)]">
+              BENEFITS
+            </div>
+          </div>
+          <p className="relative self-stretch [font-family:var(--body-base-font-family)] font-[number:var(--body-base-font-weight)] text-white text-[length:var(--body-base-font-size)] tracking-[var(--body-base-letter-spacing)] leading-[var(--body-base-line-height)] [font-style:var(--body-base-font-style)]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+          </p>
+          <ButtonLinkToOther arrow="image.svg" className="!flex-[0_0_auto]" text="See Requirements" />
+        </div>
+      </div>
+      <div className="inline-flex flex-col items-start gap-[20px] relative flex-[0_0_auto]">
+        <div className="inline-flex items-start gap-[20px] relative flex-[0_0_auto]">
+          <div className="flex flex-col w-[260px] h-[260px] items-end gap-[10px] p-[20px] relative bg-[#d9d9d9]">
+            <div className="relative self-stretch mt-[-1.00px] [font-family:var(--h3-font-family)] font-[number:var(--h3-font-weight)] text-[#181414] text-[length:var(--h3-font-size)] text-center tracking-[var(--h3-letter-spacing)] leading-[var(--h3-line-height)] [font-style:var(--h3-font-style)]">
+              Benefit 1
+            </div>
+            <p className="relative flex-1 self-stretch [font-family:'Poppins-Regular',Helvetica] font-normal text-[#1a1515] text-[16.7px] text-center tracking-[0] leading-[normal]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+          </div>
+          <div className="flex flex-col w-[260px] h-[260px] items-end gap-[10px] p-[20px] relative bg-[#d9d9d9]">
+            <div className="relative self-stretch mt-[-1.00px] [font-family:var(--h3-font-family)] font-[number:var(--h3-font-weight)] text-[#181414] text-[length:var(--h3-font-size)] text-center tracking-[var(--h3-letter-spacing)] leading-[var(--h3-line-height)] [font-style:var(--h3-font-style)]">
+              Benefit 2
+            </div>
+            <p className="relative flex-1 self-stretch [font-family:var(--small-font-family)] font-[number:var(--small-font-weight)] text-[#1a1515] text-[length:var(--small-font-size)] text-center tracking-[var(--small-letter-spacing)] leading-[var(--small-line-height)] [font-style:var(--small-font-style)]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+        <div className="inline-flex items-start gap-[20px] relative flex-[0_0_auto]">
+          <div className="flex flex-col w-[260px] h-[260px] items-end gap-[10px] p-[20px] relative bg-[#d9d9d9]">
+            <div className="relative self-stretch mt-[-1.00px] [font-family:var(--h3-font-family)] font-[number:var(--h3-font-weight)] text-[#181414] text-[length:var(--h3-font-size)] text-center tracking-[var(--h3-letter-spacing)] leading-[var(--h3-line-height)] [font-style:var(--h3-font-style)]">
+              Benefit 3
+            </div>
+            <p className="relative flex-1 self-stretch [font-family:var(--small-font-family)] font-[number:var(--small-font-weight)] text-[#1a1515] text-[length:var(--small-font-size)] text-center tracking-[var(--small-letter-spacing)] leading-[var(--small-line-height)] [font-style:var(--small-font-style)]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+          </div>
+          <div className="flex flex-col w-[260px] h-[260px] items-end gap-[10px] p-[20px] relative bg-[#d9d9d9]">
+            <div className="relative self-stretch mt-[-1.00px] [font-family:var(--h3-font-family)] font-[number:var(--h3-font-weight)] text-[#181414] text-[length:var(--h3-font-size)] text-center tracking-[var(--h3-letter-spacing)] leading-[var(--h3-line-height)] [font-style:var(--h3-font-style)]">
+              Benefit 4
+            </div>
+            <p className="relative flex-1 self-stretch [font-family:var(--small-font-family)] font-[number:var(--small-font-weight)] text-[#1a1515] text-[length:var(--small-font-size)] text-center tracking-[var(--small-letter-spacing)] leading-[var(--small-line-height)] [font-style:var(--small-font-style)]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

@@ -1,0 +1,133 @@
+.frame182 {
+  background-color: #8a8a8a;
+  padding: 120px 240px 120px 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame187 {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.subheading {
+  color: #ffffff;
+  text-align: left;
+  font: 600 32px "Inter", sans-serif;
+  position: relative;
+}
+
+.subheading2 {
+  color: #ffffff;
+  text-align: left;
+  font: 400 20px "Inter", sans-serif;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.frame185 {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame184 {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame181 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+._2022 {
+  color: #ffffff;
+  text-align: left;
+  font: 400 24px/100.02% "Inter", sans-serif;
+  position: relative;
+  width: 127px;
+}
+
+.group107 {
+  flex-shrink: 0;
+  position: absolute;
+  left: 77px;
+  top: 7px;
+  overflow: visible;
+}
+
+.line1 {
+  border-radius: 0px;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  transform: translateX(-50%, 50%);
+  overflow: visible;
+}
+
+.frame186 {
+  display: flex;
+  flex-direction: row;
+  gap: 69px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 840px;
+  position: relative;
+}
+
+.column1names {
+  color: #ffffff;
+  text-align: left;
+  font: 400 16px/148% "Inter", sans-serif;
+  position: relative;
+  flex: 1;
+}
+
+.column2names {
+  color: #ffffff;
+  text-align: left;
+  font: 400 16px/148% "Inter", sans-serif;
+  position: relative;
+  flex: 1;
+}
+
+.column3names {
+  color: #ffffff;
+  text-align: left;
+  font: 400 16px/148% 'Inter', sans-serif;
+  position: relative;
+  flex: 1;
+}

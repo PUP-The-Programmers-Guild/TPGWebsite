@@ -1,0 +1,71 @@
+import React from "react";
+
+export default function AboutPage() {
+  return (
+    <div className="Frame114 w-[1440px] h-[620px] px-[180px] py-10 inline-flex items-start justify-start gap-16 bg-[#8A8A8A]">
+      <div className="Frame113 inline-flex flex-col items-center justify-start gap-20">
+        <div className="Frame111 flex h-80 flex-col items-start justify-start gap-7">
+          <div className="Frame110 flex h-28 flex-col items-start justify-start self-stretch">
+            <div className="self-stretch font-bold text-white">
+              <h1 className="text-4xl font-['Century Gothic', 'sans-serif']">Devskolar</h1>
+            </div>
+            <div className="LatestNewsTitle font-['Century Gothic', 'sans-serif'] self-stretch text-6xl font-bold text-white">
+              <h1 className="font-['sans-serif', 'Century Gothic']">BENEFITS</h1>
+            </div>
+          </div>
+          <div className="LoremIpsum font-['Poppins', 'sans-serif'] self-stretch text-xl font-normal text-white">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+          </div>
+          <div className="ButtonLinkToOtherPage inline-flex items-center justify-center gap-2.5 bg-red-50 px-5 py-2.5">
+            <div className="ButtonText font-['Century Gothic', 'sans-serif'] text-center text-2xl font-bold text-black">
+              See Requirements
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="Frame109 inline-flex flex-col items-start justify-start gap-5">
+        <div className="Frame107 inline-flex items-start justify-start gap-5">
+          <div className="Frame103 inline-flex h-64 w-64 flex-col items-end justify-start gap-2.5 bg-zinc-300 p-5">
+            <div className="LatestNewsTitle font-['Century Gothic', 'sans-serif'] self-stretch text-center text-4xl font-bold text-neutral-900">
+              Benefit 1
+            </div>
+            <div className="LoremIpsum font-['Poppins', 'sans'] shrink grow basis-0 self-stretch text-center text-base font-normal text-neutral-900">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+          </div>
+          <div className="Frame104 inline-flex h-64 w-64 flex-col items-end justify-start gap-2.5 bg-zinc-300 p-5">
+            <div className="LatestNewsTitle font-['Century Gothic'] self-stretch text-center text-4xl font-bold text-neutral-900">
+              Benefit 2
+            </div>
+            <div className="LoremIpsumDolorSitAmetConsecteturAdipiscingElitSedDoEiusmodTemporIncididuntUtLaboreEtDoloreMagnaAliqua font-['Poppins', 'sans'] shrink grow basis-0 self-stretch text-center text-base font-normal text-neutral-900">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+            </div>
+          </div>
+        </div>
+        <div className="Frame108 inline-flex items-start justify-start gap-5">
+          <div className="Frame105 inline-flex h-64 w-64 flex-col items-end justify-start gap-2.5 bg-zinc-300 p-5">
+            <div className="LatestNewsTitle font-['Century Gothic'] self-stretch text-center text-4xl font-bold text-neutral-900">
+              Benefit 3
+            </div>
+            <div className="LoremIpsumDolorSitAmetConsecteturAdipiscingElitSedDoEiusmodTemporIncididuntUtLaboreEtDoloreMagnaAliqua font-['Poppins', 'sans'] shrink grow basis-0 self-stretch text-center text-base font-normal text-neutral-900">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+            </div>
+          </div>
+          <div className="Frame106 inline-flex h-64 w-64 flex-col items-end justify-start gap-2.5 bg-zinc-300 p-5">
+            <div className="LatestNewsTitle font-['Century Gothic'] self-stretch text-center text-4xl font-bold text-neutral-900">
+              Benefit 4
+            </div>
+            <div className="LoremIpsumDolorSitAmetConsecteturAdipiscingElitSedDoEiusmodTemporIncididuntUtLaboreEtDoloreMagnaAliqua font-['Poppins', 'sans'] shrink grow basis-0 self-stretch text-center text-base font-normal text-neutral-900">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

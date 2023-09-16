@@ -1,7 +1,14 @@
-export default function AboutPage() {
+import HeroSection from "../components/Devskolar/Hero";
+
+export default function RegisterPage() {
   return (
-    <div className="z-100 min-h-[100vh]">
-      <h1 className="text-2xl underline">About Us Page</h1>
+    <div>
+      <HeroSection
+        titleFirstPart="BE A"
+        titleSecondPart="DEV"
+        titleThirdPart="SKOLAR"
+      />
+      {/* The rest of your page content goes here */}
     </div>
   );
 }
