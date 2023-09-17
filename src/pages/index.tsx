@@ -14,14 +14,8 @@ export default function IndexPage() {
         <HeroCarousel />
       </section>
 
-      <section
-        className="flex min-h-screen items-center justify-center overflow-hidden"
-        style={{
-          background:
-            "radial-gradient(100% 418.39% at 100% 100%, #343534 0%, #1E5C3F 33.33%, #409C49 66.67%, #FFEC5C 100%)",
-        }}
-      >
-        <ShowcaseCarousel />
+      <section className="min-h-screen">
+        <h1 className="text-2xl underline">Mission Landing</h1>
       </section>
 
       <section className="min-h-screen">

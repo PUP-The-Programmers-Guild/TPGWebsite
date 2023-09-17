@@ -21,19 +21,21 @@ export default function ShowcaseCarousel() {
 
   return (
     <>
-      <div className="xs:flex-col-reverse flex min-h-[550px] min-w-[1144px] px-[9.25rem] py-[13.813rem]">
+      <div className="xs:flex-col-reverse flex min-h-[550px] min-w-[1144px] gap-16 px-[9.25rem] py-[13.813rem]">
         <div className="col-span-3 mr-[4.063rem] h-full">
           <p
-            className={`font-heading text-[2.5rem] font-bold leading-[49px] text-white`}
+            className={`mb-10 font-heading text-[2.5rem] font-bold leading-[49px] text-white`}
           >
-            Lorem ipsum dolor sit amet
+            Hero quote Lorem ipsum dolor sit amet
           </p>
           <p
-            className={`mt-[25pt] font-body text-[1.5rem] leading-[28px] text-white`}
+            className={`mb-14 font-body text-[1.5rem] leading-[28px] text-white`}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
+            vel? Tempora quae voluptatum eligendi nulla vel deleniti omnis
+            aliquam repudiandae.
           </p>
-          <button className="mb-[71px] mt-[205px] flex items-center justify-center gap-[16px] bg-white p-[20px]">
+          <button className="mb-[71px] flex items-center justify-center gap-[16px] bg-white p-[20px]">
             <ArrowDown size={28} weight="fill" />
             <span className="font-body text-[1rem] font-bold uppercase">
               Learn more
