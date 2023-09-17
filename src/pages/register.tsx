@@ -1,4 +1,5 @@
 import HeroSection from "../components/Devskolar/Hero";
+import DevskolarBenefitsPage from "@/components/Devskolar/Benefits";
 
 export default function RegisterPage() {
   return (
@@ -8,7 +9,7 @@ export default function RegisterPage() {
         titleSecondPart="DEV"
         titleThirdPart="SKOLAR"
       />
-      {/* The rest of your page content goes here */}
+      <DevskolarBenefitsPage />
     </div>
   );
 }
