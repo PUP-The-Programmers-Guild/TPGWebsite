@@ -1,6 +1,6 @@
-import HeroSection from "../components/Devskolar/Hero";
-import ProcessSection from "../components/Devskolar/Process";
-import RequirementSection from "../components/Devskolar/Requirements";
+import HeroSection from "../components/Devskolar/Hero/Hero";
+import ProcessSection from "../components/Devskolar/Process/Process";
+import RequirementSection from "../components/Devskolar/Requirements/Requirements";
 
 export default function RegisterPage() {
   return (
