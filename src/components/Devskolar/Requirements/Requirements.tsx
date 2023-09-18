@@ -4,28 +4,24 @@ import Placeholder from "../../../../public/Placeholder2.png";
 
 const reqInfo = [
   {
-    reqTitle: "Requirement 1",
     reqImage: Placeholder,
     reqText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temport incididunt ut.",
   },
   {
-    reqTitle: "Requirement 2",
     reqImage: Placeholder,
     reqText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temport incididunt ut.",
   },
   {
-    reqTitle: "Requirement 3",
     reqImage: Placeholder,
     reqText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temport incididunt ut.",
   },
   {
-    reqTitle: "Requirement 4",
     reqImage: Placeholder,
     reqText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temport incididunt ut.",
   },
 ];
 
-export default function RequirementSection({}: typeof reqInfo) {
+export default function RequirementSection() {
   return (
     <section className="item-center relative flex flex-col justify-center gap-20 bg-gray-500 px-44 py-28">
       <div className="item-center flex flex-col justify-center gap-16">
@@ -35,8 +31,8 @@ export default function RequirementSection({}: typeof reqInfo) {
           </p>
         </div>
         <div className="flex flex-col items-center justify-center gap-2 max-lg:gap-10">
-          {reqInfo.map((link) => (
-            <ReqBars key={`Process-${link.reqTitle}`} {...link} />
+          {reqInfo.map((link,index) => (
+            <ReqBars key={`Process-${index + 1}`} reqTitle = {index + 1} {...link} />
           ))}
         </div>
         <div className="item-center flex justify-center">

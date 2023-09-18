@@ -9,7 +9,7 @@ export interface ProcessInfo {
   processText: string;
 }
 
-export default function ProcessBox({ processNum,processStep,processImage,processText }: ProcessInfo) {
+export default function ProcessBox({processNum, processStep,processImage,processText }: ProcessInfo) {
   return (
     <div className="flex h-96 w-64 flex-col items-center justify-center gap-2 bg-green-200 px-8 py-7">
       <Image src={processImage} alt="placeholder" width="25" height="25" />
