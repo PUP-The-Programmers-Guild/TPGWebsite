@@ -17,8 +17,8 @@ export default function Mission() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-[5rem] justify-center pb-[2.5rem]">
-          <div className="text-center">
+        <div className="lg:grid lg:grid-cols-2 gap-x-[5rem] justify-center pb-[2.5rem]">
+          <div className="lg:text-center">
             <h2 className={`font-heading font-bold text-[2.5rem] text-white pb-[1.5rem]`}>
               Our Mission
             </h2>
@@ -26,12 +26,12 @@ export default function Mission() {
               A long-run objective of our organization that describes its day-to-day operations, including the values and public commitment to its members and the community.
             </p>
           </div>
-          <div className="relative">
+          <div className="relative order-first lg:order-last">
             <img
-                    src="https://picsum.photos/id/870/552/266?grayscale&blur=2"
-                    alt="Picsum"
-                    className="w-full h-full"
-                />
+              src="Placeholder1.png"
+              alt="Placeholder"
+              className="w-full h-full mt-[1rem] lg:mt-0"
+            />
           </div>
         </div>
 
