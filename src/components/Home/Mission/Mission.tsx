@@ -1,9 +1,8 @@
 import { ArrowRight } from "@phosphor-icons/react";
-import React from "react";
 
 export default function Mission() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#8A8A8A]">
+    <section className="flex items-center justify-center min-h-screen bg-[#8A8A8A]">
       <div className="flex flex-col px-60 py-[7.5rem]">
 
         <div className="text-center pb-[6rem]">
@@ -41,8 +40,7 @@ export default function Mission() {
             <ArrowRight size={28} weight="fill" />
           </button>
         </div>
-
       </div>
-    </div>
+    </section>
   );
 }

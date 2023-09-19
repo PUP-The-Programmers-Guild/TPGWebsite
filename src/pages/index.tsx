@@ -15,9 +15,7 @@ export default function IndexPage() {
         <HeroCarousel />
       </section>
 
-      <section className="min-h-screen">
-        <Mission />
-      </section>
+      <Mission />
 
       <section
         className="flex min-h-screen items-center justify-center overflow-hidden"
