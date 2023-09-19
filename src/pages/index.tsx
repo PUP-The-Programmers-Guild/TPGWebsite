@@ -15,12 +15,7 @@ export default function IndexPage() {
         <HeroCarousel />
       </section>
 
-      <section
-        style={{
-          background:
-            "linear-gradient(to bottom, #525252 10%, #8c8c8c 33.33%)",
-        }}
-      >
+      <section className="min-h-screen">
         <Mission />
       </section>
 
