@@ -4,7 +4,7 @@ import React from "react";
 export default function Mission() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-[#8A8A8A]">
-      <div className="flex flex-col px-[20vw]">
+      <div className="flex flex-col px-60 py-[7.5rem]">
 
         <div className="text-center pb-[6rem]">
           <h1 className={`font-heading font-bold text-[3.75rem] text-white pb-[2rem] `}>
