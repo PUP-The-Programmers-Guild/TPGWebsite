@@ -4,7 +4,7 @@ import { useKeenSlider } from "keen-slider/react";
 import { mockDataImage } from "@/mock/mockdataImage";
 import Image from "next/image";
 
-export default function ShowcaseCarousel() {
+export default function AboutHero() {
   const [ref] = useKeenSlider<HTMLDivElement>({
     loop: true,
     mode: "snap",
@@ -23,14 +23,10 @@ export default function ShowcaseCarousel() {
     <>
       <div className="xs:flex-col-reverse flex min-h-[550px] min-w-[1144px] gap-16 px-[9.25rem] py-[13.813rem]">
         <div className="col-span-3 mr-[4.063rem] h-full">
-          <p
-            className={`mb-10 font-heading text-[2.5rem] font-bold leading-[49px] text-white`}
-          >
+          <p className="mb-10 font-heading text-[2.5rem] font-bold leading-[49px] text-white">
             Hero quote Lorem ipsum dolor sit amet
           </p>
-          <p
-            className={`mb-14 font-body text-[1.5rem] leading-[28px] text-white`}
-          >
+          <p className="mb-14 font-body text-[1.5rem] leading-[28px] text-white">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
             vel? Tempora quae voluptatum eligendi nulla vel deleniti omnis
             aliquam repudiandae.
@@ -114,11 +110,7 @@ export default function ShowcaseCarousel() {
             </svg>
           </div>
         </div>
-        <div
-          ref={ref}
-          className="keen-slider col-span-3"
-          style={{ maxWidth: "650px" }}
-        >
+        <div ref={ref} className="keen-slider col-span-3 max-w-[650px]">
           {mockDataImage.map((item, index) => (
             <Image
               className="keen-slider__heroslide flex max-h-[459.35px] min-h-[424.48px] min-w-[459.35px] items-center justify-center"

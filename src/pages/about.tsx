@@ -1,5 +1,5 @@
 import MissionVision from "@/components/About/MissionVision";
-import ShowcaseCarousel from "@/components/Home/Hero/ShowcaseCarousel";
+import ShowcaseCarousel from "@/components/Home/Hero/AboutHero";
 
 export default function AboutPage() {
   return (

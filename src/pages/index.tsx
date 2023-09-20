@@ -1,5 +1,5 @@
 import HeroCarousel from "@/components/Home/Hero/HeroCarousel";
-import ShowcaseCarousel from "@/components/Home/Hero/ShowcaseCarousel";
+import ShowcaseCarousel from "@/components/Home/Hero/AboutHero";
 import LatestNews from "@/components/Home/LatestNews/LatestNews";
 
 /** @TODO: Another carousel below <HeroCarousel />
