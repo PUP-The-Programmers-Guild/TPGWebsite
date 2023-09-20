@@ -1,7 +1,6 @@
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
 import { useState } from "react";
-import { CaretDown } from "@phosphor-icons/react";
 
 // Inf. Loop Move, Lazy load
 
@@ -61,21 +60,9 @@ export default function HeroCarousel() {
 
   return (
     <div className="relative -z-10">
-      <div
-        className={`${"absolute left-1/2 top-1/2 z-10 w-3/4 -translate-x-1/2 -translate-y-1/2"}
-                                ${"text-center text-8xl uppercase leading-tight text-white"} font-heading`}
-      >
+      <div className="absolute left-1/2 top-1/2 z-10 w-3/4 -translate-x-1/2 -translate-y-1/2 text-center font-heading text-8xl uppercase leading-tight text-white">
         Empowering the next generation of coders
       </div>
-
-      <a
-        className={`${"absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-4"}`}
-        href="#"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <CaretDown color="#f8fafc" size={98} />
-      </a>
 
       <div
         ref={sliderRef}
