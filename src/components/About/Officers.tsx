@@ -114,9 +114,9 @@ export default function Officers() {
                     <p className="text-sm font-semibold leading-7 tracking-tight text-white">
                       {executives.name}
                     </p>
-                    <p className="font-regular text-[0.75rem] text-white">{executives.role1}</p>
-                    <p className="font-regular text-[0.75rem] text-white">{executives.role2}</p>
-                    <p className="font-regular text-[0.75rem] text-white">{executives.role3}</p>
+                    <p className="text-[0.75rem] text-white">{executives.role1}</p>
+                    <p className="text-[0.75rem] text-white">{executives.role2}</p>
+                    <p className="text-[0.75rem] text-white">{executives.role3}</p>
                   </div>
                 </div>
               </li>
@@ -146,9 +146,9 @@ export default function Officers() {
                   <p className="text-sm font-semibold leading-7 tracking-tight text-white">
                     {committeeHeads.name}
                   </p>
-                  <p className="font-regular text-[0.75rem] text-white">{committeeHeads.role1}</p>
-                  <p className="font-regular text-[0.75rem] text-white">{committeeHeads.role2}</p>
-                  <p className="font-regular text-[0.75rem] text-white">{committeeHeads.role3}</p>
+                  <p className="text-[0.75rem] text-white">{committeeHeads.role1}</p>
+                  <p className="text-[0.75rem] text-white">{committeeHeads.role2}</p>
+                  <p className="text-[0.75rem] text-white">{committeeHeads.role3}</p>
                 </div>
               </div>
             </li>
