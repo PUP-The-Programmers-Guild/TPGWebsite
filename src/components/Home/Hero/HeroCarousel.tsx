@@ -60,12 +60,10 @@ export default function HeroCarousel() {
 
   return (
     <div className="relative -z-10">
-      <div
-        className={`${"absolute left-1/2 top-1/2 z-10 w-3/4 -translate-x-1/2 -translate-y-1/2"}
-                                ${"text-center text-[5em] font-light leading-none text-white"} font-heading`}
-      >
+      <div className="absolute left-1/2 top-1/2 z-10 w-3/4 -translate-x-1/2 -translate-y-1/2 text-center font-heading text-8xl uppercase leading-tight text-white">
         Empowering the next generation of coders
       </div>
+
       <div
         ref={sliderRef}
         className="relative -z-10 min-h-screen min-w-full overflow-hidden"
