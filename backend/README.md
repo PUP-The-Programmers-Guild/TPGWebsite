@@ -73,3 +73,27 @@ python manage.py runserver
 - Don't touch `manage.py` unless you know what you're doing
 - Checkout a branch for your changes
 - `git checkout -b feature-yourname` and make a pull request
+
+
+#### Solutions on creating superuser (creds. Lou)
+- There is a problem while creating a superuser account after cloning the repository and doing the first migrations
+- After doing the first migrations
+- Delete the db.sqlite3 file
+- Make another migrations for the accounts and core
+```bash
+py manage.py makemigrations
+py manage.py makemigrations accounts
+py manage.py makemigrations core
+```
+- Migrate all the migrations
+```bash
+py manage.py migrate
+```
+- Then create the superuser
+```bash
+py manage.py createsuperuser
+```
+- Run the server
+```bash
+py manage.py runserver
+```
