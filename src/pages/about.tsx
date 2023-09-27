@@ -1,4 +1,6 @@
+import Demographics from "@/components/About/Demographics";
 import MissionVision from "@/components/About/MissionVision";
+import Officers from "@/components/About/Officers";
 import ShowcaseCarousel from "@/components/Home/Hero/AboutHero";
 
 export default function AboutPage() {
@@ -14,6 +16,8 @@ export default function AboutPage() {
         <ShowcaseCarousel />
       </div>
       <MissionVision />
+      <Demographics />
+      <Officers />
     </>
   );
 }
