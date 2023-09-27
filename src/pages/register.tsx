@@ -1,11 +1,15 @@
+import DevskolarBenefits from "@/components/Devskolar/Benefits";
+import HeroSection from "@/components/Devskolar/Hero/Hero";
+import ProcessSection from "@/components/Devskolar/Process/Process";
+import RequirementSection from "@/components/Devskolar/Requirements/Requirements";
+
 export default function RegisterPage() {
   return (
-    <div>
-      <HeroSection
-        titleFirstPart="BE A"
-        titleSecondPart="DEV"
-        titleThirdPart="SKOLAR"
-      />
-    </div>
+    <>
+      <HeroSection />
+      <DevskolarBenefits />
+      <ProcessSection />
+      <RequirementSection />
+    </>
   );
 }
