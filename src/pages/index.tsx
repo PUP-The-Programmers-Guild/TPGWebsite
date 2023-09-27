@@ -1,4 +1,4 @@
-import Contacts from "@/components/Home/Contacts/contacts";
+import Contacts from "@/components/Home/Contacts/Contacts";
 import HeroCarousel from "@/components/Home/Hero/HeroCarousel";
 import ShowcaseCarousel from "@/components/Home/Hero/ShowcaseCarousel";
 import LatestNews from "@/components/Home/LatestNews/LatestNews";
@@ -35,15 +35,7 @@ export default function IndexPage() {
         <h1 className="text-2xl underline">FAQ</h1>
       </section>
       {/*CONTACT*/}
-      <section
-        className=" text-white"
-        style={{
-          background:
-            "radial-gradient(100% 418.39% at 100% 100%, #343534 0%, #1E5C3F 33.33%, #409C49 66.67%, #FFEC5C 100%)",
-        }}
-      >
         <Contacts />
-      </section>
     </>
   );
 }
