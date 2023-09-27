@@ -20,9 +20,7 @@ export default function HeroCarousel() {
       loop: true,
       renderMode: "performance",
       detailsChanged(s) {
-        const new_opacities = s.track.details.slides.map(
-          (slide) => slide.portion
-        );
+        const new_opacities = s.track.details.slides.map((slide) => slide.portion);
         setOpacities(new_opacities);
       },
     },
@@ -59,21 +57,14 @@ export default function HeroCarousel() {
   );
 
   return (
-    <div className="relative -z-10">
-      <div className="absolute left-1/2 top-1/2 z-10 w-3/4 -translate-x-1/2 -translate-y-1/2 text-center font-heading text-8xl uppercase leading-tight text-white">
+    <section className="relative -z-10 min-h-screen">
+      <h1 className="absolute left-1/2 top-1/2 z-10 w-3/4 -translate-x-1/2 -translate-y-1/2 text-center font-heading text-8xl uppercase leading-tight text-white">
         Empowering the next generation of coders
-      </div>
+      </h1>
 
-      <div
-        ref={sliderRef}
-        className="relative -z-10 min-h-screen min-w-full overflow-hidden"
-      >
+      <div ref={sliderRef} className="relative -z-10 min-h-screen min-w-full overflow-hidden">
         {images.map((src, idx) => (
-          <div
-            key={idx}
-            className="absolute -z-10 min-h-full min-w-full"
-            style={{ opacity: opacities[idx] }}
-          >
+          <div key={idx} className="absolute -z-10 min-h-full min-w-full" style={{ opacity: opacities[idx] }}>
             <Image
               src={src}
               alt="an image"
@@ -83,6 +74,6 @@ export default function HeroCarousel() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
