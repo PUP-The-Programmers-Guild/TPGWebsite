@@ -160,7 +160,7 @@ TPGWebsite
     └── src/
         ├── components/
         │   ├── Devskolar
-        │   ├── Home/ (Hero Page)
+        │   ├── Home/ (Homepage route)
         │   │   ├── Hero (Hero Section)
         │   │   └── News/ (News Section)
         │   │       └── Slide (Slide component under News Section)
@@ -176,6 +176,20 @@ TPGWebsite
         └── styles
 ```
 
+**For context:** `src` folder should contain all of the relevant react project files. Under this folder we have `pages` and `components`.
+
+`src/pages` serves as the routing path for the website (Concept: File-based routing in NextJS). Each file will serve as the layout for a specific page.
+
+For example: `src/pages/index.tsx` refers to the `localhost:3000/` page.
+
+`src/components` serves as the folder to organize all UI elements used in each page. For clarity, All child folders of `src/components` should be corresponding to page routes in `src/pages` (Referred to as **page component folder**).
+
+- Except for `index.tsx`, which is referred as `Home` for its _page component folder_
+
+Each child folder should contain folders corresponding to each section available within the page (Referred to as **section component folder**). Within this folder should contain all relevant files used for this section such as components/utils/hooks/context files in the form of `.ts` or `.tsx`
+
+For example: `src/components/Home` is representing `index.tsx` as a _page component folder_, under `src/components/Home` are the page sections `Hero` and `News`. These two folders should contain all of the atomic UI components (buttons, accordions, etc.) used within that specific section as it is a _section component folder_.
+
 ## 📖Learn More
 
 To learn more about the technologies used, take a look at the following resources:
@@ -190,6 +204,8 @@ To learn more about the technologies used, take a look at the following resource
 - [Learn TypeScript](https://youtu.be/d56mG7DezGs?si=H6Ujk2qAM2jwknf0) - learn TypeScript in 1 hour.
 - [Radix UI Documentation](https://www.radix-ui.com/primitives/docs/overview/introduction) - introduction to Radix UI and its features.
 - [Learn Radix UI](https://www.youtube.com/watch?v=qSUxpqIfBPQ) - learn Radix UI component with Next JS and Tailwind CSS in 24 minutes.
+
+Feel free to contact the TPG Website - Frontend Team community chat for any questions/clarifications/suggestions.
 
 <!-- ## Deploy on Vercel
 
