@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 [Technologies](#🔧technologies) • [Getting Started](#🚀getting-started) • [Contributing](#🤝contributing) • [File Component Structure](#📁file-component-structure) • [Learn More](#📖learn-more) • <!-- [Deploy on Vercel](#deploy-on-vercel) -->
 
-## 🔧Technologies
+## 🔧 Technologies
 
 ![Next.js](https://img.shields.io/badge/-Next.js-555555?style=for-the-badge&logo=Next.js)&nbsp;
 ![React](https://img.shields.io/badge/-React-555555?style=for-the-badge&logo=react)&nbsp;
@@ -12,21 +12,35 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ![TypeScript](https://img.shields.io/badge/-TypeScript-555555?style=for-the-badge&logo=typescript)&nbsp;
 ![Radix Ui](https://img.shields.io/badge/-RadixUI-555555?style=for-the-badge&logo=radixui)&nbsp;
 
-## 🚀Getting Started
+## 🚀 Getting Started
 
-1. Clone the project
+1. Create a New folder where you can store the project file to be referred as the **Project Folder**
+
+2. Open command prompt, change current directory to as the **Project Folder**
 
 ```bash
-git clone https://github.com/PUP-The-Programmers-Guild/TPGWebsite.git
+cd <PATH TO PROJECT FOLDER>
 ```
 
-2. Run `npm install`
+3. Clone the Project, add `.` on the end to extract files to current directory.
+
+```bash
+git clone https://github.com/PUP-The-Programmers-Guild/TPGWebsite.git .
+```
+
+4. Switch to Frontend team's working branch, `dev`
+
+```bash
+git checkout dev
+```
+
+5. Run `npm install` to install project dependencies
 
 ```bash
 npm install
 ```
 
-3. Run the development server:
+6. Run the development server:
 
 ```bash
 npm run dev
@@ -36,7 +50,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `src/pages/index.tsx`. The page auto-updates as you edit the file.
 
-## 🤝Contributing
+## 🤝 Contributing
 
 ### Project Setup:
 
@@ -82,7 +96,7 @@ III. `[branch-type]` refers to the nature of your task. Which can be `feat`, `fi
 - `fix` - a bug fix
 - `refactor` - a code change that neither fixes a bug nor adds a feature
 
-IV. `[task-desc]` should be 2-3 words, connected by underscores / `_` , describing your task. Example would be: `latest_news_section`
+IV. `[task-desc]` should be 2-3 words, connected by underscores / `-` , describing your task. Example would be: `latest-news-section`
 
 4. Make sure to know what branch you are currently working on by entering:
 
@@ -100,8 +114,8 @@ git push origin <current-branch-name>
 ```
 
 7. Open a new Pull Request in the [PUP-The-Programmers-Guild/TPGWebsite (github.com)](https://github.com/PUP-The-Programmers-Guild/TPGWebsite) repository under the **Pull Request** tab.
-8. Make sure that the Pull Request flow is as follows: `base: main` <- `compare:yourname-branchtype-taskdesc`.
-9. Write a description about the Pull Request. @See:
+8. Make sure that the Pull Request flow is as follows: `base: dev` <- `compare:yourname-branchtype-taskdesc`.
+9. Write a description about the Pull Request. **@See**: [Pull Request Format Guide](#pull-request-description-format)
 10. **Notify the team about your new Pull Request via the Messenger Group Chat.** Individual Changes from different branches will be then merged into dev via Pull Request.
 
 <hr/>
@@ -129,26 +143,27 @@ Tasks to do (Incase that it is stil WIP upon PR):
 - [added the accordion reusable component by Lemon1903 · Pull Request #25 · PUP-The-Programmers-Guild/TPGWebsite (github.com)](https://github.com/PUP-The-Programmers-Guild/TPGWebsite/pull/25)
 - [created latest events section by Lemon1903 · Pull Request #26 · PUP-The-Programmers-Guild/TPGWebsite (github.com)](https://github.com/PUP-The-Programmers-Guild/TPGWebsite/pull/26)
 
-## 📁File Component Structure
+<hr>
+
+## ⚛️ UI Components
+
+During development, make sure to read about **Radix UI** (**@See:** [Learn More](##📖learn-more)) and use available components from the library. This is to ensure consistency and accessibility of components throughout all parts within the project.
+
+## 📁 File Component Structure
 
 ```
 TPGWebsite
 └── frontend/
     ├── public/
     │   ├── fonts/
-    │   │   ├── biko
-    │   │   ├── century-gothic
-    │   │   ├── karla
-    │   │   ├── neptune
-    │   │   ├── optimus-princeps
-    │   │   └── tw-cen-mt
     │   └── news
     └── src/
         ├── components/
         │   ├── Devskolar
-        │   ├── Home/
-        │   │   ├── Hero
-        │   │   └── News
+        │   ├── Home/ (Hero Page)
+        │   │   ├── Hero (Hero Section)
+        │   │   └── News/ (News Section)
+        │   │       └── Slide (Slide component under News Section)
         │   ├── NavBar
         │   └── base
         ├── lib
