@@ -88,6 +88,7 @@ git checkout -b <new-branch-name>
 ```
 
 **Note:**
+
 I. `<new-branch-name>` format is `[dev-name]-[branch-type]-[task-desc]`.  
 II. `[dev-name]` refers to your nickname.
 III. `[branch-type]` refers to the nature of your task. Which can be `feat`, `fix` `refactor`
@@ -96,7 +97,7 @@ III. `[branch-type]` refers to the nature of your task. Which can be `feat`, `fi
 - `fix` - a bug fix
 - `refactor` - a code change that neither fixes a bug nor adds a feature
 
-IV. `[task-desc]` should be 2-3 words, connected by underscores / `-` , describing your task. Example would be: `latest-news-section`
+IV. `[task-desc]` should be 2-3 words, connected by dash / `-` , describing your task. Example would be: `latest-news-section`
 
 4. Make sure to know what branch you are currently working on by entering:
 
