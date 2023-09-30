@@ -1,6 +1,7 @@
-import HeroCarousel from "@/components/Home/Hero/HeroCarousel";
-import ShowcaseCarousel from "@/components/Home/Hero/ShowcaseCarousel";
+import Contacts from "@/components/Home/Contacts";
+import HeroCarousel from "@/components/Home/HeroCarousel";
 import LatestNews from "@/components/Home/LatestNews/LatestNews";
+import Mission from "@/components/Home/Mission";
 
 /** @TODO: Another carousel below <HeroCarousel />
  *  To track slides: (slide.track.details.rel)
@@ -10,19 +11,8 @@ import LatestNews from "@/components/Home/LatestNews/LatestNews";
 export default function IndexPage() {
   return (
     <>
-      <section className="min-h-screen">
-        <HeroCarousel />
-      </section>
-
-      <section
-        className="flex min-h-screen items-center justify-center overflow-hidden"
-        style={{
-          background:
-            "radial-gradient(100% 418.39% at 100% 100%, #343534 0%, #1E5C3F 33.33%, #409C49 66.67%, #FFEC5C 100%)",
-        }}
-      >
-        <ShowcaseCarousel />
-      </section>
+      <HeroCarousel />
+      <Mission />
 
       <section className="min-h-screen">
         <h1 className="text-2xl underline">About Us</h1>
@@ -34,9 +24,7 @@ export default function IndexPage() {
         <h1 className="text-2xl underline">FAQ</h1>
       </section>
 
-      <section className="min-h-screen">
-        <h1 className="text-2xl underline">Contact Us</h1>
-      </section>
+      <Contacts />
     </>
   );
 }

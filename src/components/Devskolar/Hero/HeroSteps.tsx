@@ -1,7 +1,6 @@
-import React from "react";
 import styles from "./Hero.module.css";
 
-const HeroSteps: React.FC = () => {
+export default function HeroSteps() {
   return (
     <div className={styles.container}>
       <div className={styles.ca}></div>
@@ -44,6 +43,4 @@ const HeroSteps: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default HeroSteps;
+}
