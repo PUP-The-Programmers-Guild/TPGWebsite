@@ -1,7 +1,15 @@
+import AboutHero from "@/components/About/AboutHero";
+import Demographics from "@/components/About/Demographics";
+import MissionVision from "@/components/About/MissionVision";
+import Officers from "@/components/About/Officers";
+
 export default function AboutPage() {
   return (
-    <div className="z-100 min-h-[100vh]">
-      <h1 className="text-2xl underline">About Us Page</h1>
-    </div>
+    <>
+      <AboutHero />
+      <MissionVision />
+      <Demographics />
+      <Officers />
+    </>
   );
 }
