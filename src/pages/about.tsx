@@ -1,3 +1,4 @@
+import AboutCommittees from "@/components/About/AboutCommittees/AboutCommittees";
 import AboutHero from "@/components/About/AboutHero";
 import Demographics from "@/components/About/Demographics";
 import MissionVision from "@/components/About/MissionVision";
@@ -9,6 +10,7 @@ export default function AboutPage() {
       <AboutHero />
       <MissionVision />
       <Demographics />
+      <AboutCommittees />
       <Officers />
     </>
   );
