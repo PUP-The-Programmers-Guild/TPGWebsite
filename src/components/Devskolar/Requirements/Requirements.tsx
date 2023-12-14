@@ -1,6 +1,7 @@
 import React from "react";
 import ReqBars from "./RequirementBars";
 import Placeholder from "../../../../public/Placeholder2.png";
+import { useRegistrationFormContext } from "../RegistrationForm/RegistrationFormContext";
 
 const reqInfo = [
   {
@@ -22,6 +23,7 @@ const reqInfo = [
 ];
 
 export default function RequirementSection() {
+  const {formActive, setFormActive} = useRegistrationFormContext()
   return (
     <section className="item-center relative flex flex-col justify-center gap-20 bg-gray-500 px-44 py-28">
       <div className="item-center flex flex-col justify-center gap-16">
@@ -36,8 +38,11 @@ export default function RequirementSection() {
           ))}
         </div>
         <div className="item-center flex justify-center">
-          <button className="w-96 bg-white px-5 py-2.5 text-center text-[1.5rem] font-semibold leading-[28px] text-black">
-            Let's Start!
+          <button
+            className="w-96 bg-white px-5 py-2.5 text-center text-[1.5rem] font-semibold leading-[28px] text-black" 
+            onClick={() => setFormActive(true)}
+          >
+            Let&apos;s Start!
           </button>
         </div>
       </div>
