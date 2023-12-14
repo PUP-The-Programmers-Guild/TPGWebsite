@@ -9,33 +9,14 @@ const NAVLINKS = [
   {
     name: "Home",
     href: "/",
-    sublinks: [],
   },
   {
     name: "About Us",
     href: "/about",
-    sublinks: [
-      { name: "Description and Brief History", href: "/about" },
-      { name: "Mission and Values", href: "/about#mission" },
-      { name: "People", href: "/about#people" },
-    ],
   },
   {
-    name: "News",
-    href: "/news",
-    sublinks: [
-      { name: "Latest Announcement/News", href: "" },
-      { name: "Latest/Past Events", href: "" },
-    ],
-  },
-  {
-    name: "Contact Us",
-    href: "/contact",
-    sublinks: [
-      { name: "Social Media and Emails", href: "/#contact" },
-      { name: "Frequently Asked Questions", href: "/#faq" },
-      { name: "Get in Touch Form", href: "/#touch" },
-    ],
+    name: "Events",
+    href: "/news/events",
   },
 ];
 
@@ -44,27 +25,19 @@ export default function Header() {
   const navMenuDisplay = isNavOpen ? "flex" : "hidden";
 
   return (
-    <header className="relative flex h-16 flex-wrap items-center justify-between bg-neutral-500">
-      <div className="container mx-auto flex flex-wrap items-center justify-between px-12">
-        <Image src={TPGLogo} alt="TPG Logo" width="50" height="50" />
-        <div className="relative flex w-full justify-between lg:static lg:block lg:w-auto lg:justify-start">
-          <Link className="py-2 text-sm font-bold text-white" href="/">
-            The
-            <br /> Programmers' Guild
-          </Link>
-          {/* <button
-            className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-            type="button"
-            onClick={() => setIsNavOpen(!isNavOpen)}
-          >
-              <i className="fas fa-bars"></i>
-          </button> */}
+    <header className="flex flex-wrap items-center justify-center bg-[#052014]">
+      <div className="container mx-60 flex flex-wrap items-center justify-between py-4">
+        <div className="flex flex-row gap-x-2">
+          <Image src={TPGLogo} alt="TPG Logo" width="50" height="50" />
+          <div className="flex w-full justify-between">
+            <Link className="flex flex-col leading-5 text-white" href="/">
+              <span className="text-xs font-light tracking-[0.04em]">Polytechnic University of the Philippines</span>
+              <b className="text-md tracking-normal">THE PROGRAMMERS&apos; GUILD</b>
+            </Link>
+          </div>
         </div>
-        <nav
-          className={`${navMenuDisplay} flex-grow items-center lg:flex`}
-          id="NavBar"
-        >
-          <ul className="flex flex-col gap-6 lg:ml-auto lg:flex-row">
+        <nav className={`flex items-center`} id="NavBar">
+          <ul className="flex flex-row items-center gap-12">
             {NAVLINKS.map((link) => (
               <NavLink key={`NAVLINK-${link.name}`} {...link} />
             ))}
