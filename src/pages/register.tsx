@@ -6,7 +6,7 @@ import DevskolarBenefits from "@/components/Devskolar/Benefits/Benefits";
 export default function RegisterPage() {
   return (
     <>
-      <HeroSection />
+      <DevskolarInfo />
       <DevskolarBenefits />
       <ProcessSection />
       <RequirementSection />

@@ -26,10 +26,7 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       // padding, font-size, and font-weight not yet final
-      className={cn(
-        "flex flex-1 items-center justify-between py-4 text-lg font-medium transition-all",
-        className,
-      )}
+      className={cn("flex flex-1 items-center justify-between transition-all", className)}
       {...props}
     >
       {children}
@@ -46,7 +43,7 @@ const AccordionContent = React.forwardRef<
     ref={ref}
     className={cn(
       "overflow-hidden transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down",
-      className,
+      className
     )}
     {...props}
   >
@@ -56,4 +53,4 @@ const AccordionContent = React.forwardRef<
 ));
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
+export { Accordion, AccordionContent, AccordionItem, AccordionTrigger };
