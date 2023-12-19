@@ -1,4 +1,3 @@
-import Contacts from "@/components/Home/Contacts";
 import FAQS from "@/components/Home/FAQS";
 import HeroCarousel from "@/components/Home/HeroCarousel";
 import LatestNews from "@/components/Home/LatestNews/LatestNews";
@@ -21,7 +20,6 @@ export default function IndexPage() {
 
       <LatestNews />
       <FAQS />
-      <Contacts />
     </>
   );
 }
