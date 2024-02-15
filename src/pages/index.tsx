@@ -1,5 +1,6 @@
 import FAQS from "@/components/Home/FAQS";
 import HeroCarousel from "@/components/Home/HeroCarousel";
+import HomeDemographics from "@/components/Home/HomeDemographics";
 import LatestNews from "@/components/Home/LatestNews/LatestNews";
 import Mission from "@/components/Home/Mission";
 
@@ -13,6 +14,7 @@ export default function IndexPage() {
     <>
       <HeroCarousel />
       <Mission />
+      <HomeDemographics />
 
       <section className="min-h-screen">
         <h1 className="text-2xl underline">About Us</h1>
