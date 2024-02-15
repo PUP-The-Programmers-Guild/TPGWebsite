@@ -2,7 +2,7 @@ import BoxDecoration from "./BoxDecoration";
 
 export default function DevskolarInfo() {
   return (
-    <section className="mx-auto grid min-h-screen bg-[#6F5D5D] px-20">
+    <section className="mx-auto grid min-h-screen bg-[#6F5D5D] px-20 pb-4">
       <div className="relative h-full overflow-hidden">
         <BoxDecoration />
         <div className="relative z-10 mx-auto flex min-h-full max-w-screen-2xl flex-col justify-center gap-8 text-white">
