@@ -16,7 +16,7 @@ const NAVLINKS = [
   },
   {
     name: "Events",
-    href: "/news/events",
+    href: "/events",
   },
 ];
 
