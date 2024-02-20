@@ -1,12 +1,13 @@
 import CarouselProvider from "./CarouselContext";
 import { CarouselNavigation } from "./CarouselNavigation";
 import CarouselSlide from "./CarouselSlide";
+import "keen-slider/keen-slider.min.css";
 
 export default function LatestNews() {
   /** @TODO: fetching data in backend API */
   return (
-    <section className="flex min-h-screen border-y-4 py-12">
-      <div className="mx-auto flex max-w-6xl flex-1 flex-col gap-10">
+    <section className="flex min-h-screen justify-center px-48 py-12">
+      <div className="flex max-w-6xl flex-1 flex-col gap-10 overflow-hidden">
         <h2 className="font-heading text-5xl font-bold">LATEST EVENTS</h2>
         <CarouselProvider>
           {[0, 1, 2, 3].map((idx) => (
