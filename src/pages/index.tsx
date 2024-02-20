@@ -15,11 +15,6 @@ export default function IndexPage() {
       <HeroCarousel />
       <Mission />
       <HomeDemographics />
-
-      <section className="min-h-screen">
-        <h1 className="text-2xl underline">About Us</h1>
-      </section>
-
       <LatestNews />
       <FAQS />
     </>
