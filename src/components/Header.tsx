@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import NavLink from "./NavBar/NavLink";
 import NavLinkFilled from "./NavBar/NavLinkFilled";
@@ -26,7 +24,7 @@ export default function Header() {
 
   return (
     <header className="flex flex-wrap items-center justify-center bg-[#052014]">
-      <div className="container mx-60 flex flex-wrap items-center justify-between py-4">
+      <div className="container flex max-w-6xl flex-wrap items-center justify-between py-4">
         <TPGLogo />
         <nav className={`flex items-center`} id="NavBar">
           <ul className="flex flex-row items-center gap-12">
