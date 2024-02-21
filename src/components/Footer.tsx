@@ -86,29 +86,31 @@ const FOOTER_DIRECTORY: FooterDirectoryItem[] = [
 
 export default function Footer() {
   return (
-    <div className="flex flex-col">
+    <footer className="">
       <Contacts />
-      <div className="flex flex-row justify-center gap-x-[184px] border-0 bg-[#052014] px-60 py-10 text-white">
-        <TPGLogo />
-        <div className="flex flex-row gap-x-12">
-          {FOOTER_DIRECTORY.map((item: FooterDirectoryItem) => (
-            <div key={`${item.page}-directory`} className="flex flex-col gap-y-4">
-              <Link className="p-[10px] font-semibold" href={item.page.path}>
-                {item.page.title}
-              </Link>
-              {item.subsections.map((subsection: Subsection) => (
-                <Link key={`${subsection.title}-subdirectory`} className="p-[10px] text-sm" href={subsection.path}>
-                  {subsection.title}
+      <div className="flex grow-0 flex-row justify-center border-0 bg-[#052014] py-10 text-white">
+        <div className="flex max-w-6xl grow flex-row justify-between">
+          <TPGLogo />
+          <div className="flex grow-0 flex-row gap-x-12">
+            {FOOTER_DIRECTORY.map((item: FooterDirectoryItem) => (
+              <div key={`${item.page}-directory`} className="flex flex-col gap-y-4">
+                <Link className="p-[10px] font-semibold" href={item.page.path}>
+                  {item.page.title}
                 </Link>
-              ))}
-            </div>
-          ))}
+                {item.subsections.map((subsection: Subsection) => (
+                  <Link key={`${subsection.title}-subdirectory`} className="p-[10px] text-sm" href={subsection.path}>
+                    {subsection.title}
+                  </Link>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       <div className="flex flex-col items-center justify-center border-0 bg-[#052014] pb-10 pt-4 text-white">
         <span>PUP - THE PROGRAMMERS’ GUILD</span>
         <span>All Rights Reserved © 2023</span>
       </div>
-    </div>
+    </footer>
   );
 }

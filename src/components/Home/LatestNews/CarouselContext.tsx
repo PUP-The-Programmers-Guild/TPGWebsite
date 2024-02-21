@@ -12,7 +12,7 @@ export default function CarouselProvider({ children }: ICarouselProvider) {
   const [slideRef] = useKeenSlider({
     selector: ".event-slide",
     slides: {
-      perView: 1.08,
+      perView: 1.15,
     },
     rubberband: true,
     renderMode: "precision",
@@ -23,7 +23,7 @@ export default function CarouselProvider({ children }: ICarouselProvider) {
 
   return (
     <CarouselContext.Provider value={slider}>
-      <div ref={slideRef} className="keen-slider flex-1">
+      <div ref={slideRef} className="keen-slider h-[458px]">
         {children.slice(0, -1)}
       </div>
       {children.slice(-1)}
