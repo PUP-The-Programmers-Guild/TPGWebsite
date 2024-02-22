@@ -30,18 +30,18 @@ export default function Contacts() {
 
   return (
     <section className="flex justify-center bg-[#F5FBED] text-[#052014] ">
-      <div className="flex max-w-6xl grow flex-row justify-between  py-20">
-        <div className="flex grow-0 flex-col">
+      <div className="flex max-w-[960px] grow flex-row justify-between py-20">
+        <div className="inlne-flex basis-[400px] flex-col">
           <h2 className="mb-4 text-4xl font-bold">Let&apos;s Talk</h2>
-          <p className="mb-11 text-base">Have questions? Reach out and let&apos;s chat.</p>
-          <button className=" bg-[#052014] p-3 text-[#F5FBED]">
+          <p className="mb-11 text-base ">Have questions? Reach out and let&apos;s chat.</p>
+          <button className=" bg-[#052014] px-9 py-3 text-[#F5FBED]">
             <span className="px-[25px] font-body text-base font-bold">Send a Message</span>
           </button>
         </div>
-        <div className="flex grow-0 basis-1/2 flex-col ">
-          <h2 className="mb-4 text-4xl font-bold">Stay Connected</h2>
+        <div className="flex grow-0 basis-[400px] flex-col">
+          <h2 className="mb-4 text-4xl font-bold leading-[39.6px]">Stay Connected</h2>
           <p className="mb-11 text-base ">Find us online to see our community in action.</p>
-          <div className="flex space-x-4">
+          <div className="flex space-x-[22px]">
             {SocialMediaLinks.map(({ link, Icon }, index) => (
               <a key={index} href={link} target="_blank" rel="noreferrer">
                 <Icon color="#052014" size={45} weight="fill" />

@@ -13,10 +13,7 @@ export function CarouselNavigation() {
       {slider?.slides.map((_, idx) => (
         <button
           key={idx}
-          className={cn(
-            "h-1 w-24 bg-black/50",
-            currentSlide === idx && "bg-black"
-          )}
+          className={cn("h-1 w-16 bg-black/50", currentSlide === idx && "bg-black")}
           onClick={() => slider?.moveToIdx(idx)}
         />
       ))}
@@ -43,9 +40,9 @@ function ArrowButton({ direction }: { direction: string }) {
       onClick={() => (direction === "left" ? slider?.prev() : slider?.next())}
     >
       {direction === "left" ? (
-        <CaretLeft fill="currentColor" size={40} />
+        <CaretLeft fill="currentColor" size={24} weight="bold" />
       ) : (
-        <CaretRight fill="currentColor" size={40} />
+        <CaretRight fill="currentColor" size={24} weight="bold" />
       )}
     </Button>
   );

@@ -49,7 +49,7 @@ const FOOTER_DIRECTORY: FooterDirectoryItem[] = [
     },
     subsections: [
       {
-        title: "Vison",
+        title: "Vision",
         path: "/about#vision",
       },
       {
@@ -89,7 +89,7 @@ export default function Footer() {
     <footer className="">
       <Contacts />
       <div className="flex grow-0 flex-row justify-center border-0 bg-[#052014] py-10 text-white">
-        <div className="flex max-w-6xl grow flex-row justify-between">
+        <div className="flex max-w-[960px] grow flex-row justify-between">
           <TPGLogo />
           <div className="flex grow-0 flex-row gap-x-12">
             {FOOTER_DIRECTORY.map((item: FooterDirectoryItem) => (
@@ -107,7 +107,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center border-0 bg-[#052014] pb-10 pt-4 text-white">
+      <div className="flex flex-col items-center justify-center gap-y-[6px] border-0 bg-[#052014] pb-10 pt-4 text-xs text-white">
         <span>PUP - THE PROGRAMMERS’ GUILD</span>
         <span>All Rights Reserved © 2023</span>
       </div>

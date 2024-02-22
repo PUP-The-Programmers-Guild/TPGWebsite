@@ -7,8 +7,8 @@ export default function LatestNews() {
   /** @TODO: fetching data in backend API */
   return (
     <section className="flex justify-center py-12">
-      <div className="flex max-w-6xl flex-1 flex-col gap-10 overflow-hidden">
-        <h2 className="font-heading text-5xl font-bold">LATEST EVENTS</h2>
+      <div className="flex max-w-[960px] flex-1 flex-col gap-10 overflow-hidden">
+        <h2 className="font-heading text-6xl font-bold leading-[84px]">LATEST EVENTS</h2>
         <CarouselProvider>
           {[0, 1, 2, 3].map((idx) => (
             <CarouselSlide

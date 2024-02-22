@@ -12,7 +12,7 @@ export default function CarouselProvider({ children }: ICarouselProvider) {
   const [slideRef] = useKeenSlider({
     selector: ".event-slide",
     slides: {
-      perView: 1.15,
+      perView: 1.2,
     },
     rubberband: true,
     renderMode: "precision",

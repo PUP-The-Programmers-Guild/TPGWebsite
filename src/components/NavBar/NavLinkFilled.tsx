@@ -5,7 +5,7 @@ export default function NavLinkFilled(link: ILinkProps) {
   return (
     <li className="nav-item">
       <Link
-        className="flex items-center rounded-lg bg-[#DFF2C8] px-9 py-3 text-base font-bold leading-snug text-black"
+        className="flex items-center bg-[#DFF2C8] px-[35px] py-3 text-base font-bold leading-snug text-black"
         href={link.href}
       >
         {link.name}
