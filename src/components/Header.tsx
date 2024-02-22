@@ -24,10 +24,10 @@ export default function Header() {
 
   return (
     <header className="flex flex-wrap items-center justify-center bg-[#052014]">
-      <div className="container flex max-w-6xl flex-wrap items-center justify-between py-4">
+      <div className="container flex max-w-[960px] flex-wrap items-center justify-between py-4">
         <TPGLogo />
         <nav className={`flex items-center`} id="NavBar">
-          <ul className="flex flex-row items-center gap-12">
+          <ul className="flex flex-row items-center gap-12 text-base">
             {NAVLINKS.map((link) => (
               <NavLink key={`NAVLINK-${link.name}`} {...link} />
             ))}

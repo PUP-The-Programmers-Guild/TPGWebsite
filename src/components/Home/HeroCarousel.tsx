@@ -1,3 +1,4 @@
+import { CaretDown } from "@phosphor-icons/react";
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
 import { useState } from "react";
@@ -58,9 +59,12 @@ export default function HeroCarousel() {
 
   return (
     <section className="relative -z-10 min-h-screen">
-      <h1 className="absolute left-1/2 top-1/2 z-10 w-3/4 -translate-x-1/2 -translate-y-1/2 text-center font-heading text-8xl uppercase leading-tight text-white">
+      <h1 className="absolute left-1/2 top-1/2 z-10 w-3/4  -translate-x-1/2 -translate-y-1/2 text-center font-heading text-8xl uppercase leading-[96.02px] text-white">
         Empowering the next generation of coders
       </h1>
+      <button className="absolute bottom-[3%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-white">
+        <CaretDown size={91} weight="bold" />
+      </button>
 
       <div ref={sliderRef} className="relative -z-10 min-h-screen min-w-full overflow-hidden">
         {images.map((src, idx) => (
