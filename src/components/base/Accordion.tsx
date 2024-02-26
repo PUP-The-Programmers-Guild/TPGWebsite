@@ -12,7 +12,7 @@ const AccordionItem = React.forwardRef<
   <AccordionPrimitive.Item
     ref={ref}
     // background-color not yet final
-    className={cn("bg-gray-100 px-6", className)}
+    className={cn("bg-gray-100 px-[30px]", className)}
     {...props}
   />
 ));
