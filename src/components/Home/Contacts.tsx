@@ -29,31 +29,22 @@ export default function Contacts() {
   ];
 
   return (
-    <section
-      className=" text-white"
-      style={{
-        background:
-          "radial-gradient(100% 418.39% at 100% 100%, #343534 0%, #1E5C3F 33.33%, #409C49 66.67%, #FFEC5C 100%)",
-      }}
-    >
-      <div className="mx-auto flex max-w-screen-xl gap-10 px-9 py-20 pl-16">
-        <div className="w-1/2">
-          <h2 className="mb-4 text-6xl font-bold">Let's Work Together</h2>
-          <p className="mb-11 text-xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
-          </p>
-          <button className=" bg-white p-3">
-            <span className="font-body text-[1rem] font-bold uppercase text-[#1E1E1E]">Send a message</span>
+    <section className="flex justify-center bg-[#F5FBED] text-[#052014] ">
+      <div className="flex max-w-[960px] grow flex-row justify-between py-20">
+        <div className="inlne-flex basis-[400px] flex-col">
+          <h2 className="mb-4 text-4xl font-bold">Let&apos;s Talk</h2>
+          <p className="mb-11 text-base ">Have questions? Reach out and let&apos;s chat.</p>
+          <button className=" bg-[#052014] px-9 py-3 text-[#F5FBED]">
+            <span className="px-[25px] font-body text-base font-bold">Send a Message</span>
           </button>
         </div>
-        <div className="w-1/2 pl-20">
-          <h2 className="mb-4 text-6xl font-bold">Stay Updated</h2>
-          <p className="mb-7 text-xl ">Lorem ipsum dolor sit amet, consectetur.</p>
-          <div className="flex space-x-4">
+        <div className="flex grow-0 basis-[400px] flex-col">
+          <h2 className="mb-4 text-4xl font-bold leading-[39.6px]">Stay Connected</h2>
+          <p className="mb-11 text-base ">Find us online to see our community in action.</p>
+          <div className="flex space-x-[22px]">
             {SocialMediaLinks.map(({ link, Icon }, index) => (
               <a key={index} href={link} target="_blank" rel="noreferrer">
-                <Icon color="#f8fafc" size={35} weight="fill" />
+                <Icon color="#052014" size={45} weight="fill" />
               </a>
             ))}
           </div>

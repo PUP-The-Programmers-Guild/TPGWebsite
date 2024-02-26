@@ -1,82 +1,116 @@
-import {
-  DiscordLogo,
-  Envelope,
-  FacebookLogo,
-  GithubLogo,
-  LinkedinLogo,
-} from "@phosphor-icons/react";
-import Image from "next/image";
-import Placeholder from "../../public/Placeholder.png";
+import Contacts from "./Home/Contacts";
+import TPGLogo from "./base/TPGLogo";
+import Link from "next/link";
+
+type Subsection = {
+  title: string;
+  path: string;
+};
+
+type Page = {
+  title: string;
+  path: string;
+};
+
+type FooterDirectoryItem = {
+  page: Page;
+  subsections: Subsection[];
+};
+
+const FOOTER_DIRECTORY: FooterDirectoryItem[] = [
+  {
+    page: {
+      title: "Home",
+      path: "/",
+    },
+    subsections: [
+      {
+        title: "FAQs",
+        path: "/#faqs",
+      },
+    ],
+  },
+  {
+    page: {
+      title: "Projects",
+      path: "/",
+    },
+    subsections: [
+      {
+        title: "Events",
+        path: "/events",
+      },
+    ],
+  },
+  {
+    page: {
+      title: "About",
+      path: "/about",
+    },
+    subsections: [
+      {
+        title: "Vision",
+        path: "/about#vision",
+      },
+      {
+        title: "Mission",
+        path: "/about#mission",
+      },
+      {
+        title: "Community",
+        path: "/about#community",
+      },
+    ],
+  },
+  {
+    page: {
+      title: "Be a Devskolar",
+      path: "/register",
+    },
+    subsections: [
+      {
+        title: "Benefits",
+        path: "/register#benefits",
+      },
+      {
+        title: "Application Process",
+        path: "/register#process",
+      },
+      {
+        title: "Requirements",
+        path: "/register#requirements",
+      },
+    ],
+  },
+];
 
 export default function Footer() {
   return (
-    <>
-      <div className="relative mx-auto flex min-h-[33vh] w-full overflow-hidden bg-neutral-600 px-10 py-6">
-        <div className="self-center">
-          <Image src={Placeholder} alt="placeholder" width="162" height="162" />
-        </div>
-        <span className="mx-10 inline-block min-h-full w-0.5 self-stretch bg-[#83948C]" />
-        <div className="inline-block pt-4">
-          <p className="mb-2 text-lg font-bold uppercase text-white">
-            Get In touch with us!
-          </p>
-          <div className="flex space-x-14">
-            <div>
-              <div className="flex">
-                <Envelope color="#BAA3A3" size={32} weight="fill" />
-                <span className="ml-2 font-bold text-green-400">Email</span>
+    <footer className="">
+      <Contacts />
+      <div className="flex grow-0 flex-row justify-center border-0 bg-[#052014] py-10 text-white">
+        <div className="flex max-w-[960px] grow flex-row justify-between">
+          <TPGLogo />
+          <div className="flex grow-0 flex-row gap-x-12">
+            {FOOTER_DIRECTORY.map((item: FooterDirectoryItem) => (
+              <div key={`${item.page}-directory`} className="flex flex-col gap-y-4">
+                <Link className="p-[10px] font-semibold" href={item.page.path}>
+                  {item.page.title}
+                </Link>
+                {item.subsections.map((subsection: Subsection) => (
+                  <Link key={`${subsection.title}-subdirectory`} className="p-[10px] text-sm" href={subsection.path}>
+                    {subsection.title}
+                  </Link>
+                ))}
               </div>
-              <span className="text-sm font-light leading-tight text-white underline">
-                <a href="mailto:puptpg.partnerships@gmail.com">
-                  puptpg.partnerships@gmail.com
-                </a>
-              </span>
-            </div>
-            <div>
-              <span className="font-bold text-green-400">Social Media</span>
-              <div className="flex space-x-4">
-                <a
-                  href={process.env.NEXT_PUBLIC_LINK_FB}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FacebookLogo color="#BAA3A3" size={42} weight="fill" />
-                </a>
-                <a
-                  href={process.env.NEXT_PUBLIC_LINK_LINKEDIN}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <LinkedinLogo color="#BAA3A3" size={42} weight="fill" />
-                </a>
-                <a
-                  href={process.env.NEXT_PUBLIC_LINK_GITHUB}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <GithubLogo color="#BAA3A3" size={42} weight="fill" />
-                </a>
-                <a
-                  href={process.env.NEXT_PUBLIC_LINK_DISCORD}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <DiscordLogo color="#BAA3A3" size={42} weight="fill" />
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-        <div className="absolute -right-5 -top-10 bg-clip-padding object-none gradient-mask-l-40">
-          <Image src={Placeholder} alt="placeholder" width="276" height="276" />
-        </div>
       </div>
-
-      <div className="w-full bg-[#B4BEB9] py-1 text-center">
-        <span className="text-xs font-light">
-          (C) 2022 PUP The Programmers' Guild All rights reserved
-        </span>
+      <div className="flex flex-col items-center justify-center gap-y-[6px] border-0 bg-[#052014] pb-10 pt-4 text-xs text-white">
+        <span>PUP - THE PROGRAMMERS’ GUILD</span>
+        <span>All Rights Reserved © 2023</span>
       </div>
-    </>
+    </footer>
   );
 }

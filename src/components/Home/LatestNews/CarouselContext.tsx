@@ -5,17 +5,17 @@ interface ICarouselProvider {
   children: ReactNode[];
 }
 
-const CarouselContext = createContext<KeenSliderInstance | null | undefined>(
-  null
-);
+const CarouselContext = createContext<KeenSliderInstance | null | undefined>(null);
 
 export default function CarouselProvider({ children }: ICarouselProvider) {
   const [slider, setSlider] = useState<KeenSliderInstance>();
   const [slideRef] = useKeenSlider({
     selector: ".event-slide",
     slides: {
-      perView: "auto",
+      perView: 1.2,
     },
+    rubberband: true,
+    renderMode: "precision",
     detailsChanged(slider) {
       setSlider({ ...slider });
     },
@@ -23,7 +23,7 @@ export default function CarouselProvider({ children }: ICarouselProvider) {
 
   return (
     <CarouselContext.Provider value={slider}>
-      <div ref={slideRef} className="keen-slider flex-1">
+      <div ref={slideRef} className="keen-slider h-[458px]">
         {children.slice(0, -1)}
       </div>
       {children.slice(-1)}
