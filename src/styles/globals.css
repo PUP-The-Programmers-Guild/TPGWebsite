@@ -1,13 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer components {
-  .gradient {
-    @apply bg-gradient-to-b from-emerald-500 to-emerald-700 opacity-70;
-  }
-}
-
 /*
   Caorousel Classes
   number-slide = flex items-center justify-center text-[50px] text-white font-medium min-h-[271px] min-w-[339px] max-h-[339px]
