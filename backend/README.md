@@ -2,6 +2,23 @@
 
 This is the backend for the TPG website, built using the FastAPI framework in Python.
 
+## Create python virtual environment
+
+1. Create a venv
+```bash
+uv venv or python venv .venv
+```
+
+2. Activate .venv
+```bash
+source .venv/Scripts/activate
+```
+
+3. Deactivate
+```bash
+deactivate
+```
+
 ## Installation and Running the Server
 
 1. Install Dependencies
