@@ -13,7 +13,7 @@ export function CarouselNavigation() {
       {slider?.slides.map((_, idx) => (
         <button
           key={idx}
-          className={cn("h-1 w-16 bg-black/50", currentSlide === idx && "bg-black")}
+          className={cn("h-1 w-16 bg-[#C3A7A7]", currentSlide === idx && "bg-white")}
           onClick={() => slider?.moveToIdx(idx)}
         />
       ))}
@@ -35,7 +35,7 @@ function ArrowButton({ direction }: { direction: string }) {
   return (
     <Button
       intent="none"
-      className="disabled:text-black/50"
+      className="text-white disabled:text-[#C3A7A7]"
       disabled={isArrowDisabled()}
       onClick={() => (direction === "left" ? slider?.prev() : slider?.next())}
     >

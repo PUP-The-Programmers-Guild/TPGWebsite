@@ -1,5 +1,6 @@
 import React from "react";
 import { useEventsSlider } from "./CarouselContext";
+import Image from "next/image";
 
 interface ICarouselSlide {
   title: string;
@@ -26,13 +27,13 @@ export default function CarouselSlide({ title, image, idx }: ICarouselSlide) {
       const isLastSlide = currentSlide === idx && currentSlide === slidesLength - 1;
 
       const scaleY = 1 - Math.abs(0.2 * slide.distance);
-      const opacity = Math.max(1 - Math.abs(slide.distance / 1.5), 0.25);
+      const opacity = Math.min(1 - Math.abs(slide.distance * 1.075), 0.5);
       const zIndex = slidesLength - Math.abs(currentSlide - idx);
       const translateX = slideSize * slide.distance;
 
       return {
-        "--img-background": `url(${image})`,
-        "--img-opacity": currentSlide === idx ? 1 : opacity,
+        "--img-background": ``,
+        "--img-opacity": currentSlide === idx ? 0.25 : opacity,
         "--offset": `${-translateX}px`,
         zIndex: currentSlide === idx ? 1000 : zIndex,
         scale: `1 ${isLastSlide ? 1 : scaleY}`,
@@ -40,10 +41,21 @@ export default function CarouselSlide({ title, image, idx }: ICarouselSlide) {
     }
   }
 
+  function calculateGradient() {
+    if (slider) {
+      const currentSlide = slider.track.details.rel;
+      return currentSlide === idx
+        ? ({ backgroundImage: "linear-gradient(206deg, #2BEB61 -72.2%, #052014 74.22%)" } as React.CSSProperties)
+        : ({ backgroundImage: "linear-gradient(93deg, #175F35 -96.15%, #052014 125.57%)" } as React.CSSProperties);
+    }
+  }
+
   return (
     <article className="event-slide grid min-w-[75%]" style={calculateStyle()}>
-      <div className="grid translate-x-[--offset] items-end bg-white p-8 before:absolute before:inset-0 before:-z-10 before:bg-[image:var(--img-background)] before:bg-cover before:opacity-[--img-opacity] before:content-['']">
-        <h3 className="font-heading text-5xl font-bold text-white">{title}</h3>
+      <div className="grid translate-x-[--offset] items-end p-8 before:absolute before:inset-0 before:-z-10 before:bg-cover before:content-[''] ">
+        <div className="absolute z-[-2] h-full w-full transition duration-300" style={calculateGradient()}></div>
+        <Image src={image} alt={`Image for ${title}`} className="z-[-1] opacity-[--img-opacity]" fill />
+        <h3 className="font-heading text-5xl font-bold text-[#E6F5D6]">{title}</h3>
       </div>
     </article>
   );
