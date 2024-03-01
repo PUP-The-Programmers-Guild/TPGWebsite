@@ -1,0 +1,33 @@
+.ca {
+  background-color: green;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  top: 90px;
+  left: 300px;
+}
+
+.cb {
+  background-color: green;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  top: -60px;
+  left: 650px;
+}
+
+.cc {
+  background-color: green;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  top: 30px;
+  right: 200px;
+}
+
+.container {
+  position: relative;
+}

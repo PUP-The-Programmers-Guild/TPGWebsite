@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Caorousel Classes
+  number-slide = flex items-center justify-center text-[50px] text-white font-medium min-h-[271px] min-w-[339px] max-h-[339px]
+  hero-slide = flex items-center justify-center text-[50px] text-white font-medium min-w-[459.35px] min-h-[424.48px] max-h-[459.35px]
+*/
+
+/*  Theming
+ *  - This is my suggestion for color variables to be used for theming
+ *    throughout the project. I adopt this from shadcn/ui and here's the link
+ *    for further information about the CSS variables:
+ *    https://ui.shadcn.com/docs/theming
+ *
+ *  TODO: replace the colors here based on the color scheme of the project.
+ */
+@layer base {
+  :root {
+    /*  Based on the current figma color scheme  */
+    --background: 0 0% 100%;
+    --foreground: 120 2% 12%;
+ 
+    /*  Based on the current figma color scheme  */
+    --muted: 120 0% 60%;
+    --muted-foreground: 240 52% 11% 1;
+ 
+    /*  Just a placeholder color for popovers */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+ 
+    /*  Just a placeholder color for cards */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+ 
+    /*  Just a placeholder color for borders */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+ 
+    /*  Based on the current figma color scheme  */
+    --primary: 86 61% 57%;
+    --primary-foreground: 0 0% 100%;
+    
+    /*  Based on the current figma color scheme  */
+    --secondary: 70 81% 79%;
+    --secondary-foreground: 120 2% 12%;
+ 
+    /*  Based on the current figma color scheme  */
+    --accent: 126 55% 37%;
+    --accent-foreground: 120 2% 12%;
+ 
+    /*  Just a placeholder color for destructive intent */
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    /*  Just a placeholder color for focus rings */
+    --ring: 215 20.2% 65.1%;
+ 
+    /*  Just a placeholder radius for cards, input, and buttons */
+    --radius: 0.5rem;
+  }
+ 
+  /*  This are just placeholder colors for dark mode  */
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+ 
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+ 
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+ 
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+ 
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+ 
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --ring: 216 34% 17%;
+ 
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+
+    /*  Not sure bout this one yet if applicable to us  */
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}

@@ -1,0 +1,6 @@
+# pycache
+backend/*/__pycache__/
+backend/*/*/__pycache__/
+
+# personal configs
+.vscode
