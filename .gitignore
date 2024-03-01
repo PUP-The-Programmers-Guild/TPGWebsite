@@ -1,6 +1,8 @@
 # pycache
-backend/*/__pycache__/
-backend/*/*/__pycache__/
+backend/__pycache__
+backend/.venv
+backend/.env
+
 
 # personal configs
 .vscode
