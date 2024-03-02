@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Mission() {
   return (
-    <section className="flex min-h-screen items-center justify-center bg-gradient-to-b from-[#164323] to-[#052014]">
+    <section className="flex min-h-screen items-center justify-center bg-[linear-gradient(180deg,_#164323_-20.03%,_#052014_57.22%)]">
       <div className="flex max-w-[960px] flex-col pb-[115px] pt-[70px]">
         <div className="pb-[100px] text-center">
           <h1 className={`pb-[40px] font-heading text-6xl font-bold leading-[84px] text-[#E6F5D6] `}>

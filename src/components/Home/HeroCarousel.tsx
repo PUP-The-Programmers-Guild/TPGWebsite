@@ -62,15 +62,10 @@ export default function HeroCarousel() {
       </button>
 
       <div ref={sliderRef} className="relative -z-10 min-h-screen min-w-full overflow-hidden">
-        <div className="absolute z-40 h-full w-full bg-gradient-to-b from-[#052014] to-[#164323] opacity-80" />
+        <div className="absolute z-0 h-full w-full bg-[linear-gradient(1deg,_#164323_-23.29%,_#052014_64.94%)] opacity-[92%]" />
         {images.map((src, idx) => (
           <div key={idx} className="absolute -z-10 min-h-full min-w-full" style={{ opacity: opacities[idx] }}>
-            <Image
-              src={src}
-              alt="an image"
-              fill
-              className="absolute h-full w-full bg-transparent object-cover brightness-50"
-            />
+            <Image src={src} alt="an image" fill className="absolute h-full w-full bg-transparent object-cover" />
           </div>
         ))}
       </div>
