@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from src.cors import config as cors_config
-from src.routers import root, example
+from src.routers import root, example, posts
 # from app.database import connection as db_connection
 
 app = FastAPI()
@@ -13,3 +13,6 @@ app.include_router(root.router)
 
 # Include example router
 app.include_router(example.router)
+
+#Incluse posts router
+app.include_router(posts.router)
