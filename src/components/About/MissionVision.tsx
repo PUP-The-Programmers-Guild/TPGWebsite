@@ -23,7 +23,7 @@ export default function MissionVision() {
           className="z-10 h-[800px] w-full translate-y-24  scale-[125%] object-cover opacity-20"
         />
       </div>
-      <div className="flex flex-row justify-between gap-x-[80px]">
+      <div className="flex max-w-[960px] flex-row justify-between gap-x-[80px]">
         {[VisionInfo, MissionInfo].map((info) => (
           <div key={info.title}>
             <div className="mb-[40px] flex items-start gap-x-6">

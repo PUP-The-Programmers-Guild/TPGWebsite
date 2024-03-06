@@ -13,6 +13,7 @@
     "@next/font": "13.1.6",
     "@phosphor-icons/react": "^2.0.5",
     "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@types/node": "18.13.0",
     "@types/react": "18.0.27",

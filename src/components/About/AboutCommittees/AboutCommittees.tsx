@@ -22,8 +22,8 @@ const COMMITTEE_DATA: ICommitteeCardProps[] = [
 
 export default function AboutCommittees() {
   return (
-    <section className="flex overflow-hidden bg-[#052014]">
-      <div className="mb-[210px] flex flex-col px-60">
+    <section className="flex items-center justify-center overflow-hidden bg-[#052014]">
+      <div className="z-10 mb-[210px] flex max-w-[960px] flex-col">
         <h3 className={`text-3xl font-bold text-white`}>The Committees</h3>
         <p className={`mt-[40px] text-xl text-white`}>
           Our Organization consist of two committees that helps the executive committee for efficient operation.
