@@ -2,8 +2,14 @@
 **/__pycache__/
 backend/.venv
 backend/.env
-
+backend/node_modules
+backend/package-lock.json
+backend/.serverless/
+.venv
 
 
 # personal configs
 .vscode
+main.py
+output.txt
+test.png

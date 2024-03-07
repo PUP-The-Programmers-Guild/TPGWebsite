@@ -1,0 +1,120 @@
+org: puptpgbackend
+app: tpg-website-backend
+service: tpg-website-backend
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: python3.8
+  profile: tpg-backend
+  region: ap-southeast-1
+  timeout: 16
+  memorySize: 256
+  environment:
+    USERSTABLE: tpg-users
+    FAQSEVENTSTABLE: tpg-faqs-events
+    BUCKET: pup-tpg-backend
+    ASSETBUCKET: pup-tpg-items
+  deploymentBucket:
+    name: pup-tpg-backend
+    blockPublicAccess: true
+  iam:
+    role:
+      name: tpg-backend
+      statements:
+        - Effect: Allow
+          Action:
+            - "dynamodb:*"
+            - "s3:*"
+            - "lambda:*"
+            - "cloudwatch:*"
+          Resource:
+            - "*"
+  layers:
+    - arn:aws:lambda:ap-southeast-1:381492034381:layer:PyJWT:1
+    - arn:aws:lambda:ap-southeast-1:381492034381:layer:PyDep:1
+
+resources:
+  Resources:
+    TPGBackendFaqsEventsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: tpg-faqs-events
+        AttributeDefinitions:
+          - AttributeName: content_type
+            AttributeType: S
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: content_type
+            KeyType: HASH
+          - AttributeName: id
+            KeyType: RANGE
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 1
+    TPGUsersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: tpg-users
+        AttributeDefinitions:
+          - AttributeName: user_id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: user_id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+
+functions:
+  index:
+    handler: src/index.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
+
+  create_faq:
+    handler: src/create_faq.handler
+    events:
+      - httpApi:
+          path: /create_faq
+          method: post
+
+  create_event:
+    handler: src/create_event.handler
+    events:
+      - httpApi:
+          path: /create_event
+          method: post
+
+  get_faqs:
+    handler: src/get_faqs.handler
+    events:
+      - httpApi:
+          path: /get_faqs
+          method: get
+          
+  get_events:
+    handler: src/get_events.handler
+    events:
+      - httpApi:
+          path: /get_events
+          method: get
+
+package:
+  patterns:
+    - "!.venv/**"
+    - "!node_modules/**"
+    - "!package-lock.json"
+    - "!package.json"
+    - "!scratch_files/**"
+    - "!requirements.txt"
+    - "!.git"
+    - "!.gitignore"
+    - "!README.md"
+
+plugins:
+  - serverless-deployment-bucket
+  - serverless-python-requirements
