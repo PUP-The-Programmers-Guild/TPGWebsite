@@ -2,14 +2,12 @@ import Image from "next/image";
 interface IOfficerInfo {
   name: string;
   role: string;
-  year: string;
   imageUrl: string;
 }
 const MOCK_OFFICER_INFO: IOfficerInfo = {
-  name: "Full Middle Name Here",
-  role: "Position Regular",
-  year: "2024-2025",
-  imageUrl: "/Placeholder.png",
+  name: `Full Middle Name Here`,
+  role: `Position Regular`,
+  imageUrl: `/Placeholder.png`,
 };
 
 const COMMITTEEHEAD_MOCK_DATA: IOfficerInfo[] = Array(4).fill(MOCK_OFFICER_INFO);
@@ -18,54 +16,48 @@ const EXECUTIVES_MOCK_DATA: IOfficerInfo[] = Array(20).fill(MOCK_OFFICER_INFO);
 export default function Officers() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#052014]">
-      <div className="flex max-w-[960px] flex-col">
-        <div className="z-10 pb-16 ">
-          <h1 className="pb-16 font-heading text-[2.5rem] font-semibold text-white">The Officers</h1>
-          <h2 className="pb-8 font-heading text-[2rem] font-semibold text-white">Our Executives</h2>
-          <p className="pb-6 font-body text-xl text-white">
+      <div className="flex max-w-[960px] flex-col pb-[210px]">
+        <div className="z-10 pb-[80px] ">
+          <h1 className="pb-[80px] font-heading text-[2.5rem] font-semibold text-white">The Officers</h1>
+          <h2 className="pb-[40px] font-heading text-[2rem] font-semibold text-white">Our Executives</h2>
+          <p className="pb-[40px] font-body text-xl text-white">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
             elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
 
-          <ul role="list" className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <ul role="list" className="z-10 grid grid-flow-row grid-cols-4 gap-x-[46.33px] gap-y-[32px]">
             {EXECUTIVES_MOCK_DATA.map((executive, idx) => (
-              <li key={`${executive.name}-${idx}`}>
-                <div className="flex gap-x-[15px]">
-                  <Image className="rounded-full" src={executive.imageUrl} alt="placeholder" width={64} height={64} />
-                  <div>
-                    <p className="text-sm font-semibold leading-7 tracking-tight text-white">{executive.name}</p>
-                    <p className="text-[0.75rem] text-white">{executive.role}</p>
-                    <p className="text-[0.75rem] text-white">{executive.year}</p>
-                  </div>
-                </div>
-              </li>
+              <OfficerInfoCard {...executive} key={idx} />
             ))}
           </ul>
         </div>
 
         <div className="z-10">
-          <h2 className="pb-8 font-heading text-[2rem] font-semibold text-white">Our Committee Heads</h2>
-          <p className="pb-6 font-body text-xl text-white">
+          <h2 className="pb-[40px] font-heading text-[2rem] font-semibold text-white">Our Committee Heads</h2>
+          <p className="pb-[40px] font-body text-xl text-white">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
             elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
 
-        <ul role="list" className="z-10 grid grid-flow-row auto-rows-max grid-cols-4">
+        <ul role="list" className="z-10 grid grid-flow-row auto-rows-max grid-cols-4 gap-x-[46.33px] gap-y-[32px]">
           {COMMITTEEHEAD_MOCK_DATA.map((head, idx) => (
-            <li key={`${head.name}-${idx}`}>
-              <div className="flex gap-x-[15px]">
-                <Image className="rounded-full" src={head.imageUrl} alt="placeholder" width={64} height={64} />
-                <div>
-                  <p className="text-sm font-semibold leading-7 tracking-tight text-white">{head.name}</p>
-                  <p className="text-[0.75rem] text-white">{head.role}</p>
-                  <p className="text-[0.75rem] text-white">{head.year}</p>
-                </div>
-              </div>
-            </li>
+            <OfficerInfoCard {...head} key={idx} />
           ))}
         </ul>
       </div>
     </div>
+  );
+}
+
+function OfficerInfoCard(props: IOfficerInfo, idx: number) {
+  return (
+    <li key={`${props.name}-${idx}`} className="flex gap-x-[15px] overflow-clip whitespace-pre-line break-words">
+      <Image className="self-center rounded-full" src={props.imageUrl} alt="placeholder" width={64} height={64} />
+      <div className="flex flex-col gap-y-[6px]">
+        <p className="text-sm font-semibold leading-none tracking-tight text-white">{props.name}</p>
+        <p className="text-ellipsis text-xs leading-none text-white">{props.role}</p>
+      </div>
+    </li>
   );
 }

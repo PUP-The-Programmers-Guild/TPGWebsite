@@ -1,9 +1,8 @@
-import { useState } from "react";
-import * as Select from "@radix-ui/react-select";
-import { CaretDown, CaretUp, Check } from "@phosphor-icons/react";
+import { useEffect, useState } from "react";
 import React from "react";
+import SelectComponent from "../base/Select";
 
-const MOCK_ALUMNI: string[] = `
+const MOCK_ALUMNI_LIST: string[] = `
   Estrella Coleman
   Warren Patrick
   Nicole Contreras
@@ -39,53 +38,56 @@ const MOCK_ALUMNI: string[] = `
   .trim()
   .split("\n");
 
+// Helper function to make different mock data per year
+function shuffle<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+// Suggestion on how the received data should look like
+interface IAlumniData {
+  [year: string]: string[];
+}
+
+const MOCK_ALUMNI_DATA: IAlumniData = {
+  "2020": shuffle(MOCK_ALUMNI_LIST),
+  "2021": shuffle(MOCK_ALUMNI_LIST),
+  "2022": shuffle(MOCK_ALUMNI_LIST),
+  "2023": shuffle(MOCK_ALUMNI_LIST),
+  "2024": shuffle(MOCK_ALUMNI_LIST),
+  "2025": shuffle(MOCK_ALUMNI_LIST),
+};
+
 export default function OurAlumnisPage() {
-  const [alumniYear, setAlumniYear] = useState<string>("2023");
+  const [alumniYear, setAlumniYear] = useState<string>("2024");
+  const [alumniInfo, setAlumniInfo] = useState<string[]>(MOCK_ALUMNI_DATA[alumniYear]);
+
+  useEffect(() => {
+    setAlumniInfo(MOCK_ALUMNI_DATA[alumniYear]);
+  }, [alumniYear]);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-5 bg-[#052014] py-28">
-      <div className="relative z-10 flex max-w-[960px] flex-col gap-14">
-        <h1 className="relative font-heading text-3xl font-bold text-white">Our Alumnis</h1>
-        <p className="relative flex items-center self-stretch text-xl font-normal text-white">
+    <div className="flex flex-col items-center justify-center gap-5 bg-[#052014] pb-[240px]">
+      <div className="z-10 flex max-w-[960px] flex-col gap-[60px]">
+        <h1 className="text-3xl font-bold text-white">Our Alumni</h1>
+        <p className="flex items-center  text-xl font-normal text-white">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
-        <div className="flex flex-col gap-12 self-stretch">
-          <div className="flex flex-col gap-5 self-stretch">
+        <div className="flex flex-col gap-[48px]">
+          <div className="flex flex-col gap-[18px]">
             <div className="">
-              <Select.Root value={alumniYear} onValueChange={setAlumniYear}>
-                <Select.Trigger className="inline-flex h-[35px] items-center justify-center gap-[10px] px-[6px] text-2xl leading-none text-white outline-none">
-                  <Select.Value aria-label={alumniYear}>{alumniYear}</Select.Value>
-                  <Select.Icon className="text-white">
-                    <CaretDown size={32} />
-                  </Select.Icon>
-                </Select.Trigger>
-                <Select.Portal>
-                  <Select.Content className="z-20 overflow-hidden rounded-md bg-white">
-                    <Select.ScrollUpButton className="flex h-[25px] cursor-default items-center justify-center bg-white text-[#052014]">
-                      <CaretUp size={32} />
-                    </Select.ScrollUpButton>
-                    <Select.Viewport className="p-[5px]">
-                      <Select.Group>
-                        <SelectItem value="2020">2020</SelectItem>
-                        <SelectItem value="2021">2021</SelectItem>
-                        <SelectItem value="2022">2022</SelectItem>
-                        <SelectItem value="2023">2023</SelectItem>
-                        <SelectItem value="2024">2024</SelectItem>
-                      </Select.Group>
-                    </Select.Viewport>
-                    <Select.ScrollDownButton className="flex h-[25px] cursor-default items-center justify-center bg-white text-[#052014]">
-                      <CaretDown size={16} />
-                    </Select.ScrollDownButton>
-                  </Select.Content>
-                </Select.Portal>
-              </Select.Root>
+              <SelectComponent selection={Object.keys(MOCK_ALUMNI_DATA)} state={alumniYear} setState={setAlumniYear} />
             </div>
             <hr className="" />
           </div>
 
-          <div className="ml-[120px]  grid grid-flow-col grid-rows-12 gap-x-[69px] text-base text-white">
-            {MOCK_ALUMNI.map((alumni, index) => (
+          <div className="ml-[120px] grid grid-flow-col grid-rows-12 gap-x-[69px] text-base text-white">
+            {alumniInfo.map((alumni, index) => (
               <span key={`ALUMNI_#${index}`} className="text-base text-white">
                 {alumni}
               </span>
@@ -96,20 +98,3 @@ export default function OurAlumnisPage() {
     </div>
   );
 }
-
-const SelectItem = React.forwardRef<HTMLDivElement, { children: React.ReactNode; className?: string }>(
-  ({ children, className, ...props }, forwardedRef) => {
-    return (
-      <Select.Item
-        className="relative flex h-[25px] select-none items-center rounded-[3px] pl-[25px] pr-[35px] text-[16px] leading-none text-[#052014] hover:cursor-pointer data-[highlighted]:bg-[#052014] data-[highlighted]:text-white data-[highlighted]:outline-none"
-        {...props}
-        ref={forwardedRef}
-      >
-        <Select.ItemText>{children}</Select.ItemText>
-        <Select.ItemIndicator className="absolute left-0 inline-flex w-[25px] items-center justify-center">
-          <Check size={16} />
-        </Select.ItemIndicator>
-      </Select.Item>
-    );
-  }
-);

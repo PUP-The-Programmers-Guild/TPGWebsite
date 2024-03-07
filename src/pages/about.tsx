@@ -21,13 +21,13 @@ export default function AboutPage() {
             className="absolute bottom-[-96px] -z-0 select-none stroke-[#343534] stroke-[162px]"
             style={{ filter: "drop-shadow(0px 0px 250px rgba(255, 235, 132, 0.21));" }}
           >
-            {/* <Image src="/AboutUsCurlyBrace-L.svg" alt="bg" width={850} height={1941} /> */}
+            <Image src="/AboutUsCurlyBrace-L.webp" alt="bg" width={885} height={1941} />
           </div>
           <div
             className="absolute right-[-58px] top-0 -z-0 select-none stroke-[#343534] stroke-[162px]"
             style={{ filter: "drop-shadow(0px 0px 250px rgba(255, 235, 132, 0.21));" }}
           >
-            {/* <Image src="/AboutUsCurlyBrace-R.svg" alt="bg" width={910} height={1941} /> */}
+            <Image src="/AboutUsCurlyBrace-R.webp" alt="bg" width={910} height={1941} />
           </div>
         </div>
       </div>

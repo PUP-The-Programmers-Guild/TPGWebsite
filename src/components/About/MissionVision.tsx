@@ -14,16 +14,16 @@ const VisionInfo = {
 
 export default function MissionVision() {
   return (
-    <section className="flex min-h-screen items-center justify-center gap-x-[4.56rem] px-[240px] py-[240px] text-white">
-      <div className="absolute -z-20 h-full w-full overflow-hidden bg-[radial-gradient(1718.21%_485.56%_at_-1%_463.56%,_#2A9134_0%,_#052014_85.26%)]">
+    <section className="flex min-h-screen items-center justify-center gap-x-[4.56rem]  text-white">
+      <div className="absolute -z-20 h-full w-full bg-[radial-gradient(1718.21%_485.56%_at_-1%_463.56%,_#2A9134_0%,_#052014_85.26%)] px-[240px] py-[240px]">
         <Image
-          src="/AboutTPG/AboutTPGMission.webp"
+          src="/TPGMembersBanner.webp"
           alt="TPG Mission-Vision Background Image"
           fill
-          className="z-10 h-[800px] w-full translate-y-24  scale-[125%] object-cover opacity-20"
+          className="z-10 h-full w-full object-cover opacity-20"
         />
       </div>
-      <div className="flex max-w-[960px] flex-row justify-between gap-x-[80px]">
+      <div className="flex max-w-[960px] flex-row justify-between gap-x-[80px] ">
         {[VisionInfo, MissionInfo].map((info) => (
           <div key={info.title}>
             <div className="mb-[40px] flex items-start gap-x-6">
