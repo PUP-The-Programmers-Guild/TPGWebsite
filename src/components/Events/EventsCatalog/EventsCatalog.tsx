@@ -26,12 +26,16 @@ export default function EventsCatalog() {
   };
 
   return (
-    <section className={`min-h-screen bg-[#F7FFF8]`}>
-      <div className={`flex flex-col items-center justify-center py-20`}>
-        <div className={`flex flex-col items-center justify-center py-6`}>
-          <h3 className={`pb-16 text-4xl font-bold`}>Our Events</h3>
-          <div className={`mb-6 flex flex-row items-center gap-x-4 bg-white px-4 py-5 drop-shadow-2xl`}>
-            <span className={`text-xl font-bold`}>EVENT TYPE</span>
+    <section
+      className={`flex min-h-screen flex-col items-center justify-center bg-[radial-gradient(278.86%_108.32%_at_50%_108.32%,_#E6F5D6_0.52%,_#167920_28.13%,_#0F541B_47.4%,_#052014_80.73%)]`}
+    >
+      <div className={`flex max-w-[960px] flex-col items-center justify-center pb-[80px] pt-[24px]`}>
+        <div className={`flex flex-col items-center justify-center gap-y-[64px] pb-[64px]`}>
+          <h3 className={`text-5xl font-bold text-white`}>Our Events</h3>
+          <div
+            className={`flex flex-row items-center gap-x-[16px] rounded-[4px] bg-[#052014] p-[16px] shadow-[0px_0px_250px_15px_rgba(255,_235,_132,_0.21)]`}
+          >
+            <span className={`text-lg font-bold text-white`}>EVENT TYPE</span>
             {ALL_EVENT_FILTERS.map((type) => (
               <EventTypeBadge
                 key={`${type}-filter-badge`}
@@ -42,7 +46,8 @@ export default function EventsCatalog() {
             ))}
           </div>
         </div>
-        <div className={`grid grid-cols-3 items-start gap-x-8 gap-y-4`}>
+
+        <div className={`grid grid-cols-3 items-start gap-[32px]`}>
           {events.map((event) => (
             <EventCard
               key={`${event.title}-card`}

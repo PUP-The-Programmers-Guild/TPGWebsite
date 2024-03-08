@@ -17,22 +17,22 @@ export interface IEventCardInfo {
 
 export default function EventCard({ thumbnail, title, link, dates, tags, description }: IEventCardInfo) {
   return (
-    <div className={`w-[314px] bg-white p-4`}>
-      <div>
-        <Image src={thumbnail} alt={`${title}-thumbnail`} width={262} height={120} />
-      </div>
-      <div className={`mt-6 flex flex-col gap-y-2`}>
-        <a className={`text-xl font-bold leading-6 hover:underline`} href={link}>
+    <div className={`flex h-full flex-col gap-y-[16px] bg-[#052014] p-[16px]`}>
+      <Image src={thumbnail} alt={`${title}-thumbnail`} width={262} height={120} />
+
+      <div className={`flex flex-col gap-y-[8px] text-white`}>
+        <a className={`text-xl font-bold leading-6 hover:underline `} href={link}>
           {title}
         </a>
         <span className="text-xs">{dates}</span>
       </div>
-      <div className={`my-6 flex flex-row flex-wrap gap-x-2 gap-y-2 overflow-auto`}>
+
+      <div className={`flex flex-row flex-wrap gap-x-[8px] gap-y-[8px] overflow-auto`}>
         {tags.map((tag) => (
           <EventTypeBadge key={`${title}-${tag}-badge`} type={tag} />
         ))}
       </div>
-      <p className={`text-sm leading-4`}>{description}</p>
+      <p className={`text-sm  text-white`}>{description}</p>
     </div>
   );
 }
