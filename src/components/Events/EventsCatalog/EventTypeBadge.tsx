@@ -2,14 +2,14 @@ import { Circle, X } from "@phosphor-icons/react";
 import { VariantProps, cva } from "class-variance-authority";
 
 type TEventTypeBadgeVariants = VariantProps<typeof EventTypeBadgeVariants>;
-const EventTypeBadgeVariants = cva("flex flex-row items-center py-1 px-2 rounded-md gap-x-2", {
+const EventTypeBadgeVariants = cva("flex flex-row items-center p-[8px] rounded-md gap-x-[4px]", {
   variants: {
     type: {
-      FLAGSHIP: "bg-[#D2FF85]",
-      WEBINARS: "bg-[#85E2FF]",
-      EXTERNAL: "bg-[#FFEB90]",
-      PODCAST: "bg-[#E794FF]",
-      "TPG-EXCLUSIVE": "bg-[#FFBC78]",
+      FLAGSHIP: "bg-[#99D44E]",
+      WEBINARS: "bg-[#93C5FD]",
+      EXTERNAL: "bg-[#FDE047]",
+      PODCAST: "bg-[#EC4899]",
+      "TPG-EXCLUSIVE": "bg-[#F97316]",
     },
   },
 });
@@ -36,8 +36,8 @@ export default function EventTypeBadge({ type, enabled, onClick }: IEventTypeBad
       tabIndex={onClick ? 0 : -1}
       onKeyDown={onKeyDown}
     >
-      <span className={`text-xs font-bold`}>{type}</span>
-      {enabled !== undefined && (enabled ? <X size={20} weight="bold" /> : <Circle size={20} weight="fill" />)}
+      <span className={`text-[10px] font-bold`}>{type}</span>
+      {enabled !== undefined && (enabled ? <X size={20} weight="bold" /> : <Circle size={8} weight="fill" />)}
     </div>
   );
 }
