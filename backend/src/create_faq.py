@@ -18,8 +18,6 @@ table = dynamodb.Table(os.environ['FAQSEVENTSTABLE'])
 
 """
     sample_payload = {
-        "content_type": "faqs",
-        "id": "string", = tpg-faq-000
         "title": "string",
         "description": "string"
     }
@@ -37,9 +35,13 @@ def create_faq(event_body):
     try:
         count = counter('faqs')
 
+        content_type = 'faqs'
+
+        faq_id = f"tpg-faq-{count + 1:03}"
+
         schema = {
-            "content_type": "faqs",
-            "id": f"tpg-faq-{count + 1:03}",
+            "content_type": content_type,
+            "id": faq_id,
             "title": event_body['title'],
             "description": event_body['description'],
         }
@@ -49,45 +51,6 @@ def create_faq(event_body):
     except Exception as e:
         print(f"An error occurred: {e}")
         return e
-
-
-def handler(event, context):
-    try:
-        event_body = json.loads(event.get('body'))
-        print(event_body)
-
-        event_body = create_faq(event_body)
-
-        body = {
-            "message": "FAQ created successfully",
-            "event": event_body
-        }
-
-        response = {
-            "statusCode": 201,
-            "headers": {
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*",
-            },
-            "body": json.dumps(body)
-        }
-
-        return response
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        body = {
-            "message": "An error occurred while creating FAQ",
-            "error": str(e)
-        }
-        response = {
-            "statusCode": 500,
-            "headers": {
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*",
-            },
-            "body": json.dumps(body)
-        }
-        return response
     
 def handler(event, context):
     try:
@@ -106,7 +69,7 @@ def handler(event, context):
     
     body = {
         "message": message,
-        "event": event 
+        "data": event_body,
     }
 
     response = {

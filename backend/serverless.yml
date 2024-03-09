@@ -95,7 +95,7 @@ functions:
       - httpApi:
           path: /get_faqs
           method: get
-          
+
   get_events:
     handler: src/get_events.handler
     events:

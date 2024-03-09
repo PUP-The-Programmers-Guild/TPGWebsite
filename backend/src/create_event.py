@@ -12,33 +12,25 @@ table = dynamodb.Table(os.environ['FAQSEVENTSTABLE'])
 
 """
     events_schema = {
+        To be worked by backend:
         "content_type": "events",
         "id": "string", = tpg-events-000
-        "title": "string",
-        "description": "string"
-        "event_type: "string",
-        "event_date": "string",
-        "date_created": "string"
-        "facebook_url: "string",
-        "image_url": "string"
-    }
-"""
-
-"""
-    sample_payload = {
-        "content_type": "events",
-        "id": "string", = tpg-events-000
-        "title": "string",
-        "description": "string"
-        "event_type: "string",
-        "event_date": "string",
-        "date_created": "string"
-        "facebook_url: "string",
+        "date_created": "string",
+        "date_updated: "string",
         "image_url": "string",
-        "image_type" "string" -> png, jpg, jpeg
+
+        To be worked by frontend:
+        "title": "string",
+        "description": "string"
+        "event_type: "string",
+        "event_dates": ["string"],
+        "facebook_url: "string",
+        "image": "base64 string",
+        "image_type" "string" -> png, jpg, jpeg, etc.
+        "tags": ["string"]
+        "admin_id": "string"
     }
 """
-
 
 
 def counter(content_type):
@@ -68,19 +60,48 @@ def create_event(event_body):
 
         image_url = upload_image(image_data_base64, title, image_type)
 
+        tags = event_body.get('tags', [])
+
+        event_dates = event_body.get('event_dates', [])
+        
+        event_id = f"tpg-events-{count + 1:03}"
+
+        date_created = datetime.now().isoformat()
+        date_updated = datetime.now().isoformat()
+        
+        content_type = "events"
+
         schema = {
-            "content_type": "events",
-            "id": f"tpg-events-{count + 1:03}",
+            "content_type": content_type,
+            "id": event_id,
+            "date_created": date_created,
+            "date_updated": date_updated,
+            "image_url": image_url,
+
             "title": event_body['title'],
             "description": event_body['description'],
             "event_type":  event_body['event_type'],
-            "event_date": datetime.now().isoformat(),
+            "event_dates": event_dates,
             "facebook_url": event_body['facebook_url'],
-            "image_url": image_url
+            "tags": tags,
+            "admin_id": event_body['admin_id']
+        }
+
+        uploaded_content = {
+            "id": event_id,
+            "title": event_body['title'],
+            "description": event_body['description'],
+            "event_type":  event_body['event_type'],
+            "event_dates": event_dates,
+            "facebook_url": event_body['facebook_url'],
+            "tags": tags,
+            "image_url": image_url,
+            "date_created": date_created,
+            "date_updated": date_updated,
         }
 
         table.put_item(Item=schema)
-        return schema
+        return uploaded_content
     except Exception as e:
         print(f"An error occurred: {e}")
         return e
@@ -89,11 +110,12 @@ def create_event(event_body):
 def handler(event, context):
     try:
         event_body = json.loads(event.get("body"))
+        print(event_body)
 
         event_body = create_event(event_body)
 
         status_code = 201
-        message =  "Event created successfully" + str(event_body)
+        message =  "Event created successfully" 
 
     except Exception as e:
         status_code = 500
@@ -102,7 +124,7 @@ def handler(event, context):
 
     body = {
         "message": message,
-        "event": event 
+        "data": event_body
     }
 
     response = {
