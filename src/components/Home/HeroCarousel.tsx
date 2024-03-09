@@ -2,11 +2,12 @@ import { CaretDown } from "@phosphor-icons/react";
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
 import { useState } from "react";
+import Hero2 from "../../../public/hero/hero2.webp";
 
 // Inf. Loop Move, Lazy load
 
 // Mock Data, pictures will be fetched from sanity
-const images = ["/hero/hero2.webp", "/hero/hero2.webp", "/hero/hero2.webp", "/hero/hero2.webp"];
+const images = [Hero2, Hero2, Hero2];
 
 export default function HeroCarousel() {
   const [opacities, setOpacities] = useState<number[]>([]);
@@ -65,7 +66,15 @@ export default function HeroCarousel() {
         <div className="absolute z-0 h-full w-full bg-[linear-gradient(1deg,_#164323_-23.29%,_#052014_64.94%)] opacity-[92%]" />
         {images.map((src, idx) => (
           <div key={idx} className="absolute -z-10 min-h-full min-w-full" style={{ opacity: opacities[idx] }}>
-            <Image src={src} alt="an image" fill className="absolute h-full w-full bg-transparent object-cover" />
+            <Image
+              src={src}
+              alt="an image"
+              fill
+              className="absolute h-full w-full bg-transparent object-cover"
+              priority={idx === 0}
+              quality={50}
+              placeholder="blur"
+            />
           </div>
         ))}
       </div>

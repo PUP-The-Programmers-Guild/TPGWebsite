@@ -1,5 +1,7 @@
 import { ArrowUpRight } from "@phosphor-icons/react";
 import Image from "next/image";
+import DevskolarBG1 from "../../../public/devskolar/devskolar1.webp";
+import DevskolarBG2 from "../../../public/devskolar/devskolar2.webp";
 
 export default function HomeDemographics() {
   return (
@@ -9,10 +11,13 @@ export default function HomeDemographics() {
         <div className={`relative`}>
           <div className="absolute h-full w-full bg-[conic-gradient(from_-14.4deg_at_35%_175%,_#052014_0%,#194624_43%,#052014)]">
             <Image
-              src="/devskolar/devskolar1.webp"
+              src={DevskolarBG1}
               alt="Devskolar Background Image 1"
               className="z-[0] h-full w-full object-cover opacity-[8%]"
-              fill
+              placeholder="blur"
+              quality={50}
+              width={960}
+              height={346}
             />
           </div>
           <div className="p-10 pb-[102px]">
@@ -32,10 +37,13 @@ export default function HomeDemographics() {
         <div className={`relative`}>
           <div className="absolute h-full w-full bg-[conic-gradient(from_-38deg_at_57.63%_169%,_rgba(86,_171,_62,_0.2)_171deg,_#052014_335deg,_rgba(86,_171,_62,_0.175))]">
             <Image
-              src="/devskolar/devskolar2.webp"
+              src={DevskolarBG2}
               alt="Devskolar Background Image 2"
               className="z-[0] h-full w-full object-cover opacity-[20%]"
-              fill
+              placeholder="blur"
+              quality={50}
+              width={960}
+              height={176}
             />
           </div>
           <div className="p-10">

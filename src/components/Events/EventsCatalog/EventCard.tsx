@@ -1,35 +1,50 @@
 import Image from "next/image";
 import EventTypeBadge from "./EventTypeBadge";
-import { TEventFilter } from "./EventsCatalog";
+import { dateFormatter } from "@/lib/utils";
+import { TEventFilter } from "@/lib/types/event.interface";
 
-// Ideally, dates will be received as an array of strings in YYYY-MM-DDTHH:MM:SSZ format
-// E.g. ["2021-05-01T00:00:00Z", "2021-05-02T00:00:00Z"]
-// It can be parsed as a Date object and then formatted as needed
-// But a string will do for now
-export interface IEventCardInfo {
-  thumbnail: string;
+interface IEventCardProps {
   title: string;
-  link: string;
-  dates: string[] | string;
-  tags: TEventFilter[];
+  event_type: TEventFilter[];
+  event_dates: string[];
   description: string;
+  image_url: string;
+  facebook_url: string;
 }
 
-export default function EventCard({ thumbnail, title, link, dates, tags, description }: IEventCardInfo) {
+export default function EventCard({
+  image_url,
+  title,
+  facebook_url,
+  event_dates,
+  event_type,
+  description,
+}: IEventCardProps) {
   return (
     <div className={`flex h-full flex-col gap-y-[16px] bg-[#052014] p-[16px]`}>
-      <Image src={thumbnail} alt={`${title}-thumbnail`} width={262} height={120} />
+      <div className="relative h-[120px] w-[262px]">
+        <Image src={image_url} alt={`${title}-thumbnail`} fill className="object-cover" quality={50} />
+      </div>
 
       <div className={`flex flex-col gap-y-[8px] text-white`}>
-        <a className={`text-xl font-bold leading-6 hover:underline `} href={link}>
+        <a
+          className={`text-xl font-bold leading-6 hover:underline `}
+          target="_blank"
+          href={facebook_url}
+          rel="noreferrer"
+        >
           {title}
         </a>
-        <span className="text-xs">{dates}</span>
+        <div>
+          <span key={`${title}-dates`} className="mr-2 text-xs">
+            {dateFormatter(event_dates)}
+          </span>
+        </div>
       </div>
 
       <div className={`flex flex-row flex-wrap gap-x-[8px] gap-y-[8px] overflow-auto`}>
-        {tags.map((tag) => (
-          <EventTypeBadge key={`${title}-${tag}-badge`} type={tag} />
+        {event_type.map((type) => (
+          <EventTypeBadge key={`${title}-${type}-badge`} type={type} />
         ))}
       </div>
       <p className={`text-sm  text-white`}>{description}</p>

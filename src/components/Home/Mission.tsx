@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "@phosphor-icons/react";
 import Image from "next/image";
+import TPGMembersFull from "../../../public/TPGMembersFull.webp";
 
 export default function Mission() {
   return (
@@ -26,7 +27,14 @@ export default function Mission() {
             </p>
           </div>
           <div className="relative order-last w-[493px]">
-            <Image src="/AboutTPG/AboutTPGMission.webp" alt="Placeholder" fill className="h-full w-full lg:mt-0" />
+            <Image
+              src={TPGMembersFull}
+              alt="Placeholder"
+              className="h-full w-full object-cover"
+              placeholder="blur"
+              width={493}
+              height={261}
+            />
           </div>
         </div>
 

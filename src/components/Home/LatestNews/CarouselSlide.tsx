@@ -6,10 +6,11 @@ interface ICarouselSlide {
   title: string;
   image: string;
   idx: number;
+  link: string;
 }
 
 // TODO: The styles are not yet final
-export default function CarouselSlide({ title, image, idx }: ICarouselSlide) {
+export default function CarouselSlide({ title, image, idx, link }: ICarouselSlide) {
   const slider = useEventsSlider();
 
   /** @TODO: to fix the glitchy/jiggly behavior when changing slides, try the following:
@@ -54,8 +55,16 @@ export default function CarouselSlide({ title, image, idx }: ICarouselSlide) {
     <article className="event-slide grid min-w-[75%]" style={calculateStyle()}>
       <div className="grid translate-x-[--offset] items-end p-8 before:absolute before:inset-0 before:-z-10 before:bg-cover before:content-[''] ">
         <div className="absolute z-[-2] h-full w-full transition duration-300" style={calculateGradient()}></div>
-        <Image src={image} alt={`Image for ${title}`} className="z-[-1] opacity-[--img-opacity]" fill />
-        <h3 className="font-heading text-5xl font-bold text-[#E6F5D6]">{title}</h3>
+        <Image
+          src={image}
+          alt={`Image for ${title}`}
+          className="z-[-1] object-cover opacity-[--img-opacity]"
+          fill
+          loading="lazy"
+        />
+        <a href={link} rel="noreferrer" target="_blank">
+          <h3 className="font-heading text-5xl font-bold text-[#E6F5D6] hover:underline">{title}</h3>
+        </a>
       </div>
     </article>
   );

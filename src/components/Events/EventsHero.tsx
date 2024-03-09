@@ -10,6 +10,8 @@ export default function EventsHero() {
           alt="TPG members"
           fill
           className="z-[-1] h-full w-full object-cover opacity-[35%]"
+          loading="eager"
+          priority
         />
       </div>
 

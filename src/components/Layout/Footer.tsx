@@ -1,5 +1,5 @@
-import Contacts from "./Home/Contacts";
-import TPGLogo from "./base/TPGLogo";
+import Contacts from "./Contacts";
+import TPGLogo from "../base/TPGLogo";
 import Link from "next/link";
 
 type Subsection = {
