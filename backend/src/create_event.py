@@ -22,12 +22,11 @@ table = dynamodb.Table(os.environ['FAQSEVENTSTABLE'])
         To be worked by frontend:
         "title": "string",
         "description": "string"
-        "event_type: "string",
+        "event_type: ["string"],
         "event_dates": ["string"],
         "facebook_url: "string",
         "image": "base64 string",
         "image_type" "string" -> png, jpg, jpeg, etc.
-        "tags": ["string"]
         "admin_id": "string"
     }
 """
@@ -60,7 +59,7 @@ def create_event(event_body):
 
         image_url = upload_image(image_data_base64, title, image_type)
 
-        tags = event_body.get('tags', [])
+        event_type = event_body.get('event_type', [])
 
         event_dates = event_body.get('event_dates', [])
         
@@ -80,10 +79,9 @@ def create_event(event_body):
 
             "title": event_body['title'],
             "description": event_body['description'],
-            "event_type":  event_body['event_type'],
+            "event_type":  event_type,
             "event_dates": event_dates,
             "facebook_url": event_body['facebook_url'],
-            "tags": tags,
             "admin_id": event_body['admin_id']
         }
 
@@ -91,10 +89,9 @@ def create_event(event_body):
             "id": event_id,
             "title": event_body['title'],
             "description": event_body['description'],
-            "event_type":  event_body['event_type'],
+            "event_type":  event_type,
             "event_dates": event_dates,
             "facebook_url": event_body['facebook_url'],
-            "tags": tags,
             "image_url": image_url,
             "date_created": date_created,
             "date_updated": date_updated,

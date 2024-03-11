@@ -9,7 +9,7 @@ table = dynamodb.Table(os.environ['FAQSEVENTSTABLE'])
 
 def get_events():
     events = table.scan(
-        ProjectionExpression='id, title, description, event_type, event_dates, facebook_url, image_url, tags, date_created, date_updated',
+        ProjectionExpression='id, title, description, event_type, event_dates, facebook_url, image_url, date_created, date_updated',
         FilterExpression=Attr('content_type').eq('events')
     )['Items']
 

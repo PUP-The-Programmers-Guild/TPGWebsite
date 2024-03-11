@@ -13,3 +13,6 @@ backend/.serverless/
 main.py
 output.txt
 test.png
+test.py
+register.py
+testlogin.py

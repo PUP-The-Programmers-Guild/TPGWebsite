@@ -15,6 +15,7 @@ provider:
     FAQSEVENTSTABLE: tpg-faqs-events
     BUCKET: pup-tpg-backend
     ASSETBUCKET: pup-tpg-items
+    SECRET: 3a151a3c2e0244c23777a0f5faa997a27c9ef87b1aa04884f795e3f7eb90eb97
   deploymentBucket:
     name: pup-tpg-backend
     blockPublicAccess: true
@@ -58,11 +59,15 @@ resources:
       Properties:
         TableName: tpg-users
         AttributeDefinitions:
+          - AttributeName: role
+            AttributeType: S
           - AttributeName: user_id
             AttributeType: S
         KeySchema:
-          - AttributeName: user_id
+          - AttributeName: role
             KeyType: HASH
+          - AttributeName: user_id
+            KeyType: RANGE
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
@@ -74,6 +79,13 @@ functions:
       - httpApi:
           path: /
           method: get
+
+  login: 
+    handler: src/login.handler
+    events:
+      - httpApi:
+          path: /login
+          method: post
 
   create_faq:
     handler: src/create_faq.handler
