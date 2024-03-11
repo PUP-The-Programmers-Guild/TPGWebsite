@@ -1,7 +1,6 @@
-import { useState } from "react";
 import NavLink from "./NavBar/NavLink";
 import NavLinkFilled from "./NavBar/NavLinkFilled";
-import TPGLogo from "./base/TPGLogo";
+import TPGLogo from "../base/TPGLogo";
 
 const NAVLINKS = [
   {
@@ -19,8 +18,9 @@ const NAVLINKS = [
 ];
 
 export default function Header() {
-  const [isNavOpen, setIsNavOpen] = useState(false);
-  const navMenuDisplay = isNavOpen ? "flex" : "hidden";
+  // For mobile-responsive navbar state
+  //const [isNavOpen, setIsNavOpen] = useState(false);
+  //const navMenuDisplay = isNavOpen ? "flex" : "hidden";
 
   return (
     <header className="flex flex-wrap items-center justify-center bg-[#052014]">

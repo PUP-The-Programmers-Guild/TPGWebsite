@@ -1,4 +1,4 @@
-const demographics = [
+const MOCK_DEMOGRAPHIC_DATA = [
   ["DevSkolars", "274"],
   ["Courses", "8"],
   ["Alumnis", "+500"],
@@ -19,7 +19,7 @@ export default function Demographics() {
 
         <div className="flex flex-1 flex-col pb-[164px]">
           <div className="space-y-10 pt-[72px] text-white">
-            {demographics.map(([category, est]) => (
+            {MOCK_DEMOGRAPHIC_DATA.map(([category, est]) => (
               <div key={category} className="grid grid-cols-5 items-end gap-x-4">
                 <span className="col-span-4 text-right font-heading text-5xl">{est}</span>
                 <span className="text-left font-heading text-3xl text-[2rem]">{category}</span>

@@ -1,11 +1,4 @@
-import Image from "next/image";
-export interface ICommitteeCardProps {
-  committeeTitle: string;
-  committeeSubtitle: string;
-  committeeLogo: React.ReactElement;
-  committeeRoles: string[];
-  committeeDesc: string;
-}
+import { ICommitteeCardProps } from "@/lib/types/aboutCommittee.interface";
 
 export function CommitteeCard(props: ICommitteeCardProps) {
   return (

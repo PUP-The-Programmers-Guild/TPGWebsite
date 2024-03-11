@@ -10,9 +10,9 @@
     }
 */
 
-import { IEventCardInfo } from "@/components/Events/EventsCatalog/EventCard";
+//import { IEventCardInfo } from "@/components/Events/EventsCatalog/EventCard";
 
-export const MOCK_EVENT_DATA: IEventCardInfo[] = [
+export const MOCK_EVENT_DATA = [
   {
     thumbnail: "/EventCardThumbnailPlaceholder.jpg",
     title: "TAHAK TECH: Career Adventure Awaits",

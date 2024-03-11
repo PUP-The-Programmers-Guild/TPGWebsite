@@ -1,25 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import EventTypeBadge from "./EventTypeBadge";
-import { MOCK_EVENT_DATA } from "@/mock/mockEventData";
-import EventCard, { IEventCardInfo } from "./EventCard";
+import EventCard from "./EventCard";
+import { IEventCardInfo, TEventFilter } from "@/lib/types/event.interface";
 
-export type TEventFilter = "FLAGSHIP" | "WEBINARS" | "EXTERNAL" | "PODCAST" | "TPG-EXCLUSIVE";
 const ALL_EVENT_FILTERS = ["FLAGSHIP", "WEBINARS", "EXTERNAL", "PODCAST", "TPG-EXCLUSIVE"] as const;
+interface IEventsCatalogComponent {
+  events: IEventCardInfo[];
+}
 
-export default function EventsCatalog() {
+export default function EventsCatalog(props: IEventsCatalogComponent) {
   const [eventsFilter, setEventsFilter] = useState<TEventFilter[]>([]);
-  const [events, setEvents] = useState<IEventCardInfo[] | []>([]);
+  const [currentEvents, setCurrentEvents] = useState<IEventCardInfo[] | []>(props.events);
+
+  const filteredEvents = useMemo(() => {
+    if (eventsFilter.length === 0) {
+      return props.events;
+    } else {
+      return props.events.filter((event) => eventsFilter.every((filter) => event.event_type.includes(filter)));
+    }
+  }, [eventsFilter, props.events]);
 
   useEffect(() => {
-    if (eventsFilter.length === 0) {
-      setEvents(MOCK_EVENT_DATA);
-    } else {
-      let filteredEvents = MOCK_EVENT_DATA.filter((event) =>
-        eventsFilter.every((filter) => event.tags.includes(filter))
-      );
-      setEvents(filteredEvents);
-    }
-  }, [eventsFilter]);
+    setCurrentEvents(filteredEvents);
+  }, [filteredEvents]);
 
   const handleFilterChange = (type: TEventFilter) => {
     setEventsFilter((prev) => (prev.includes(type) ? prev.filter((prevType) => prevType !== type) : [...prev, type]));
@@ -29,7 +32,7 @@ export default function EventsCatalog() {
     <section
       className={`flex min-h-screen flex-col items-center justify-center bg-[radial-gradient(278.86%_108.32%_at_50%_108.32%,_#E6F5D6_0.52%,_#167920_28.13%,_#0F541B_47.4%,_#052014_80.73%)]`}
     >
-      <div className={`flex max-w-[960px] flex-col items-center justify-center pb-[80px] pt-[24px]`}>
+      <div className={`flex max-w-[960px] flex-col items-center justify-center pb-[80px] pt-[24px] `}>
         <div className={`flex flex-col items-center justify-center gap-y-[64px] pb-[64px]`}>
           <h3 className={`text-5xl font-bold text-white`}>Our Events</h3>
           <div
@@ -47,18 +50,20 @@ export default function EventsCatalog() {
           </div>
         </div>
 
-        <div className={`grid grid-cols-3 items-start gap-[32px]`}>
-          {events.map((event) => (
-            <EventCard
-              key={`${event.title}-card`}
-              thumbnail={event.thumbnail}
-              title={event.title}
-              link={event.link}
-              dates={event.dates}
-              tags={event.tags}
-              description={event.description}
-            />
-          ))}
+        <div className="min-h-[1377px]">
+          <div className={`grid grid-cols-3 items-start gap-[32px]`}>
+            {currentEvents.map((event: IEventCardInfo) => (
+              <EventCard
+                key={event?.id}
+                image_url={event?.image_url}
+                title={event?.title}
+                facebook_url={event?.facebook_url}
+                event_dates={event?.event_dates}
+                event_type={event?.event_type}
+                description={event?.description}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
