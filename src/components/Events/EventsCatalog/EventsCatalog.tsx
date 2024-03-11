@@ -1,28 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import EventTypeBadge from "./EventTypeBadge";
-import { MOCK_EVENT_DATA } from "@/mock/mockEventData";
 import EventCard from "./EventCard";
+import { IEventCardInfo, TEventFilter } from "@/lib/types/event.interface";
 
-type TEventFilter = "FLAGSHIP" | "WEBINARS" | "EXTERNAL" | "PODCAST" | "TPG-EXCLUSIVE";
 const ALL_EVENT_FILTERS = ["FLAGSHIP", "WEBINARS", "EXTERNAL", "PODCAST", "TPG-EXCLUSIVE"] as const;
-
-interface IEventCardInfo {
-  id: string;
-  title: string;
-  event_type: TEventFilter[];
-  event_dates: string[];
-  date_created?: string;
-  date_updated?: string;
-  description: string;
-  image_url: string;
-  facebook_url: string;
-}
-
-interface IEventCatalogResponse {
-  message: string;
-  events: any;
-}
-
 interface IEventsCatalogComponent {
   events: IEventCardInfo[];
 }
