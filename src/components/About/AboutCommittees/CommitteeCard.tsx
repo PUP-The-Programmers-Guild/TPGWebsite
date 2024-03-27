@@ -2,7 +2,9 @@ import { ICommitteeCardProps } from "@/lib/types/aboutCommittee.interface";
 
 export function CommitteeCard(props: ICommitteeCardProps) {
   return (
-    <div className={`rounded-8 rounded-md bg-white p-[36px] shadow-[0px_0px_250px_15px_rgba(255,_235,_132,_0.21)]`}>
+    <div
+      className={`rounded-8 w-[468px] rounded-md bg-white p-[36px] shadow-[0px_0px_250px_15px_rgba(255,_235,_132,_0.21)]`}
+    >
       <div className={`flex flex-col gap-y-[16px]`}>
         <div className={`inline-flex gap-x-[6px]`}>
           <div className="text-[#052014]">{props.committeeLogo}</div>
