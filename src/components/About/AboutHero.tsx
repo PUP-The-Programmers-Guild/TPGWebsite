@@ -20,14 +20,15 @@ export default function AboutHero() {
   });
 
   return (
-    <section className="flex min-h-screen items-center justify-center bg-[#052014] ">
+    <section className="flex min-h-[calc(100vh-80px)] items-center justify-center bg-[#052014] ">
       <div className="flex max-w-[960px] flex-row justify-around gap-[64px] pb-[158.54px] pt-[121px]">
         <div className="mt-[10px] h-full">
           <p className="mb-[40px] ml-[6.5px] font-heading text-4xl font-bold leading-[49px] text-white">
-            Hero quote <br /> Lorem ipsum dolor sit amet
+            Coding is <br />
+            for everyone
           </p>
           <p className="mb-[24.5px] ml-[6.5px] font-body text-2xl leading-7 text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Hear more about our advocacy and community.
           </p>
           <button className="mb-[71px] flex items-center justify-center gap-[10px] bg-white px-[25px] py-[12px]">
             <ArrowDown size={28} weight="fill" />

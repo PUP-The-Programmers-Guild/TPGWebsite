@@ -49,12 +49,12 @@ const FOOTER_DIRECTORY: FooterDirectoryItem[] = [
     },
     subsections: [
       {
-        title: "Vision",
-        path: "/about#vision",
+        title: "Mission",
+        path: "/about#missionvision",
       },
       {
-        title: "Mission",
-        path: "/about#mission",
+        title: "Vision",
+        path: "/about#missionvision",
       },
       {
         title: "Community",

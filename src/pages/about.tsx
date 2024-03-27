@@ -16,7 +16,7 @@ export default function AboutPage() {
     <>
       <AboutHero />
       <MissionVision />
-      <div>
+      <div id="community">
         <div className="relative overflow-hidden">
           <Demographics />
           <AboutCommittees />

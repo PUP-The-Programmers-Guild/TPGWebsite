@@ -1,8 +1,8 @@
 const MOCK_DEMOGRAPHIC_DATA = [
-  ["DevSkolars", "274"],
-  ["Courses", "8"],
-  ["Alumnis", "+500"],
-  ["Years", "3"],
+  ["DevSkolars", "+200"],
+  ["Branches", "3"],
+  ["Courses", "14"],
+  ["Years", "6"],
 ];
 
 export default function Demographics() {

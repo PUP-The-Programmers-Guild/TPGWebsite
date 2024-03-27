@@ -34,11 +34,10 @@ export default function OurAlumnisPage() {
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 bg-[#052014] pb-[240px]">
-      <div className="z-10 flex max-w-[960px] flex-col gap-[60px]">
+      <div className="z-10 flex w-[960px] flex-col gap-[60px]">
         <h1 className="text-3xl font-bold text-white">Our Alumni</h1>
         <p className="flex items-center  text-xl font-normal text-white">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          We would like to give a toast to our alumnis from different years.
         </p>
         <div className="flex flex-col gap-[48px]">
           <div className="flex flex-col gap-[18px]">

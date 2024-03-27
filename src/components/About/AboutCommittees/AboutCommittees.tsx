@@ -9,7 +9,7 @@ export default function AboutCommittees() {
         <p className={`mt-[40px] text-xl text-white`}>
           Our Organization consist of two committees that helps the executive committee for efficient operation.
         </p>
-        <div className={`mt-[78px] grid grid-cols-2 gap-[24px]`}>
+        <div className={`mt-[78px] flex flex-row flex-wrap justify-center gap-[24px]`}>
           {COMMITTEE_DATA.map((committee) => (
             <CommitteeCard
               key={committee.committeeTitle}

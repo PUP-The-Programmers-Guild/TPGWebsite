@@ -21,8 +21,7 @@ export default function Officers() {
           <h1 className="pb-[80px] font-heading text-[2.5rem] font-semibold text-white">The Officers</h1>
           <h2 className="pb-[40px] font-heading text-[2rem] font-semibold text-white">Our Executives</h2>
           <p className="pb-[40px] font-body text-xl text-white">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            These are the student leaders that make the organization work.
           </p>
 
           <ul role="list" className="z-10 grid grid-flow-row grid-cols-4 gap-x-[46.33px] gap-y-[32px]">
@@ -35,8 +34,7 @@ export default function Officers() {
         <div className="z-10">
           <h2 className="pb-[40px] font-heading text-[2rem] font-semibold text-white">Our Committee Heads</h2>
           <p className="pb-[40px] font-body text-xl text-white">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            These are the student leaders that handles the committees.
           </p>
         </div>
 

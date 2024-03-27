@@ -4,7 +4,7 @@ import { IFAQSComponent } from "@/lib/types/faq.interface";
 
 export default function FAQS(props: IFAQSComponent) {
   return (
-    <section className="bg-[#052014] py-[4.375rem] text-[#E6F5D6]">
+    <section id="faqs" className="bg-[#052014] py-[4.375rem] text-[#E6F5D6]">
       <div className="mx-auto max-w-[960px] space-y-10">
         <h2 className="font-title text-6xl font-bold leading-[84px]">FAQs</h2>
         <Accordion type="single" collapsible className="space-y-4">
