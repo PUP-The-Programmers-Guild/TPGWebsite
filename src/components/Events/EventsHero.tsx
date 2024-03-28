@@ -1,5 +1,6 @@
 import { ArrowDown } from "@phosphor-icons/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function EventsHero() {
   return (
@@ -25,10 +26,12 @@ export default function EventsHero() {
             Empower your growth journey with <br />
             TPG&apos;s diverse tech events.
           </div>
-          <button className="flex max-w-fit flex-row items-center gap-1 bg-[#E6F5D6] px-[30px] py-3">
-            <ArrowDown weight="bold" />
-            <span className="text-base font-bold">Explore Events</span>
-          </button>
+          <Link href="#eventcatalog">
+            <button className="flex max-w-fit flex-row items-center gap-1 bg-white px-[30px] py-3 hover:bg-[#E6F5D6]">
+              <ArrowDown weight="fill" size={18} />
+              <span className="text-base font-bold">Explore Events</span>
+            </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,35 +1,20 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import SelectComponent from "../base/Select";
-import {
-  MOCK_ALUMNI_2020,
-  MOCK_ALUMNI_2021,
-  MOCK_ALUMNI_2022,
-  MOCK_ALUMNI_2023,
-  MOCK_ALUMNI_2024,
-  MOCK_ALUMNI_2025,
-} from "@/mock/mockAlumni";
-
-// Suggestion on how the received data should look like
-interface IAlumniData {
-  [year: string]: string[];
-}
-
-const MOCK_ALUMNI_DATA: IAlumniData = {
-  "2020": MOCK_ALUMNI_2020,
-  "2021": MOCK_ALUMNI_2021,
-  "2022": MOCK_ALUMNI_2022,
-  "2023": MOCK_ALUMNI_2023,
-  "2024": MOCK_ALUMNI_2024,
-  "2025": MOCK_ALUMNI_2025,
-};
 
 export default function OurAlumnisPage() {
-  const [alumniYear, setAlumniYear] = useState<string>("2024");
-  const [alumniInfo, setAlumniInfo] = useState<string[]>(MOCK_ALUMNI_DATA[alumniYear]);
+  const ALUMNI_YEARS = ["2022", "2023"];
+  const [alumniYear, setAlumniYear] = useState<string>("2023");
+  const [alumniInfo, setAlumniInfo] = useState<string[]>();
 
   useEffect(() => {
-    setAlumniInfo(MOCK_ALUMNI_DATA[alumniYear]);
+    async function fetchAlumniData(): Promise<string[]> {
+      const alumniData = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_ROOT}/get_alumni/${alumniYear}`).then((res) =>
+        res.json()
+      );
+      return alumniData.alumni[0].alumni;
+    }
+    fetchAlumniData().then((alumniData) => setAlumniInfo(alumniData));
   }, [alumniYear]);
 
   return (
@@ -42,14 +27,14 @@ export default function OurAlumnisPage() {
         <div className="flex flex-col gap-[48px]">
           <div className="flex flex-col gap-[18px]">
             <div className="">
-              <SelectComponent selection={Object.keys(MOCK_ALUMNI_DATA)} state={alumniYear} setState={setAlumniYear} />
+              <SelectComponent selection={ALUMNI_YEARS} state={alumniYear} setState={setAlumniYear} />
             </div>
             <hr className="" />
           </div>
 
           <div className="ml-[120px] grid grid-flow-col grid-rows-12 gap-x-[69px] text-base text-white">
-            {alumniInfo.map((alumni, index) => (
-              <span key={`ALUMNI_#${index}`} className="text-base text-white">
+            {alumniInfo?.map((alumni, index) => (
+              <span key={`ALUMNI_#${index}-YR-${ALUMNI_YEARS}`} className="text-base text-white">
                 {alumni}
               </span>
             ))}

@@ -3,6 +3,7 @@ import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
 import { useState } from "react";
 import Hero2 from "../../../public/hero/hero2.webp";
+import Link from "next/link";
 
 // Inf. Loop Move, Lazy load
 
@@ -54,13 +55,19 @@ export default function HeroCarousel() {
   );
 
   return (
-    <section className="relative -z-10 min-h-[calc(100vh-80px)]">
+    <section className="relative min-h-[calc(100vh-80px)]">
       <h1 className="absolute left-1/2 top-[calc(50%-80px)] z-10 w-3/5 max-w-4xl -translate-x-1/2 -translate-y-1/2 text-center font-heading text-5xl font-normal uppercase text-[#E6F5D6] lg:text-6xl xl:text-8xl">
         Empowering the next generation of coders
       </h1>
-      <button className="absolute bottom-[calc(3%+90px)] left-1/2 -translate-x-1/2 -translate-y-1/2 font-tpgTitle font-bold text-[#E6F5D6]">
-        <CaretDown size={91} weight="bold" />
-      </button>
+
+      <Link href="/#about">
+        <button
+          className="z-100 absolute bottom-[calc(3%+90px)] left-1/2 -translate-x-1/2 -translate-y-1/2 font-tpgTitle font-bold text-[#E6F5D6]"
+          aria-label="View more information about PUP The Programmers' Guild"
+        >
+          <CaretDown size={91} weight="bold" />
+        </button>
+      </Link>
 
       <div ref={sliderRef} className="relative -z-10 min-h-screen min-w-full overflow-hidden">
         <div className="absolute z-0 h-full w-full bg-[linear-gradient(1deg,_#164323_-23.29%,_#052014_64.94%)] opacity-[92%]" />

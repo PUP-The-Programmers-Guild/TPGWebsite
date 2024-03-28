@@ -12,7 +12,10 @@ export default function SelectComponent(props: ISelectComponentProps) {
   return (
     <>
       <Select.Root value={props.state} onValueChange={props.setState}>
-        <Select.Trigger className="inline-flex h-[35px] items-center justify-center gap-[2px] text-2xl leading-none text-white outline-none">
+        <Select.Trigger
+          className="inline-flex h-[35px] items-center justify-center gap-[2px] text-2xl leading-none text-white outline-none"
+          aria-label="Select Alumni Year to display"
+        >
           <Select.Value aria-label={props.state}>{props.state}</Select.Value>
           <Select.Icon className="text-white">
             <CaretDown size={32} />

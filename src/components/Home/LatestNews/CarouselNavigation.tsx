@@ -15,6 +15,7 @@ export function CarouselNavigation() {
           key={idx}
           className={cn("h-1 w-16 bg-[#C3A7A7]", currentSlide === idx && "bg-white")}
           onClick={() => slider?.moveToIdx(idx)}
+          aria-label={`Go to Event ${idx + 1}`}
         />
       ))}
       <ArrowButton direction="right" />
@@ -38,6 +39,7 @@ function ArrowButton({ direction }: { direction: string }) {
       className="text-white disabled:text-[#C3A7A7]"
       disabled={isArrowDisabled()}
       onClick={() => (direction === "left" ? slider?.prev() : slider?.next())}
+      aria-label={direction === "left" ? "Previous Event" : "Next Event"}
     >
       {direction === "left" ? (
         <CaretLeft fill="currentColor" size={24} weight="bold" />

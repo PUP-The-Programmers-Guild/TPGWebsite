@@ -4,7 +4,8 @@ export interface IEventCardInfo {
   id: string;
   title: string;
   event_type: TEventFilter[];
-  event_dates: string[];
+  start_date: string;
+  end_date: string;
   date_created: string;
   date_updated: string;
   description: string;

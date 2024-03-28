@@ -1,6 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+    @apply snap-y;
+    @apply snap-proximity;
+  }
+  header,
+  section {
+    @apply snap-start;
+    @apply snap-always;
+  }
+}
 /*
   Caorousel Classes
   number-slide = flex items-center justify-center text-[50px] text-white font-medium min-h-[271px] min-w-[339px] max-h-[339px]

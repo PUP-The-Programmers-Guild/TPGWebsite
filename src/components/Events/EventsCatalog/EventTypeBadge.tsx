@@ -22,22 +22,25 @@ interface IEventTypeBadgeProps
 }
 
 export default function EventTypeBadge({ type, enabled, onClick }: IEventTypeBadgeProps) {
-  const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+  const onKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
     if (e.key === "Enter" || e.key === " ") {
       onClick?.();
     }
   };
 
   return (
-    <div
-      className={EventTypeBadgeVariants({ type })}
-      onClick={onClick}
-      role={onClick ? "button" : "div"}
-      tabIndex={onClick ? 0 : -1}
-      onKeyDown={onKeyDown}
-    >
-      <span className={`text-[10px] font-bold`}>{type}</span>
-      {enabled !== undefined && (enabled ? <X size={20} weight="bold" /> : <Circle size={8} weight="fill" />)}
-    </div>
+    <>
+      {onClick !== undefined ? (
+        <button className={EventTypeBadgeVariants({ type })} onClick={onClick} tabIndex={0} onKeyDown={onKeyDown}>
+          <span className={`text-[10px] font-bold`}>{type}</span>
+          {enabled !== undefined && (enabled ? <X size={12} weight="bold" /> : <Circle size={12} weight="fill" />)}
+        </button>
+      ) : (
+        <div className={EventTypeBadgeVariants({ type })} tabIndex={-1}>
+          <span className={`text-[10px] font-bold`}>{type}</span>
+          {enabled !== undefined && (enabled ? <X size={12} weight="bold" /> : <Circle size={12} weight="fill" />)}
+        </div>
+      )}
+    </>
   );
 }

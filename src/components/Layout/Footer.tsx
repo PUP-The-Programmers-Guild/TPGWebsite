@@ -33,7 +33,7 @@ const FOOTER_DIRECTORY: FooterDirectoryItem[] = [
   {
     page: {
       title: "Projects",
-      path: "/",
+      path: "/events",
     },
     subsections: [
       {
@@ -93,12 +93,17 @@ export default function Footer() {
           <TPGLogo />
           <div className="flex grow-0 flex-row gap-x-12">
             {FOOTER_DIRECTORY.map((item: FooterDirectoryItem) => (
-              <div key={`${item.page}-directory`} className="flex flex-col gap-y-4">
+              <div key={`${item.page.title}-directory`} className="flex flex-col gap-y-4">
                 <Link className="p-[10px] font-semibold" href={item.page.path}>
                   {item.page.title}
                 </Link>
                 {item.subsections.map((subsection: Subsection) => (
-                  <Link key={`${subsection.title}-subdirectory`} className="p-[10px] text-sm" href={subsection.path}>
+                  <Link
+                    key={`${subsection.title}-subdirectory`}
+                    className="p-[10px] text-sm"
+                    href={subsection.path}
+                    scroll={!/\#/.test(subsection.path)}
+                  >
                     {subsection.title}
                   </Link>
                 ))}
