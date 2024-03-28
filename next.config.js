@@ -7,6 +7,11 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["@phosphor-icons/react"],
   },
+  modularizeImports: {
+    "@phosphor-icons/react": {
+      transform: "@phosphor-icons/react/dist/ssr/{{member}}",
+    },
+  },
   images: {
     remotePatterns: [
       {
