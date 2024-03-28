@@ -6,6 +6,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 const nextConfig = {
   experimental: {
     appDir: false,
+    optimizePackageImports: ["@phosphor-icons/react"],
   },
   images: {
     domains: ["images.unsplash.com", "picsum.photos", process.env.S3_BUCKET],
