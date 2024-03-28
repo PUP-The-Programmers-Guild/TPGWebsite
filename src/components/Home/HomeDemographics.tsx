@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "@phosphor-icons/react";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import DevskolarBG1 from "../../../public/devskolar/devskolar1.webp";
 import DevskolarBG2 from "../../../public/devskolar/devskolar2.webp";

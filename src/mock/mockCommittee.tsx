@@ -1,4 +1,4 @@
-import { HighlighterCircle, PencilCircle, MarkerCircle } from "@phosphor-icons/react";
+import { HighlighterCircle, PencilCircle, MarkerCircle } from "@phosphor-icons/react/dist/ssr";
 import { ICommitteeCardProps } from "@/lib/types/aboutCommittee.interface";
 
 export const COMMITTEE_DATA: ICommitteeCardProps[] = [

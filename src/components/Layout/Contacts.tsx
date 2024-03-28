@@ -1,4 +1,11 @@
-import { FacebookLogo, GithubLogo, InstagramLogo, LinkedinLogo, TwitterLogo, YoutubeLogo } from "@phosphor-icons/react";
+import {
+  FacebookLogo,
+  GithubLogo,
+  InstagramLogo,
+  LinkedinLogo,
+  TwitterLogo,
+  YoutubeLogo,
+} from "@phosphor-icons/react/dist/ssr";
 
 export default function Contacts() {
   const SocialMediaLinks = [

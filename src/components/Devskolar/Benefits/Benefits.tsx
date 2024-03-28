@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "@phosphor-icons/react";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { MOCK_BENEFITS } from "@/mock/mockBenefits";
 
 export default function DevskolarBenefits() {

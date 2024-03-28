@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { TrafficCone } from "@phosphor-icons/react";
+import { TrafficCone } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 
 interface IMaintenanceNoticeProps {
