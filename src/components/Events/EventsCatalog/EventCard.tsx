@@ -6,7 +6,8 @@ import { TEventFilter } from "@/lib/types/event.interface";
 interface IEventCardProps {
   title: string;
   event_type: TEventFilter[];
-  event_dates: string[];
+  start_date: string;
+  end_date: string;
   description: string;
   image_url: string;
   facebook_url: string;
@@ -16,7 +17,8 @@ export default function EventCard({
   image_url,
   title,
   facebook_url,
-  event_dates,
+  start_date,
+  end_date,
   event_type,
   description,
 }: IEventCardProps) {
@@ -36,8 +38,8 @@ export default function EventCard({
           {title}
         </a>
         <div>
-          <span key={`${title}-dates`} className="mr-2 text-xs">
-            {dateFormatter(event_dates)}
+          <span key={`${title}-start-date`} className="mr-2 text-xs">
+            {dateFormatter(start_date, end_date)}
           </span>
         </div>
       </div>

@@ -19,14 +19,6 @@ export default function LatestNews(props: ILatestNewsProps) {
       <div className="flex max-w-[960px] flex-1 flex-col gap-10 overflow-hidden">
         <h2 className="font-heading text-6xl font-bold leading-[84px] text-[#E6F5D6]">LATEST EVENTS</h2>
         <CarouselProvider>
-          {/*           {[0, 1, 2, 3].map((idx) => (
-            <CarouselSlide
-              key={idx}
-              title={`Slide ${idx}`}
-              image={`https://picsum.photos/920/480?random=${idx}`}
-              idx={idx}
-            />
-          ))} */}
           {props.events.map((event, idx) => (
             <CarouselSlide key={idx} title={event.title} image={event.image_url} link={event.facebook_url} idx={idx} />
           ))}

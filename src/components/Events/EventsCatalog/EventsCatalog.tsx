@@ -30,6 +30,7 @@ export default function EventsCatalog(props: IEventsCatalogComponent) {
 
   return (
     <section
+      id="eventcatalog"
       className={`flex min-h-screen flex-col items-center justify-center bg-[radial-gradient(278.86%_108.32%_at_50%_108.32%,_#E6F5D6_0.52%,_#167920_28.13%,_#0F541B_47.4%,_#052014_80.73%)]`}
     >
       <div className={`flex max-w-[960px] flex-col items-center justify-center pb-[80px] pt-[24px] `}>
@@ -58,7 +59,8 @@ export default function EventsCatalog(props: IEventsCatalogComponent) {
                 image_url={event?.image_url}
                 title={event?.title}
                 facebook_url={event?.facebook_url}
-                event_dates={event?.event_dates}
+                start_date={event?.start_date}
+                end_date={event?.end_date}
                 event_type={event?.event_type}
                 description={event?.description}
               />

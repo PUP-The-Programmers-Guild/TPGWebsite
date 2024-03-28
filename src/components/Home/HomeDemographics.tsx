@@ -2,6 +2,7 @@ import { ArrowUpRight } from "@phosphor-icons/react";
 import Image from "next/image";
 import DevskolarBG1 from "../../../public/devskolar/devskolar1.webp";
 import DevskolarBG2 from "../../../public/devskolar/devskolar2.webp";
+import Link from "next/link";
 
 export default function HomeDemographics() {
   return (
@@ -55,10 +56,13 @@ export default function HomeDemographics() {
           </div>
         </div>
 
-        <button className="mt-10 flex items-center justify-center gap-[10px] bg-white p-[10px] hover:bg-[#E6F5D6]">
+        <Link
+          href="/about#community"
+          className="mt-10 flex items-center justify-center gap-[10px] bg-white p-[10px] hover:bg-[#E6F5D6]"
+        >
           <span className="font-body text-base font-bold text-[#052014]">LEARN MORE</span>
           <ArrowUpRight size={28} weight="fill" />
-        </button>
+        </Link>
       </div>
     </section>
   );

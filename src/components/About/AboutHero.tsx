@@ -3,6 +3,7 @@ import { ArrowDown } from "@phosphor-icons/react";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutHero() {
   const [ref] = useKeenSlider<HTMLDivElement>({
@@ -30,10 +31,12 @@ export default function AboutHero() {
           <p className="mb-[24.5px] ml-[6.5px] font-body text-2xl leading-7 text-white">
             Hear more about our advocacy and community.
           </p>
-          <button className="mb-[71px] flex items-center justify-center gap-[10px] bg-white px-[25px] py-[12px]">
-            <ArrowDown size={28} weight="fill" />
-            <span className="font-body text-base font-bold uppercase">Learn more</span>
-          </button>
+          <Link href="#missionvision">
+            <button className="mb-[71px] flex items-center justify-center gap-[10px] bg-white px-[25px] py-[12px] hover:bg-[#DFF2C8]">
+              <ArrowDown size={20} weight="fill" />
+              <span className="font-body text-base font-bold uppercase">Learn more</span>
+            </button>
+          </Link>
         </div>
 
         <div className="relative max-w-[450px] overflow-visible">
@@ -89,6 +92,7 @@ export default function AboutHero() {
                 height={293}
                 width={318}
                 priority={index === 0}
+                loading={index === 0 ? "eager" : "lazy"}
               />
             ))}
           </div>

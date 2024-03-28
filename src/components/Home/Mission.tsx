@@ -1,10 +1,14 @@
 import { ArrowUpRight } from "@phosphor-icons/react";
 import Image from "next/image";
 import TPGMembersFull from "../../../public/TPGMembersFull.webp";
+import Link from "next/link";
 
 export default function Mission() {
   return (
-    <section className="flex min-h-screen items-center justify-center bg-[linear-gradient(180deg,_#164323_-20.03%,_#052014_57.22%)]">
+    <section
+      id="about"
+      className="flex min-h-screen items-center justify-center bg-[linear-gradient(180deg,_#164323_-20.03%,_#052014_57.22%)]"
+    >
       <div className="flex max-w-[960px] flex-col pb-[115px] pt-[70px]">
         <div className="pb-[100px] text-center">
           <h1 className={`pb-[40px] font-heading text-6xl font-bold leading-[84px] text-[#E6F5D6] `}>
@@ -39,10 +43,12 @@ export default function Mission() {
         </div>
 
         <div className="flex items-center justify-center text-[#052014]">
-          <button className="flex items-center justify-end gap-[10px] bg-white p-[20px] py-[10px] pl-5 pr-4 hover:bg-[#E6F5D6]">
-            <span className="font-body text-base font-bold ">Learn More</span>
-            <ArrowUpRight size={22} weight="fill" />
-          </button>
+          <Link href="/about#missionvision">
+            <button className="flex items-center justify-end gap-[10px] bg-white p-[20px] py-[10px] pl-5 pr-4 hover:bg-[#E6F5D6]">
+              <span className="font-body text-base font-bold ">Learn More</span>
+              <ArrowUpRight size={22} weight="fill" />
+            </button>
+          </Link>
         </div>
       </div>
     </section>
