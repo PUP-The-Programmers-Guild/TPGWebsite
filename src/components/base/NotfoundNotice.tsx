@@ -1,4 +1,4 @@
-import { SmileyXEyes } from "@phosphor-icons/react/dist/ssr";
+import { SmileyXEyes } from "@phosphor-icons/react/dist/ssr/SmileyXEyes";
 import Link from "next/link";
 
 export default function NotfoundNotice() {

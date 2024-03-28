@@ -1,5 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/base/Accordion";
-import { Plus } from "@phosphor-icons/react/dist/ssr";
+import { Plus } from "@phosphor-icons/react/dist/ssr/Plus";
 import { IFAQSComponent } from "@/lib/types/faq.interface";
 
 export default function FAQS(props: IFAQSComponent) {

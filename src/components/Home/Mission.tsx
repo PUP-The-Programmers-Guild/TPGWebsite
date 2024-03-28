@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr/ArrowUpRight";
 import Image from "next/image";
 import TPGMembersFull from "../../../public/TPGMembersFull.webp";
 import Link from "next/link";

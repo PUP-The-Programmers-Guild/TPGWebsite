@@ -1,4 +1,5 @@
-import { Circle, X } from "@phosphor-icons/react/dist/ssr";
+import { Circle } from "@phosphor-icons/react/dist/ssr/Circle";
+import { X } from "@phosphor-icons/react/dist/ssr/X";
 import { VariantProps, cva } from "class-variance-authority";
 
 type TEventTypeBadgeVariants = VariantProps<typeof EventTypeBadgeVariants>;

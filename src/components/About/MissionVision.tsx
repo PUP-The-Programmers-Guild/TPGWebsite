@@ -1,4 +1,5 @@
-import { LightbulbFilament, RocketLaunch } from "@phosphor-icons/react/dist/ssr";
+import { LightbulbFilament } from "@phosphor-icons/react/dist/ssr/LightbulbFilament";
+import { RocketLaunch } from "@phosphor-icons/react/dist/ssr/RocketLaunch";
 import Image from "next/image";
 
 const MissionInfo = {

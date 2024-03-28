@@ -1,5 +1,7 @@
 import * as Select from "@radix-ui/react-select";
-import { CaretDown, CaretUp, Check } from "@phosphor-icons/react/dist/ssr";
+import { CaretDown } from "@phosphor-icons/react/dist/ssr/CaretDown";
+import { CaretUp, } from "@phosphor-icons/react/dist/ssr/CaretUp";
+import { Check } from "@phosphor-icons/react/dist/ssr/Check";
 import React from "react";
 
 interface ISelectComponentProps {

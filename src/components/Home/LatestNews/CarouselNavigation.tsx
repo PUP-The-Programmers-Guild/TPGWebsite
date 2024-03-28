@@ -1,6 +1,7 @@
 import Button from "@/components/base/Button";
 import { cn } from "@/lib/utils";
-import { CaretLeft, CaretRight } from "@phosphor-icons/react/dist/ssr";
+import { CaretLeft } from "@phosphor-icons/react/dist/ssr/CaretLeft";
+import { CaretRight } from "@phosphor-icons/react/dist/ssr/CaretRight";
 import { useEventsSlider } from "./CarouselContext";
 
 export function CarouselNavigation() {
