@@ -1,5 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/base/Accordion";
-import { Plus } from "@phosphor-icons/react";
+import { Plus } from "@phosphor-icons/react/dist/ssr/Plus";
 import { IFAQSComponent } from "@/lib/types/faq.interface";
 
 export default function FAQS(props: IFAQSComponent) {
@@ -14,9 +14,9 @@ export default function FAQS(props: IFAQSComponent) {
               value={index.toString()}
               className="space-y-7 bg-[#123D16] p-7 [&[data-state=open]]:bg-[linear-gradient(175deg,_#123D16_25.08%,_rgba(153,_212,_78,_0.8)_358.54%)]"
             >
-              <AccordionTrigger className="text-start font-heading text-[36px] font-bold [&[data-state=open]>#plus]:rotate-45">
-                <span>{question.title}</span>
-                <Plus id="plus" weight="bold" className="transition duration-300" />
+              <AccordionTrigger className="text-start font-heading  font-bold [&[data-state=open]>#plus]:rotate-45">
+                <span className="text-[36px]">{question.title}</span>
+                <Plus id="plus" weight="bold" className="transition duration-300" size={36} />
               </AccordionTrigger>
               <AccordionContent className="font-body text-xl leading-[24px]">{question.description}</AccordionContent>
             </AccordionItem>

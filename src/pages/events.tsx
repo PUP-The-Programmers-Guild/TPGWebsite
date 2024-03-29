@@ -2,7 +2,8 @@ import { InferGetServerSidePropsType, GetServerSideProps } from "next";
 import dynamic from "next/dynamic";
 
 import EventsHero from "@/components/Events/EventsHero";
-const EventsCatalog = dynamic(() => import("@/components/Events/EventsCatalog/EventsCatalog"), { ssr: true });
+import EventsCatalog from "@/components/Events/EventsCatalog/EventsCatalog";
+//const EventsCatalog = dynamic(() => import("@/components/Events/EventsCatalog/EventsCatalog"), { ssr: true });
 
 import { IEventCatalogResponse } from "@/lib/types/event.interface";
 import dayjs from "dayjs";

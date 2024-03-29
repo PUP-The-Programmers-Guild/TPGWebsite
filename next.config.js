@@ -5,10 +5,31 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    appDir: false,
+    optimizePackageImports: ["@phosphor-icons/react"],
+  },
+  modularizeImports: {
+    "@phosphor-icons/react": {
+      transform: "@phosphor-icons/react/dist/ssr/{{member}}",
+    },
   },
   images: {
-    domains: ["images.unsplash.com", "picsum.photos", process.env.S3_BUCKET],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: process.env.S3_BUCKET,
+        port: "",
+      },
+    ],
   },
 };
 
