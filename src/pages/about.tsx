@@ -1,25 +1,25 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { InferGetServerSidePropsType, GetServerSideProps } from "next";
+import { InferGetStaticPropsType, GetStaticProps } from "next";
+import { IOfficerResponse } from "@/lib/types/Officers.interface";
 
 import AboutHero from "@/components/About/AboutHero";
 const MissionVision = dynamic(() => import("@/components/About/MissionVision"), { ssr: true });
 const Demographics = dynamic(() => import("@/components/About/Demographics"), { ssr: true });
 const AboutCommittees = dynamic(() => import("@/components/About/AboutCommittees/AboutCommittees"), { ssr: true });
 const Officers = dynamic(() => import("@/components/About/Officers"), { ssr: true });
-import { IOfficerResponse } from "@/lib/types/Officers.interface";
 const OurAlumnisPage = dynamic(() => import("@/components/About/OurAlumnis"), { ssr: true });
 
 import AboutUsCurlyBraceL from "../../public/AboutUsCurlyBrace-L.webp";
 import AboutUsCurlyBraceR from "../../public/AboutUsCurlyBrace-R.webp";
 
-export const getServerSideProps = (async (context) => {
+export const getStaticProps = (async (context) => {
   const officerRes = await fetch(`${process.env.BACKEND_ROOT}/get_officers`);
   let officerData = await officerRes.json();
   return { props: { officerData } };
-}) satisfies GetServerSideProps<{ officerData: IOfficerResponse }>;
+}) satisfies GetStaticProps<{ officerData: IOfficerResponse }>;
 
-export default function AboutPage({ officerData }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function AboutPage({ officerData }: InferGetStaticPropsType<typeof getStaticProps>) {
   const executivesData = officerData.officers.slice(0, 9);
   const committeeHeadsData = officerData.officers.slice(9);
 

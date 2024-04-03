@@ -2,22 +2,31 @@ import { InferGetServerSidePropsType, GetServerSideProps } from "next";
 import dynamic from "next/dynamic";
 
 import EventsHero from "@/components/Events/EventsHero";
-import EventsCatalog from "@/components/Events/EventsCatalog/EventsCatalog";
-//const EventsCatalog = dynamic(() => import("@/components/Events/EventsCatalog/EventsCatalog"), { ssr: true });
+/* import EventsCatalog from "@/components/Events/EventsCatalog/EventsCatalog"; */
+const EventsCatalog = dynamic(() => import("@/components/Events/EventsCatalog/EventsCatalog"), { ssr: true });
 
-import { IEventCatalogResponse } from "@/lib/types/event.interface";
+import { IEventCatalogProcessedResponse, IEventCatalogResponse, TEventFilter } from "@/lib/types/event.interface";
 import dayjs from "dayjs";
 
 export const getServerSideProps = (async (context) => {
   const eventsRes = await fetch(`${process.env.BACKEND_ROOT}/get_events`);
-  let eventsData: IEventCatalogResponse = await eventsRes.json();
-  eventsData.events = eventsData.events.sort((a, b) => {
+  let eventsRawData: IEventCatalogResponse = await eventsRes.json();
+  eventsRawData.events = eventsRawData.events.sort((a, b) => {
     const dateA = dayjs(a.start_date);
     const dateB = dayjs(b.start_date);
     return dateB.isAfter(dateA) ? 1 : -1;
   });
+
+  let eventsData: IEventCatalogProcessedResponse = {
+    message: eventsRawData.message,
+    events: eventsRawData.events.map((event) => ({
+      ...event,
+      event_type: JSON.parse(event.event_type) as TEventFilter[],
+    })),
+  };
+
   return { props: { eventsData } };
-}) satisfies GetServerSideProps<{ eventsData: IEventCatalogResponse }>;
+}) satisfies GetServerSideProps<{ eventsData: IEventCatalogProcessedResponse }>;
 
 export default function EventsPage({ eventsData }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (

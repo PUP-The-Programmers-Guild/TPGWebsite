@@ -1,16 +1,16 @@
 import { useEffect, useMemo, useState } from "react";
 import EventTypeBadge from "./EventTypeBadge";
 import EventCard from "./EventCard";
-import { IEventCardInfo, TEventFilter } from "@/lib/types/event.interface";
+import { IEventCardData, IEventCardInfo, TEventFilter } from "@/lib/types/event.interface";
 
-const ALL_EVENT_FILTERS = ["FLAGSHIP", "WEBINARS", "EXTERNAL", "PODCAST", "TPG-EXCLUSIVE"] as const;
+const ALL_EVENT_FILTERS = ["FLAGSHIP", "WEBINAR", "EXTERNAL", "PODCAST", "TPG-EXCLUSIVE"] as const;
 interface IEventsCatalogComponent {
   events: IEventCardInfo[];
 }
 
 export default function EventsCatalog(props: IEventsCatalogComponent) {
   const [eventsFilter, setEventsFilter] = useState<TEventFilter[]>([]);
-  const [currentEvents, setCurrentEvents] = useState<IEventCardInfo[] | []>(props.events);
+  const [currentEvents, setCurrentEvents] = useState<IEventCardInfo[]>(props.events);
 
   const filteredEvents = useMemo(() => {
     if (eventsFilter.length === 0) {

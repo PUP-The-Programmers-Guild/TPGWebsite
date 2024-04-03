@@ -6,14 +6,16 @@ import dynamic from "next/dynamic";
 import "../styles/globals.css";
 import "keen-slider/keen-slider.min.css";
 
+import NextNProgress from "nextjs-progressbar";
+
 const MaintenanceNotice = dynamic(() => import("@/components/base/MaintenanceNotice"), { ssr: true });
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>TPG | The Programmers`&apos; Guild</title>
+        <title>TPG | The Programmers&apos; Guild</title>
       </Head>
-
+      <NextNProgress color="#FFEA49" showOnShallow={true} />
       <Layout className="hidden lg:block">
         <Component {...pageProps} />
       </Layout>

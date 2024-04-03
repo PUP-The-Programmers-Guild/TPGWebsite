@@ -7,7 +7,7 @@ const EventTypeBadgeVariants = cva("flex flex-row items-center p-[8px] rounded-m
   variants: {
     type: {
       FLAGSHIP: "bg-[#99D44E]",
-      WEBINARS: "bg-[#93C5FD]",
+      WEBINAR: "bg-[#93C5FD]",
       EXTERNAL: "bg-[#FDE047]",
       PODCAST: "bg-[#EC4899]",
       "TPG-EXCLUSIVE": "bg-[#F97316]",

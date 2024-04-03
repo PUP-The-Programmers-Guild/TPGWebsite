@@ -5,20 +5,56 @@ import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
 import Link from "next/link";
 
+import AboutUsCarousel1 from "../../../public/AboutUsCarousel1.webp";
+import AboutUsCarousel2 from "../../../public/AboutUsCarousel2.webp";
+import AboutUsCarousel3 from "../../../public/AboutUsCarousel3.webp";
+
 export default function AboutHero() {
-  const [ref] = useKeenSlider<HTMLDivElement>({
-    loop: true,
-    mode: "snap",
-    selector: ".aboutHeroCarouselSlide",
-    slides: {
-      origin: "center",
-      perView: 1.378,
-      spacing: 31,
+  const carouselImages = [AboutUsCarousel1, AboutUsCarousel2, AboutUsCarousel3];
+
+  const [ref] = useKeenSlider<HTMLDivElement>(
+    {
+      loop: true,
+      mode: "snap",
+      selector: ".aboutHeroCarouselSlide",
+      slides: {
+        origin: "center",
+        perView: 1.378,
+        spacing: 31,
+      },
     },
-    created(s) {
-      setTimeout(s.update, 0);
-    },
-  });
+    [
+      (slider) => {
+        let timeout: ReturnType<typeof setTimeout>;
+        let mouseOver = false;
+        function clearNextTimeout() {
+          clearTimeout(timeout);
+        }
+        function nextTimeout() {
+          clearTimeout(timeout);
+          if (mouseOver) return;
+          timeout = setTimeout(() => {
+            slider.next();
+          }, 3000);
+        }
+        slider.on("created", () => {
+          slider.container.addEventListener("mouseover", () => {
+            mouseOver = true;
+            clearNextTimeout();
+          });
+          slider.container.addEventListener("mouseout", () => {
+            mouseOver = false;
+            nextTimeout();
+          });
+          nextTimeout();
+        });
+        slider.on("dragStarted", clearNextTimeout);
+        slider.on("animationEnded", nextTimeout);
+        slider.on("updated", nextTimeout);
+        slider.on("destroyed", clearNextTimeout);
+      },
+    ]
+  );
 
   return (
     <section className="flex min-h-[calc(100vh-80px)] items-center justify-center bg-[#052014] ">
@@ -83,12 +119,12 @@ export default function AboutHero() {
           <div className="margin-[100px] absolute left-1/2 top-1/2 h-[1px] w-[1px] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-white shadow-[0_0_250px_100px_rgba(255,_235,_132,_0.7)]"></div>
           <div ref={ref} className="keen-slider">
             <div className="absolute z-40 h-full w-full bg-[linear-gradient(to_right,_rgba(5,32,20,0.8),_rgba(0,0,0,0)_35px,_rgba(0,0,0,0)_415px,_rgba(5,32,20,0.8))]"></div>
-            {mockDataImage.map((item, index) => (
+            {carouselImages.map((item, index) => (
               <Image
                 className="aboutHeroCarouselSlide z-1 flex h-[293px] max-w-[318px] items-center justify-center"
                 key={`heroslider-${index}`}
-                src={item.url}
-                alt={`${item.url}`}
+                src={item}
+                alt={`AboutUs-${index}`}
                 height={293}
                 width={318}
                 priority={index === 0}
