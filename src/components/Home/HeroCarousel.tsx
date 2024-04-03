@@ -8,9 +8,8 @@ import Hero1 from "../../../public/hero/Hero1.webp";
 import Hero2 from "../../../public/hero/Hero2.webp";
 import Hero3 from "../../../public/hero/Hero3.webp";
 
-const images = [Hero1, Hero2, Hero3];
-
 export default function HeroCarousel() {
+  const images = [Hero1, Hero2, Hero3];
   const [opacities, setOpacities] = useState<number[]>([]);
   const [sliderRef] = useKeenSlider<HTMLDivElement>(
     {
