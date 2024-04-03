@@ -4,9 +4,9 @@ import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 
-import hero1 from "../../../public/hero/hero1.webp";
+import hero1 from "../../../public/hero/Hero1.webp";
 import hero2 from "../../../public/hero/hero2.webp";
-import hero3 from "../../../public/hero/hero3.webp";
+import hero3 from "../../../public/hero/Hero3.webp";
 
 export default function HeroCarousel() {
   const images = [hero1, hero2, hero3];
