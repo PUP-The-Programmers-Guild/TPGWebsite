@@ -4,12 +4,12 @@ import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 
-import Hero1 from "../../../public/hero/Hero1.webp";
-import Hero2 from "../../../public/hero/Hero2.webp";
-import Hero3 from "../../../public/hero/Hero3.webp";
+import hero1 from "../../../public/hero/hero1.webp";
+import hero2 from "../../../public/hero/hero2.webp";
+import hero3 from "../../../public/hero/hero3.webp";
 
 export default function HeroCarousel() {
-  const images = [Hero1, Hero2, Hero3];
+  const images = [hero1, hero2, hero3];
   const [opacities, setOpacities] = useState<number[]>([]);
   const [sliderRef] = useKeenSlider<HTMLDivElement>(
     {
