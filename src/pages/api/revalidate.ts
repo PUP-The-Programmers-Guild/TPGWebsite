@@ -8,7 +8,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method == "POST") {
-    const jsonBody = req.body;
+    const jsonBody = await JSON.parse(req.body);
     if (!jsonBody.data || !jsonBody.secret) {
       return res.status(422).json({ message: "Missing required fields." });
     }
