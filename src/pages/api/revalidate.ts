@@ -2,13 +2,17 @@
  *    PATH: https://<FRONTEND_URL>/api/revalidate
  *    METHOD: POST
  *    INFO: Revalidates the cache of the specified page.
- *    PAYLOAD: { data: string, secret: string }
+ *    PAYLOAD: { data: string, secret: string } as json
  */
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method === "POST") {
-    const { data, secret } = JSON.parse(req.body);
+  if (req.method == "POST") {
+    const jsonBody = req.body;
+    if (!jsonBody.data || !jsonBody.secret) {
+      return res.status(422).json({ message: "Missing required fields." });
+    }
+    const { data, secret } = jsonBody;
     if (secret !== process.env.REVALIDATION_SECRET) {
       return res.status(401).json({ message: "Unauthorized secret token." });
     }
@@ -47,7 +51,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         });
     }
     return res.json({ revalidated: true });
+  } else if (req.method == "GET") {
+    return res.status(405).json({ message: "GET Method not allowed." });
   } else {
-    return res.status(405).json({ message: "Method not allowed." });
+    return res.status(405).json({ message: "GET Method not allowed." });
   }
 }
