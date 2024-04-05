@@ -1,14 +1,13 @@
-import { InferGetServerSidePropsType, GetServerSideProps } from "next";
+import { InferGetStaticPropsType, GetStaticProps } from "next";
 import dynamic from "next/dynamic";
 
 import EventsHero from "@/components/Events/EventsHero";
-/* import EventsCatalog from "@/components/Events/EventsCatalog/EventsCatalog"; */
 const EventsCatalog = dynamic(() => import("@/components/Events/EventsCatalog/EventsCatalog"), { ssr: true });
 
 import { IEventCatalogProcessedResponse, IEventCatalogResponse, TEventFilter } from "@/lib/types/event.interface";
 import dayjs from "dayjs";
 
-export const getServerSideProps = (async (context) => {
+export const getStaticProps = (async (context) => {
   const eventsRes = await fetch(`${process.env.BACKEND_ROOT}/get_events`);
   let eventsRawData: IEventCatalogResponse = await eventsRes.json();
   eventsRawData.events = eventsRawData.events.sort((a, b) => {
@@ -26,9 +25,9 @@ export const getServerSideProps = (async (context) => {
   };
 
   return { props: { eventsData } };
-}) satisfies GetServerSideProps<{ eventsData: IEventCatalogProcessedResponse }>;
+}) satisfies GetStaticProps<{ eventsData: IEventCatalogProcessedResponse }>;
 
-export default function EventsPage({ eventsData }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function EventsPage({ eventsData }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <EventsHero />
