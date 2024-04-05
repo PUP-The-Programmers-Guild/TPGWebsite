@@ -75,12 +75,12 @@ export default function HeroCarousel() {
           <div key={idx} className="absolute -z-10 min-h-full min-w-full" style={{ opacity: opacities[idx] }}>
             <Image
               src={src}
-              alt="an image"
+              alt="TPG Hero Carousel"
               fill
               className="absolute h-full w-full bg-transparent object-cover"
-              priority={idx === 0}
               quality={50}
               placeholder="blur"
+              loading="eager"
             />
           </div>
         ))}
