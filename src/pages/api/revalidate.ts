@@ -54,6 +54,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   } else if (req.method == "GET") {
     return res.status(405).json({ message: "GET Method not allowed." });
   } else {
-    return res.status(405).json({ message: "GET Method not allowed." });
+    return res.status(405).json({ message: "Method not allowed." });
   }
 }
