@@ -7,7 +7,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method == "POST") {
+  if (req.method === "POST") {
     const jsonBody = await JSON.parse(req.body);
     if (!jsonBody.data || !jsonBody.secret) {
       return res.status(422).json({ message: "Missing required fields." });
@@ -22,7 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         await res
           .revalidate("/events")
           .then(async () => {
-            await res.revalidate("/events/[id]").catch((err) => {
+            await res.revalidate("/").catch((err) => {
               res.status(500).json({ message: err.message });
             });
           })
@@ -41,7 +41,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         });
         break;
       case "alumni":
-        await res.revalidate("about").catch((err) => {
+        await res.revalidate("/about").catch((err) => {
           res.status(500).json({ message: err.message });
         });
         break;
@@ -51,7 +51,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         });
     }
     return res.json({ revalidated: true });
-  } else if (req.method == "GET") {
+  } else if (req.method === "GET") {
     return res.status(405).json({ message: "GET Method not allowed." });
   } else {
     return res.status(405).json({ message: "Method not allowed." });
