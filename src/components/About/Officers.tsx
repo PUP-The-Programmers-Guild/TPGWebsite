@@ -5,7 +5,7 @@ export default function Officers({ executivesData, committeeHeadsData }: IOffice
   const ADVISER_INFO: IOfficerInfo = {
     name: "Sir John Dustin Santos",
     position: "",
-    image_url: "/Placeholder.png",
+    image_url: "/adviser.webp",
   };
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#052014]">
