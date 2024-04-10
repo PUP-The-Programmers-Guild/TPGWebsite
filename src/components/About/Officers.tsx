@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Officers({ executivesData, committeeHeadsData }: IOfficersComponentProps) {
   const ADVISER_INFO: IOfficerInfo = {
     name: "Sir John Dustin Santos",
-    position: "Adviser",
+    position: "",
     image_url: "/Placeholder.png",
   };
   return (
