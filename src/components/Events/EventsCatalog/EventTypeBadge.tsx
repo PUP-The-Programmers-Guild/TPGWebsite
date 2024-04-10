@@ -32,7 +32,15 @@ export default function EventTypeBadge({ type, enabled, onClick }: IEventTypeBad
   return (
     <>
       {onClick !== undefined ? (
-        <button className={EventTypeBadgeVariants({ type })} onClick={onClick} tabIndex={0} onKeyDown={onKeyDown}>
+        <button
+          className={EventTypeBadgeVariants({ type })}
+          onClick={onClick}
+          tabIndex={0}
+          onKeyDown={onKeyDown}
+          style={{
+            filter: enabled ? "opacity(1.0)" : "opacity(0.5)",
+          }}
+        >
           <span className={`text-[10px] font-bold`}>{type}</span>
           {enabled !== undefined && (enabled ? <X size={12} weight="bold" /> : <Circle size={12} weight="fill" />)}
         </button>
