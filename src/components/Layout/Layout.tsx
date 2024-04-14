@@ -1,4 +1,4 @@
-import { biko, centuryGothic, karla, neptune, optimusPrinceps, twCenMt } from "@/components/base/fonts";
+/* import { biko, centuryGothic, karla, neptune, optimusPrinceps, twCenMt } from "@/components/base/fonts"; */
 import { ReactNode } from "react";
 import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
@@ -10,7 +10,7 @@ export default function Layout({ children, className }: { children: ReactNode; c
   return (
     <div
       className={cn(
-        `${centuryGothic.variable} ${karla.variable} ${neptune.variable} ${biko.variable} ${optimusPrinceps.variable} ${twCenMt.variable}`,
+        /* `${centuryGothic.variable} ${karla.variable} ${neptune.variable} ${biko.variable} ${optimusPrinceps.variable} ${twCenMt.variable}` ,*/
         `${className}`
       )}
     >
