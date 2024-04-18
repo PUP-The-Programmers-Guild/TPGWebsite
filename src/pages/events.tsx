@@ -1,4 +1,4 @@
-import { InferGetServerSidePropsType, GetServerSideProps } from "next";
+import { InferGetStaticPropsType, GetStaticProps } from "next";
 import dynamic from "next/dynamic";
 
 import EventsHero from "@/components/Events/EventsHero";
@@ -8,7 +8,7 @@ import { IEventCatalogProcessedResponse, IEventCatalogResponse, TEventFilter } f
 import dayjs from "dayjs";
 import { NextSeo, OrganizationJsonLd } from "next-seo";
 
-export const getServerSideProps = (async (context) => {
+export const getStaticProps = (async (context) => {
   const eventsRes = await fetch(`${process.env.BACKEND_ROOT}/get_events`);
   let eventsRawData: IEventCatalogResponse = await eventsRes.json();
   eventsRawData.events = eventsRawData.events.sort((a, b) => {
@@ -26,9 +26,9 @@ export const getServerSideProps = (async (context) => {
   };
 
   return { props: { eventsData } };
-}) satisfies GetServerSideProps<{ eventsData: IEventCatalogProcessedResponse }>;
+}) satisfies GetStaticProps<{ eventsData: IEventCatalogProcessedResponse }>;
 
-export default function EventsPage({ eventsData }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function EventsPage({ eventsData }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <NextSeo

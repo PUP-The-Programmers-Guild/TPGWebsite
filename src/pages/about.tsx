@@ -1,6 +1,6 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { InferGetServerSidePropsType, GetServerSideProps } from "next";
+import { InferGetStaticPropsType, GetStaticProps } from "next";
 import { IOfficerResponse } from "@/lib/types/Officers.interface";
 
 import AboutHero from "@/components/About/AboutHero";
@@ -14,13 +14,13 @@ import AboutUsCurlyBraceL from "../../public/AboutUsCurlyBrace-L.webp";
 import AboutUsCurlyBraceR from "../../public/AboutUsCurlyBrace-R.webp";
 import { NextSeo, OrganizationJsonLd } from "next-seo";
 
-export const getServerSideProps = (async (context) => {
+export const getStaticProps = (async (context) => {
   const officerRes = await fetch(`${process.env.BACKEND_ROOT}/get_officers`);
   let officerData = await officerRes.json();
   return { props: { officerData } };
-}) satisfies GetServerSideProps<{ officerData: IOfficerResponse }>;
+}) satisfies GetStaticProps<{ officerData: IOfficerResponse }>;
 
-export default function AboutPage({ officerData }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function AboutPage({ officerData }: InferGetStaticPropsType<typeof getStaticProps>) {
   const executivesData = officerData.officers.slice(0, 9);
   const committeeHeadsData = officerData.officers.slice(9);
 

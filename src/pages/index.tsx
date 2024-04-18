@@ -1,4 +1,4 @@
-import { InferGetServerSidePropsType, GetServerSideProps } from "next";
+import { InferGetStaticPropsType, GetStaticProps } from "next";
 import dynamic from "next/dynamic";
 import { IFAQDataEntry, IFAQResponse } from "@/lib/types/faq.interface";
 import { IEventCatalogResponse } from "@/lib/types/event.interface";
@@ -13,7 +13,7 @@ const HomeDemographics = dynamic(() => import("@/components/Home/HomeDemographic
 const LatestNews = dynamic(() => import("@/components/Home/LatestNews/LatestNews"), { ssr: true });
 const FAQS = dynamic(() => import("@/components/Home/FAQS"), { ssr: true });
 
-export const getServerSideProps = (async (context) => {
+export const getStaticProps = (async (context) => {
   const faqsRes = await fetch(`${process.env.BACKEND_ROOT}/get_faqs`).then((res) => res.json());
   let eventsRes: IEventCatalogResponse = await fetch(`${process.env.BACKEND_ROOT}/get_events`).then((res) =>
     res.json()
@@ -25,9 +25,9 @@ export const getServerSideProps = (async (context) => {
   });
   eventsRes.events = eventsRes.events.slice(0, 5);
   return { props: { faqsRes, eventsRes } };
-}) satisfies GetServerSideProps<{ faqsRes: IFAQResponse; eventsRes: IEventCatalogResponse }>;
+}) satisfies GetStaticProps<{ faqsRes: IFAQResponse; eventsRes: IEventCatalogResponse }>;
 
-export default function IndexPage({ faqsRes, eventsRes }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function IndexPage({ faqsRes, eventsRes }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <NextSeo
