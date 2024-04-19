@@ -31,7 +31,10 @@ export default function Header() {
             {NAVLINKS.map((link) => (
               <NavLink key={`NAVLINK-${link.name}`} {...link} />
             ))}
-            <NavLinkFilled name="Be a Devskolar" href="https://forms.gle/WNkVhscBtbHePYz16" />
+            <NavLinkFilled
+              name="Be a Devskolar"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdoxZzw_YY1hV_A7d-Ped2G6zYYdClZL5fvhz2bhDuyT8FzIQ/viewform"
+            />
           </ul>
         </nav>
       </div>

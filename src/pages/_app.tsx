@@ -2,7 +2,6 @@ import Layout from "@/components/Layout/Layout";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import dynamic from "next/dynamic";
-import { NextSeo } from "next-seo";
 
 import "../styles/globals.css";
 import "keen-slider/keen-slider.min.css";

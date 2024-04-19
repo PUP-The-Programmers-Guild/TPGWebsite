@@ -81,7 +81,6 @@ export default function HeroCarousel() {
               quality={50}
               placeholder="blur"
               loading="eager"
-              priority
             />
           </div>
         ))}

@@ -12,7 +12,6 @@ const OurAlumnisPage = dynamic(() => import("@/components/About/OurAlumnis"), { 
 
 import AboutUsCurlyBraceL from "../../public/AboutUsCurlyBrace-L.webp";
 import AboutUsCurlyBraceR from "../../public/AboutUsCurlyBrace-R.webp";
-import { NextSeo, OrganizationJsonLd } from "next-seo";
 
 export const getStaticProps = (async (context) => {
   const officerRes = await fetch(`${process.env.BACKEND_ROOT}/get_officers`);
@@ -26,52 +25,6 @@ export default function AboutPage({ officerData }: InferGetStaticPropsType<typeo
 
   return (
     <>
-      <NextSeo
-        title="About Us"
-        titleTemplate="%s | PUP The Programmers' Guild"
-        defaultTitle="PUP The Programmers' Guild"
-        description={`Dive deeper into our mission and vision to create a fun and innovative learning environment for IT and programming students.  Learn more about their community, committees and leadership dedicated to bring IT for everyone.`}
-        canonical="https://puptpg.org"
-        twitter={{
-          cardType: "summary_large_image",
-          site: "@pup_tpg",
-        }}
-        openGraph={{
-          type: "website",
-          locale: "en_PH",
-          url: "puptpg.org",
-          siteName: "About Us | PUP The Programmers' Guild",
-          description: `Dive deeper into our mission and vision to create a fun and innovative learning environment for IT and programming students.  Learn more about their community, committees and leadership dedicated to bring IT for everyone.`,
-          images: [
-            {
-              url: "https://puptpg.org/ExternalLinkBG.jpg",
-              width: 2050,
-              height: 780,
-              alt: "PUP The Programmers' Guild",
-            },
-          ],
-        }}
-      />
-      <OrganizationJsonLd
-        name="Polytechnic University of the Philippines -  The Programmers' Guild"
-        type="EducationalOrganization"
-        url="https://puptpg.org"
-        logo="https://puptpg.org/TPGLogoLarge.webp"
-        address={{
-          addressCountry: "PH",
-          addressLocality: "Sta. Mesa, Manila",
-          addressRegion: "NCR",
-          postalCode: "1016",
-          streetAddress: "Anonas St.",
-        }}
-        contactPoint={[
-          {
-            contactPointType: "Partnership Inquiries",
-            email: "puptpg.partnership@gmail.com",
-            availableLanguage: "English, Filipino",
-          },
-        ]}
-      />
       <AboutHero />
       <MissionVision />
       <div id="community">
